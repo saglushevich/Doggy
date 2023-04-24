@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Wrapper = styled.header`
@@ -11,7 +12,7 @@ export const NavigationLinks = styled.nav`
   margin-left: 155px;
 `;
 
-export const NavigationLink = styled.a`
+export const NavigationLink = styled(Link)`
   font-family: ${({ theme }) => theme.fonts.primary};
   position: relative;
   font-weight: 700;

@@ -16,16 +16,19 @@
     }
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@types/node": "18.15.13",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
+    "formik": "^2.2.9",
     "mapbox-gl": "^2.14.1",
     "next": "13.3.0",
     "next-images": "^1.8.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.9",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@types/mapbox-gl": "^2.7.10",

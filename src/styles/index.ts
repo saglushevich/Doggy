@@ -12,19 +12,19 @@ export default createGlobalStyle`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: 66px;
   line-height: 80px;
-  border-radius: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
   text-align: center;
 `;
 
 export const SectionHeader = styled.h1`
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes["6xl"]};
-  font-size: ${({ theme }) => theme.lineHeights["2xl"]};
-  border-radius: ${({ theme }) => theme.colors.black};
+  line-height: ${({ theme }) => theme.lineHeights["2xl"]};
+  color: ${({ theme }) => theme.colors.black};
   text-align: center;
 `;

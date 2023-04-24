@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: ${({ theme }) => `${theme.gaps["6xl"]} 120 0 ${theme.gaps["6xl"]}`};
+  padding: ${({ theme }) =>
+    `${theme.gaps["6xl"]} 120px 0 ${theme.gaps["6xl"]}`};
 `;
 
 export const Content = styled.div`
@@ -25,12 +26,12 @@ export const Image = styled.img`
 
 export const PackageName = styled.div`
   width: 400px;
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes["4xl"]};
-  font-size: ${({ theme }) => theme.lineHeights.xl};
+  line-height: ${({ theme }) => theme.lineHeights.xl};
   text-align: center;
-  border-radius: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
   margin: 0 auto;
 `;
 
@@ -55,7 +56,7 @@ export const PackageButton = styled.button`
   background: #dfb2a9;
   border-radius: ${({ theme }) => theme.borderSizes.l};
   padding: ${({ theme }) => `${theme.gaps.m} ${theme.gaps["4xl"]}`};
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: 26px;
   color: ${({ theme }) => theme.colors.white};

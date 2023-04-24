@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export const Form = styled.form`
+export const Wrapper = styled.div`
   padding: 100px 100px 120px;
+`;
+
+export const InputWrapper = styled.div`
+  display: block;
 `;
 
 export const Input = styled.input`
@@ -12,7 +16,7 @@ export const Input = styled.input`
   border-radius: ${({ theme }) => theme.borderSizes.m};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.s};
+  font-size: ${({ theme }) => theme.fontSizes.m};
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -24,11 +28,20 @@ export const TextArea = styled.textarea`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes.s};
-  font-size: ${({ theme }) => theme.lineHeights.xs};
+  line-height: ${({ theme }) => theme.lineHeights.xs};
   color: ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid #e0e0e0;
   border-radius: ${({ theme }) => theme.borderSizes.m};
+`;
+
+export const FormMessage = styled.div`
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes["3xl"]};
+  color: #b78e80;
+  text-align: center;
+  margin-top: ${({ theme }) => theme.gaps.xl};
 `;
 
 export const Inputs = styled.div`
@@ -52,4 +65,7 @@ export const Button = styled.button`
   cursor: pointer;
   margin: 0 auto;
   margin-top: 65px;
+  &:disabled {
+    background: ${({ theme }) => theme.colors.gray};
+  }
 `;

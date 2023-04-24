@@ -1,8 +1,12 @@
+import { ErrorMessage, FormikProvider } from "formik";
+
 import facebook from "@assets/icons/Facebook.svg";
 import instagram from "@assets/icons/Instagram.svg";
 import pinterest from "@assets/icons/Pinterest.svg";
 import snapchat from "@assets/icons/Snapchat.svg";
 import twitter from "@assets/icons/Twitter.svg";
+import { EMAIL_TEMPLATE, SUBSCRIBE_SCHEMA } from "@constants";
+import { useContact } from "@hooks";
 import { Container } from "@layout";
 
 import {
@@ -11,6 +15,7 @@ import {
   Content,
   FooterForm,
   FooterLink,
+  FormMessage,
   InnerWrapper,
   Input,
   Privacy,
@@ -23,6 +28,11 @@ import {
 } from "./styles";
 
 function Footer() {
+  const { formik, form, disabled, message } = useContact(
+    SUBSCRIBE_SCHEMA,
+    EMAIL_TEMPLATE as string
+  );
+
   return (
     <Wrapper>
       <InnerWrapper>
@@ -38,10 +48,24 @@ function Footer() {
             </Block>
             <Block>
               <Title>Subscribe to our Newsletter</Title>
-              <FooterForm>
-                <Input placeholder="Email" />
-                <Button>Submit</Button>
-              </FooterForm>
+
+              <FormikProvider value={formik}>
+                <FooterForm ref={form}>
+                  <Input
+                    placeholder="Email"
+                    name="email"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                    type="text"
+                  />
+                  <Button disabled={disabled}>Submit</Button>
+                </FooterForm>
+                <ErrorMessage name="email">
+                  {(msg) => <FormMessage>{msg}</FormMessage>}
+                </ErrorMessage>
+                <FormMessage>{message}</FormMessage>
+              </FormikProvider>
+
               <Title>Connect With Us On Social Media</Title>
               <SocialNetworks>
                 <Social src={instagram} />

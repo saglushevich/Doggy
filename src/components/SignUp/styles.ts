@@ -26,17 +26,17 @@ export const SignTitle = styled.div`
   font-family: "Cinzel Decorative";
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes["3xl"]};
-  font-size: ${({ theme }) => theme.lineHeights.l};
-  border-radius: ${({ theme }) => theme.colors.black};
+  line-height: ${({ theme }) => theme.lineHeights.l};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const SignDiscount = styled.div`
   max-width: 250px;
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
   line-height: 27px;
-  border-radius: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
   margin-top: ${({ theme }) => theme.gaps.l};
 `;
 
@@ -46,7 +46,7 @@ export const SignInput = styled.input`
   border-radius: ${({ theme }) => theme.borderSizes.m};
   padding: 13px;
   margin-top: ${({ theme }) => theme.gaps.xl};
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes.s};
   display: flex;
@@ -60,7 +60,7 @@ export const SignButton = styled.button`
   padding: ${({ theme }) => `${theme.gaps.xs} ${theme.gaps["3xl"]}`};
   background: #e89b93;
   border-radius: ${({ theme }) => theme.borderSizes.l};
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes.xl};
   color: ${({ theme }) => theme.colors.white};
@@ -68,15 +68,27 @@ export const SignButton = styled.button`
   border: 1px solid #e89b93;
   margin: 0 auto;
   margin-top: ${({ theme }) => theme.gaps["3xl"]};
+  &:disabled {
+    background: ${({ theme }) => theme.colors.gray};
+  }
+`;
+
+export const FormMessage = styled.div`
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  color: #b78e80;
+  text-align: center;
+  margin-top: ${({ theme }) => theme.gaps.m};
 `;
 
 export const SignText = styled.p`
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes.s};
   line-height: 17px;
   text-align: center;
-  border-radius: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
   width: 230px;
   margin: 0 auto;
   margin-top: ${({ theme }) => theme.gaps["3xl"]};

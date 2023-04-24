@@ -1,3 +1,4 @@
+import { Form } from "formik";
 import styled from "styled-components";
 
 export const Wrapper = styled.footer`
@@ -42,9 +43,13 @@ export const FooterLink = styled.a`
   }
 `;
 
-export const FooterForm = styled.form`
+export const FooterForm = styled(Form)`
   display: flex;
   align-items: center;
+`;
+
+export const FormMessage = styled(Title)`
+  margin-top: ${({ theme }) => theme.gaps.s};
   margin-bottom: ${({ theme }) => theme.gaps["8xl"]};
 `;
 
@@ -63,7 +68,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   background: ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.gaps["2xl"]};
+  border-radius: ${({ theme }) => theme.borderSizes.l};
   padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps["3xl"]}`};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;

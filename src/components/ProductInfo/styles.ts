@@ -7,11 +7,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Selection = styled.div`
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes["3xl"]};
-  font-size: ${({ theme }) => theme.lineHeights.m};
-  border-radius: ${({ theme }) => theme.colors.black};
+  line-height: ${({ theme }) => theme.lineHeights.m};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Block = styled.div`
@@ -37,10 +37,10 @@ export const Input = styled.input`
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: ${({ theme }) => theme.borderSizes.m};
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes.s};
-  border-radius: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const InputIcon = styled.div`

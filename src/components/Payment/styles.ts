@@ -9,10 +9,10 @@ export const Wrapper = styled.div`
 `;
 
 export const PaymentTitle = styled.div`
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes.xl};
-  border-radius: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
   text-align: center;
   margin-bottom: 0;
 `;
@@ -23,10 +23,10 @@ export const PaymentInput = styled.input`
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: ${({ theme }) => theme.borderSizes.m};
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes.s};
-  border-radius: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
   margin-top: ${({ theme }) => theme.gaps.l};
 `;
 

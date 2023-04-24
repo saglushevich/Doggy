@@ -9,12 +9,12 @@ export const Wrapper = styled.li`
 `;
 
 export const Title = styled.div`
-  font-size: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes["4xl"]};
   line-height: 42px;
   text-align: center;
-  border-radius: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Price = styled.span`
