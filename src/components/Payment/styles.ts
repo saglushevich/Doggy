@@ -28,6 +28,10 @@ export const PaymentInput = styled.input`
   font-size: ${({ theme }) => theme.fontSizes.s};
   color: ${({ theme }) => theme.colors.black};
   margin-top: ${({ theme }) => theme.gaps.l};
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    width: 100%;
+  }
 `;
 
 export const PaymentInputs = styled.div`
@@ -35,10 +39,18 @@ export const PaymentInputs = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    display: block;
+    width: 100%;
+  }
 `;
 
 export const PaymentInputLarge = styled(PaymentInput)`
   width: 510px;
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    width: 100%;
+  }
 `;
 
 export const PaymentMethods = styled.div`

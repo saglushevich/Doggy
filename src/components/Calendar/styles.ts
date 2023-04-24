@@ -4,14 +4,26 @@ import checkmark from "@assets/icons/checkmark.svg";
 
 export const CalendarWrapper = styled.div`
   width: 320px;
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    width: 100%;
+    margin-bottom: ${({ theme }) => theme.gaps["5xl"]};
+  }
 `;
 
 export const Visit = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    display: block;
+  }
 `;
 
-export const TimeSlots = styled.div``;
+export const TimeSlots = styled.div`
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    margin-bottom: ${({ theme }) => theme.gaps["5xl"]};
+  }
+`;
 
 export const TimeTitle = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
@@ -70,6 +82,10 @@ export const Days = styled.div`
   grid-template-rows: repeat(6, 30px);
   column-gap: ${({ theme }) => theme.gaps.l};
   row-gap: ${({ theme }) => theme.gaps.s};
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    justify-content: center;
+  }
 `;
 
 export const CalendarBlock = styled.div`

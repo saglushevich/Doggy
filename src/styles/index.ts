@@ -18,6 +18,18 @@ export const SectionTitle = styled.h2`
   line-height: 80px;
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    font-size: 52px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    font-size: ${({ theme }) => theme.fontSizes["5xl"]};
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobileSmall}) {
+    font-size: ${({ theme }) => theme.fontSizes["4xl"]};
+  }
 `;
 
 export const SectionHeader = styled.h1`
@@ -27,4 +39,8 @@ export const SectionHeader = styled.h1`
   line-height: ${({ theme }) => theme.lineHeights["2xl"]};
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    font-size: ${({ theme }) => theme.fontSizes["5xl"]};
+  }
 `;

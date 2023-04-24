@@ -6,6 +6,12 @@ export const Wrapper = styled.li`
   &:nth-last-child(n + 2) {
     margin-bottom: 90px;
   }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    &:nth-last-child(n + 2) {
+      margin-bottom: ${({ theme }) => theme.gaps["4xl"]};
+    }
+  }
 `;
 
 export const Title = styled.div`
@@ -15,6 +21,10 @@ export const Title = styled.div`
   line-height: 42px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    font-size: ${({ theme }) => theme.fontSizes["2xl"]};
+  }
 `;
 
 export const Price = styled.span`
@@ -24,4 +34,7 @@ export const Price = styled.span`
 export const Description = styled(Title)`
   font-weight: 400;
   margin-top: ${({ theme }) => theme.gaps["2xl"]};
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    margin-top: ${({ theme }) => theme.gaps.l};
+  }
 `;

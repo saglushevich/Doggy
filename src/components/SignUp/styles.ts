@@ -8,6 +8,12 @@ export const Wrapper = styled.div`
   padding: ${({ theme }) => theme.gaps.s};
   background: #dfb2a9;
   width: 970px;
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    position: static;
+    transform: translateX(0);
+    width: 100%;
+    margin-top: ${({ theme }) => theme.gaps["2xl"]};
+  }
 `;
 
 export const InnerWrapper = styled.div`
@@ -15,6 +21,14 @@ export const InnerWrapper = styled.div`
   justify-content: space-between;
   background: #ffffff;
   padding: 90px 40px 100px 80px;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    padding: ${({ theme }) => `${theme.gaps["8xl"]} ${theme.gaps["4xl"]}`};
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobileSmall}) {
+    padding: ${({ theme }) => theme.gaps.m};
+  }
 `;
 
 export const Content = styled.div`
@@ -99,6 +113,10 @@ export const ImageWrapper = styled.div`
   padding: ${({ theme }) => theme.gaps.s};
   width: 480px;
   height: 450px;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    display: none;
+  }
 `;
 
 export const Image = styled.img`

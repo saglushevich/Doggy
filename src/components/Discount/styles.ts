@@ -12,4 +12,8 @@ export const Text = styled.p`
   line-height: 31px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: ${({ theme }) => theme.fontSizes["2xl"]};
+  }
 `;

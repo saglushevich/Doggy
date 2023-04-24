@@ -4,11 +4,23 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 ${({ theme }) => theme.gaps["6xl"]};
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    display: block;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    padding: 0;
+  }
 `;
 
 export const Selection = styled.div`
   padding: ${({ theme }) => `${theme.gaps["8xl"]} ${theme.gaps.m} 0`};
   width: 750px;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.div`
@@ -21,12 +33,24 @@ export const Title = styled.div`
 
 export const Form = styled.form`
   margin-top: ${({ theme }) => theme.gaps["7xl"]};
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    margin-top: ${({ theme }) => theme.gaps["4xl"]};
+  }
 `;
 
 export const Inputs = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: ${({ theme }) => theme.gaps["4xl"]};
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    display: block;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    margin-bottom: 0;
+  }
 `;
 
 export const Input = styled.input`
@@ -41,6 +65,14 @@ export const Input = styled.input`
   color: ${({ theme }) => theme.colors.black};
   &:nth-last-child(n + 2) {
     margin-right: ${({ theme }) => theme.gaps["7xl"]};
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    width: 100%;
+    &:nth-last-child(n + 2) {
+      margin-right: 0;
+    }
+    margin-bottom: 20px;
   }
 `;
 
@@ -57,6 +89,10 @@ export const Requests = styled.textarea`
   color: ${({ theme }) => theme.colors.black};
   resize: none;
   margin-top: ${({ theme }) => theme.gaps["7xl"]};
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    margin-top: 0;
+  }
 `;
 
 export const Cancelling = styled.p`
@@ -70,6 +106,10 @@ export const Cancelling = styled.p`
   color: ${({ theme }) => theme.colors.black};
   margin: 0 auto;
   margin-top: ${({ theme }) => theme.gaps.l};
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.button`

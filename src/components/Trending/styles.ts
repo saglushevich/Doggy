@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   padding: ${({ theme }) =>
     `${theme.gaps["6xl"]} 120px 0 ${theme.gaps["6xl"]}`};
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    display: none;
+  }
 `;
 
 export const Content = styled.div`
