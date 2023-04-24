@@ -1,3 +1,3 @@
 export interface ICatalog {
-    title: string;
+  title: string;
 }

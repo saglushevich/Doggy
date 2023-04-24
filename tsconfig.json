@@ -22,6 +22,7 @@
       "@assets/*": ["./src/assets/*"],
       "@interfaces": ["./src/interfaces"],
       "@mocks": ["./src/mocks"],
+      "@constants": ["./src/constants"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

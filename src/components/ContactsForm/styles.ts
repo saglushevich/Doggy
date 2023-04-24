@@ -1,56 +1,55 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-    padding: 100px 100px 120px;
+  padding: 100px 100px 120px;
 `;
 
 export const Input = styled.input`
-    width: 605px;
-    padding: 20px 30px;
-    background: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
-    font-family: 'Cormorant';
-    font-weight: 400;
-    font-size: 14px;
-    color: #4C4C4B;
+  width: 605px;
+  padding: ${({ theme }) => `${theme.gaps.l} ${theme.gaps["2xl"]}`};
+  background: ${({ theme }) => theme.colors.white};
+  border: 1px solid #e0e0e0;
+  border-radius: ${({ theme }) => theme.borderSizes.m};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 400;
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const TextArea = styled.textarea`
-    width: 100%;
-    height: 315px;
-    resize: none;
-    padding: 30px;
-    font-family: 'Cormorant';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: #4C4C4B;
-    background: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
+  width: 100%;
+  height: 315px;
+  resize: none;
+  padding: ${({ theme }) => theme.gaps["2xl"]};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 400;
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  font-size: ${({ theme }) => theme.lineHeights.xs};
+  color: ${({ theme }) => theme.colors.black};
+  background: ${({ theme }) => theme.colors.white};
+  border: 1px solid #e0e0e0;
+  border-radius: ${({ theme }) => theme.borderSizes.m};
 `;
 
 export const Inputs = styled.div`
-    display: flex;
-    justify-content: space-between;
-    &:nth-last-child(n+2) {
-        margin-bottom: 80px;
-    }
+  display: flex;
+  justify-content: space-between;
+  &:nth-last-child(n + 2) {
+    margin-bottom: ${({ theme }) => theme.gaps["9xl"]};
+  }
 `;
 
 export const Button = styled.button`
-    display: block;
-    padding: 10px 80px;
-    background: #E89B93;
-    border-radius: 30px;
-    border: 1px solid #E89B93;
-    font-family: 'Cormorant';
-    font-weight: 700;
-    font-size: 20px;
-    color: #FFFFFF;
-    cursor: pointer;
-    margin: 0 auto;
-    margin-top: 65px;
+  display: block;
+  padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps["9xl"]}`};
+  background: ${({ theme }) => theme.colors.primary};
+  border-radius: ${({ theme }) => theme.borderSizes.l};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  color: ${({ theme }) => theme.colors.white};
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 65px;
 `;
-    

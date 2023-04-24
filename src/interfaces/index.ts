@@ -1,3 +1,3 @@
 export * from "./Catalog";
-export * from "./SpaService";
 export * from "./PageHeader";
+export * from "./SpaService";

@@ -1,111 +1,111 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.footer`
-    background: #DFB2A9;
-    padding: 10px 0;
-    margin-top: 80px;
+  background: ${({ theme }) => theme.colors.secondary};
+  padding: ${({ theme }) => `${theme.gaps.s} 0`};
+  margin-top: ${({ theme }) => theme.gaps["9xl"]};
 `;
 
 export const InnerWrapper = styled.div`
-    padding: 55px 0 80px;
-    background: #F3DED7;
+  padding: 55px 0 ${({ theme }) => theme.gaps["9xl"]};
+  background: #f3ded7;
 `;
 
 export const Block = styled.div`
-    display: block;
+  display: block;
 `;
 
 export const Content = styled.div`
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Title = styled.div`
-    font-family: 'Cormorant';
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 39px;
-    color: #4C4C4B;
-    margin-bottom: 30px;
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: ${({ theme }) => theme.colors.black};
+  margin-bottom: ${({ theme }) => theme.gaps["2xl"]};
 `;
 
 export const FooterLink = styled.a`
-    display: block;
-    font-family: 'Cormorant';
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 31px;
-    color: #4C4C4B;
-    cursor: pointer;
-    &:nth-last-child(n+2) {
-        margin-bottom: 15px;
-    }
+  display: block;
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 31px;
+  color: ${({ theme }) => theme.colors.black};
+  cursor: pointer;
+  &:nth-last-child(n + 2) {
+    margin-bottom: ${({ theme }) => theme.gaps.m};
+  }
 `;
 
 export const FooterForm = styled.form`
-    display: flex;
-    align-items: center;
-    margin-bottom: 70px;
+  display: flex;
+  align-items: center;
+  margin-bottom: ${({ theme }) => theme.gaps["8xl"]};
 `;
 
 export const Input = styled.input`
-    width: 500px;
-    background: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
-    padding: 20px 25px;
-    font-family: 'Cormorant';
-    font-weight: 400;
-    font-size: 14px;
-    color: #959FA8;
-    margin-right: 30px;
+  width: 500px;
+  background: ${({ theme }) => theme.colors.white};
+  border: 1px solid #e0e0e0;
+  border-radius: ${({ theme }) => theme.borderSizes.m};
+  padding: ${({ theme }) => `${theme.gaps.l} ${theme.gaps.xl}`};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 400;
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  color: ${({ theme }) => theme.colors.gray};
+  margin-right: ${({ theme }) => theme.gaps["2xl"]};
 `;
 
 export const Button = styled.button`
-    background: #E89B93;
-    border-radius: 30px;
-    padding: 10px 35px;
-    font-family: 'Cormorant';
-    font-weight: 700;
-    font-size: 20px;
-    color: #FFFFFF;
-    border: 1px solid #E89B93;
-    cursor: pointer;
+  background: ${({ theme }) => theme.colors.primary};
+  border-radius: ${({ theme }) => theme.gaps["2xl"]};
+  padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps["3xl"]}`};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  color: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  cursor: pointer;
 `;
 
 export const SocialNetworks = styled.div`
-    margin-top: 30px;
+  margin-top: ${({ theme }) => theme.gaps["2xl"]};
 `;
 
 export const Social = styled.img`
-    cursor: pointer;
-    &:nth-last-child(n+2) {
-        margin-right: 50px;
-    }
+  cursor: pointer;
+  &:nth-last-child(n + 2) {
+    margin-right: ${({ theme }) => theme.gaps["6xl"]};
+  }
 `;
 
 export const Privacy = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 1385px;
-    padding-top: 15px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1385px;
+  padding-top: ${({ theme }) => theme.gaps.m};
+  margin: 0 auto;
 `;
 
 export const PrivacyBlock = styled.div`
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 `;
 
 export const PrivacyInfo = styled.div`
-    font-family: 'Cormorant';
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 27px;
-    color: #4C4C4B;
-    cursor: pointer;
-    &:nth-last-child(n+2) {
-        margin-right: 30px;
-    }
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 400;
+  font-size: ${({ theme }) => theme.fontSizes["2xl"]};
+  line-height: 27px;
+  color: ${({ theme }) => theme.colors.black};
+  cursor: pointer;
+  &:nth-last-child(n + 2) {
+    margin-right: ${({ theme }) => theme.gaps["2xl"]};
+  }
 `;

@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const withImages = require('next-images')
+const withImages = require("next-images");
 
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    disableStaticImages: true
+    disableStaticImages: true,
   },
   module: {
     rules: [
@@ -12,12 +12,12 @@ const nextConfig = {
         test: /\.(png|jpe?g|gif|webp)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
           },
         ],
       },
-    ]
-  }
-}
+    ],
+  },
+};
 
-module.exports = withImages(nextConfig)
+module.exports = withImages(nextConfig);

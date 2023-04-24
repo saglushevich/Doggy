@@ -6,12 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prettier": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix && npm run prettier"
+    }
   },
   "dependencies": {
     "@types/node": "18.15.13",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
+    "mapbox-gl": "^2.14.1",
     "next": "13.3.0",
     "next-images": "^1.8.5",
     "react": "18.2.0",
@@ -20,9 +28,18 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/mapbox-gl": "^2.7.10",
     "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
     "babel-plugin-styled-components": "^2.1.1",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "file-loader": "^6.2.0",
+    "husky": "^8.0.3",
+    "prettier": "2.8.8",
     "url-loader": "^4.1.1"
   }
 }
