@@ -55,5 +55,6 @@ export const THEMES = {
     mobile: "415px",
     tabletSmall: "750px",
     tablet: "915px",
+    laptop: "1500px",
   },
 };

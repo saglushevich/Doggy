@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   position: relative;
 
+  @media (max-width: ${({ theme }) => theme.media.laptop}) {
+    width: 1350px;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 735px;
   }

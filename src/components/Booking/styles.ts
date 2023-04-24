@@ -18,6 +18,10 @@ export const Selection = styled.div`
   padding: ${({ theme }) => `${theme.gaps["8xl"]} ${theme.gaps.m} 0`};
   width: 750px;
 
+  @media (max-width: ${({ theme }) => theme.media.laptop}) {
+    width: 700px;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 100%;
   }

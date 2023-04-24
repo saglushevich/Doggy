@@ -8,4 +8,10 @@ export const Subtitle = styled.h2`
   color: ${({ theme }) => theme.colors.black};
   margin-top: ${({ theme }) => theme.gaps["3xl"]};
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    margin-top: ${({ theme }) => theme.gaps.xl};
+    font-size: ${({ theme }) => theme.fontSizes["4xl"]};
+    line-height: ${({ theme }) => theme.lineHeights.m};
+  }
 `;

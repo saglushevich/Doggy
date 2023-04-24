@@ -43,4 +43,8 @@ export const SectionHeader = styled.h1`
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
     font-size: ${({ theme }) => theme.fontSizes["5xl"]};
   }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    line-height: ${({ theme }) => theme.lineHeights.xl};
+  }
 `;

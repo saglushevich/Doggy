@@ -2,6 +2,14 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 100px 100px 120px;
+
+  @media (max-width: ${({ theme }) => theme.media.laptop}) {
+    padding: 100px 50px 120px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    padding: ${({ theme }) => `${theme.gaps["6xl"]} 0 0`};
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -16,8 +24,21 @@ export const Input = styled.input`
   border-radius: ${({ theme }) => theme.borderSizes.m};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.m};
+  font-size: ${({ theme }) => theme.fontSizes.l};
   color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    width: 100%;
+    margin-bottom: ${({ theme }) => theme.gaps["3xl"]};
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    margin-bottom: ${({ theme }) => theme.gaps["2xl"]};
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    margin-bottom: ${({ theme }) => theme.gaps.l};
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -27,12 +48,20 @@ export const TextArea = styled.textarea`
   padding: ${({ theme }) => theme.gaps["2xl"]};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.s};
+  font-size: ${({ theme }) => theme.fontSizes.xl};
   line-height: ${({ theme }) => theme.lineHeights.xs};
   color: ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid #e0e0e0;
   border-radius: ${({ theme }) => theme.borderSizes.m};
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    height: 230px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    height: 200px;
+  }
 `;
 
 export const FormMessage = styled.div`
@@ -49,6 +78,13 @@ export const Inputs = styled.div`
   justify-content: space-between;
   &:nth-last-child(n + 2) {
     margin-bottom: ${({ theme }) => theme.gaps["9xl"]};
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    display: block;
+    &:nth-last-child(n + 2) {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -67,5 +103,9 @@ export const Button = styled.button`
   margin-top: 65px;
   &:disabled {
     background: ${({ theme }) => theme.colors.gray};
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    margin-top: ${({ theme }) => theme.gaps["3xl"]};
   }
 `;

@@ -22,6 +22,20 @@ export const Text = styled.p`
     transform: translateX(-50%);
     border: 1px solid #000000;
   }
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    font-size: ${({ theme }) => theme.fontSizes["2xl"]};
+    &:before {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobileSmall}) {
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    &:before {
+      width: 90%;
+    }
+  }
 `;
 
 export const EmailLink = styled.a`
