@@ -5,7 +5,7 @@ import { SectionTitle } from "@styles";
 
 import { Button, Cards, Wrapper } from "./styles";
 
-function Catalog({ title }: ICatalog) {
+function Catalog({ title, buttonText }: ICatalog) {
   return (
     <Wrapper>
       <Container>
@@ -15,7 +15,7 @@ function Catalog({ title }: ICatalog) {
           <CatalogCard />
           <CatalogCard />
         </Cards>
-        <Button>See More Dog Collars</Button>
+        <Button>{buttonText}</Button>
       </Container>
     </Wrapper>
   );

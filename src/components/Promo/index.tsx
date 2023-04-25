@@ -1,27 +1,20 @@
+import { useTranslation } from "react-i18next";
+
 import { Container } from "@layout";
 
 import { Button, Content, Subtitle, Title, Wrapper } from "./styles";
 
 function Promo() {
+  const { t } = useTranslation();
   return (
     <Wrapper>
       <Container>
         <Content>
-          <Title>Your dog running amok in the dirt?</Title>
-          <Subtitle>Book your doggy spa day!</Subtitle>
-          <Button>Book Appointment</Button>
+          <Title>{t("header")}</Title>
+          <Subtitle>{t("book")}</Subtitle>
+          <Button>{t("book appointment")}</Button>
         </Content>
       </Container>
-      {/* <Image /> */}
-      {/* <Container>
-        <Image>
-          <Content>
-            <Title>Your dog running amok in the dirt?</Title>
-            <Subtitle>Book your doggy spa day!</Subtitle>
-            <Button>Book Appointment</Button>
-          </Content>
-        </Image>
-      </Container> */}
     </Wrapper>
   );
 }

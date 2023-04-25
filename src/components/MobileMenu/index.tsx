@@ -1,20 +1,19 @@
-import { ROUTES } from "@constants";
+import { NAVIGATION } from "@mocks";
 
 import { Menu, MenuItem } from "./styles";
 
 function MobileMenu({ menuStatus }: { menuStatus: boolean }) {
-  const { home, about, appointment, blog, contacts, info, services } = ROUTES;
-  return (
-    <Menu active={menuStatus}>
-      <MenuItem href={home}>Home</MenuItem>
-      <MenuItem href={info}>Info</MenuItem>
-      <MenuItem href={services}>Spa Services</MenuItem>
-      <MenuItem href={appointment}>Book Appointment</MenuItem>
-      <MenuItem href={blog}>Blog</MenuItem>
-      <MenuItem href={about}>About Us</MenuItem>
-      <MenuItem href={contacts}>Contact Us</MenuItem>
-    </Menu>
-  );
+  const navigation = NAVIGATION.ru.map((nav) => {
+    const { id, title, link } = nav;
+
+    return (
+      <MenuItem key={id} href={link}>
+        {title}
+      </MenuItem>
+    );
+  });
+
+  return <Menu active={menuStatus}>{navigation}</Menu>;
 }
 
 export default MobileMenu;

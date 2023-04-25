@@ -23,7 +23,8 @@
       "@interfaces": ["./src/interfaces"],
       "@mocks": ["./src/mocks"],
       "@constants": ["./src/constants"],
-      "@hooks": ["./src/hooks"]
+      "@hooks": ["./src/hooks"],
+      "@localization": ["./src/localization"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

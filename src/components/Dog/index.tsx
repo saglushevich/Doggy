@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import collars2 from "@assets/images/collars_2.webp";
 import { Container } from "@layout";
 
@@ -11,6 +13,7 @@ import {
 } from "./styles";
 
 function Dog() {
+  const { t } = useTranslation();
   return (
     <Wrapper>
       <Container>
@@ -19,10 +22,10 @@ function Dog() {
           <Breed>Siberian Husky</Breed>
         </ImageWrapper>
         <Characteristics>
-          <Characteristic>Energy: 5</Characteristic>
-          <Characteristic>Min life expectancy: 5</Characteristic>
-          <Characteristic>Good with strangers: 5</Characteristic>
-          <Characteristic>Good with other dogs: 5</Characteristic>
+          <Characteristic>{t("energy")} 5</Characteristic>
+          <Characteristic>{t("life expectancy")} 5</Characteristic>
+          <Characteristic>{t("strangers")} 5</Characteristic>
+          <Characteristic>{t("other dogs")} 5</Characteristic>
         </Characteristics>
       </Container>
     </Wrapper>

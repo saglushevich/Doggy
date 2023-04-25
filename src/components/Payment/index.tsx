@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import amazon from "@assets/icons/amazon.svg";
 import applePay from "@assets/icons/applePay.svg";
 import googlePay from "@assets/icons/googlePay.svg";
@@ -15,15 +17,16 @@ import {
 } from "./styles";
 
 function Payment() {
+  const { t } = useTranslation();
   return (
     <Wrapper>
-      <PaymentTitle>Enter your payment information</PaymentTitle>
-      <PaymentInputLarge placeholder="Credit Card Number" />
+      <PaymentTitle>{t("payment info")}</PaymentTitle>
+      <PaymentInputLarge placeholder={t("card number") as string} />
       <PaymentInputs>
-        <PaymentInput placeholder="Expiry Date" />
+        <PaymentInput placeholder={t("expiry") as string} />
         <PaymentInput placeholder="CVV" />
       </PaymentInputs>
-      <PaymentInputLarge placeholder="Name on Card" />
+      <PaymentInputLarge placeholder={t("name on card") as string} />
       <PaymentMethods>
         <PaymentMethod src={applePay} />
         <PaymentMethod src={googlePay} />

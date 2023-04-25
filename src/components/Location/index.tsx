@@ -1,5 +1,6 @@
 import mapboxgl from "mapbox-gl";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import { MAP_KEY, MAP_LINK } from "@constants";
 import { COORDINATES } from "@mocks";
@@ -16,7 +17,9 @@ import {
 } from "./styles";
 
 function Location() {
+  const { t } = useTranslation();
   const mapContainerRef = useRef<HTMLDivElement>(null);
+
   mapboxgl.accessToken = MAP_KEY as string;
 
   useEffect(() => {
@@ -41,7 +44,7 @@ function Location() {
       </MapWrapper>
       <Info>
         <InfoBlock>
-          <Title>Our Address:</Title>
+          <Title>{t("address")}</Title>
           <Text>
             Luxe Animal Spa <Br />
             80 Smithe St <Br />
@@ -50,21 +53,21 @@ function Location() {
           </Text>
         </InfoBlock>
         <InfoBlock>
-          <Title>Hours of Operation:</Title>
+          <Title>{t("hours")}</Title>
           <Text>
-            Sunday - Closed
+            {t("sunday")} - {t("closed")}
             <Br />
-            Monday 10 a.m.-5:30 p.m.
+            {t("monday")} 10 a.m.-5:30 p.m.
             <Br />
-            Tuesday 10 a.m.-5:30 p.m.
+            {t("tuesday")} 10 a.m.-5:30 p.m.
             <Br />
-            Wednesday 10 a.m.-5:30 p.m.
+            {t("wednesday")} 10 a.m.-5:30 p.m.
             <Br />
-            Thursday 10 a.m.-5:30 p.m.
+            {t("thursday")} 10 a.m.-5:30 p.m.
             <Br />
-            Friday 10 a.m.-5:30 p.m.
+            {t("friday")} 10 a.m.-5:30 p.m.
             <Br />
-            Saturday 10 a.m.-5:30 p.m.
+            {t("saturday")} 10 a.m.-5:30 p.m.
             <Br />
           </Text>
         </InfoBlock>

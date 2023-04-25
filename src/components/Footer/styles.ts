@@ -1,5 +1,8 @@
 import { Form } from "formik";
+import Link from "next/link";
 import styled from "styled-components";
+
+import { IStyles } from "@interfaces";
 
 export const Wrapper = styled.footer`
   background: ${({ theme }) => theme.colors.secondary};
@@ -78,7 +81,7 @@ export const Title = styled.div`
   }
 `;
 
-export const FooterLink = styled.a`
+export const FooterLink = styled(Link)`
   display: block;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 400;
@@ -158,16 +161,21 @@ export const Button = styled.button`
 `;
 
 export const SocialNetworks = styled.div`
+  display: flex;
+  align-items: center;
   margin-top: ${({ theme }) => theme.gaps["2xl"]};
+  padding-left: ${({ theme }) => theme.gaps["3xl"]};
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    display: flex;
-    align-items: center;
     justify-content: center;
   }
 `;
 
-export const Social = styled.img`
+export const Social = styled(Link)<IStyles>`
   cursor: pointer;
+  display: block;
+  width: 38px;
+  height: 30px;
+  background: ${({ image }) => `url(${image}) center center/contain no-repeat`};
   &:nth-last-child(n + 2) {
     margin-right: ${({ theme }) => theme.gaps["6xl"]};
   }

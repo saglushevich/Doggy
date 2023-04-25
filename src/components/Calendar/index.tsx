@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import arrow from "@assets/icons/arrow.svg";
 
 import {
@@ -17,6 +19,7 @@ import {
 } from "./styles";
 
 function Calendar() {
+  const { t } = useTranslation();
   // const date = new Date();
 
   const days = ["S", "M", "T", "W", "T", "F", "S"].map((item, i) => (
@@ -30,7 +33,7 @@ function Calendar() {
   return (
     <Visit>
       <TimeSlots>
-        <TimeTitle>Choose a timeslot on Dec. 11th, 2021:</TimeTitle>
+        <TimeTitle>{t("timeslot")} Dec. 11th, 2021:</TimeTitle>
         <Time>
           <Checkbox type="radio" id="time-1" name="time" />
           <Label htmlFor="time-1">11 am - 12 pm</Label>
@@ -54,7 +57,7 @@ function Calendar() {
       </TimeSlots>
       <CalendarWrapper>
         <Control>
-          <ControlText>Select dates</ControlText>
+          <ControlText>{t("dates")}</ControlText>
           <CalendarBlock>
             <Arrow src={arrow} />
             <ControlText>December 2021</ControlText>

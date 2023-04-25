@@ -1,4 +1,5 @@
 import { ErrorMessage, Form, FormikProvider } from "formik";
+import { useTranslation } from "react-i18next";
 
 import { CONTACT_SCHEMA, CONTACT_TEMPLATE } from "@constants";
 import { useContact } from "@hooks";
@@ -15,6 +16,7 @@ import {
 } from "./styles";
 
 function ContactsForm() {
+  const { t } = useTranslation();
   const { formik, form, disabled, message } = useContact(
     CONTACT_SCHEMA,
     CONTACT_TEMPLATE as string
@@ -33,7 +35,7 @@ function ContactsForm() {
             <Inputs>
               <InputWrapper>
                 <Input
-                  placeholder="First Name"
+                  placeholder={t("name") as string}
                   name="name"
                   onChange={handleChange}
                   value={name}
@@ -45,7 +47,7 @@ function ContactsForm() {
               </InputWrapper>
               <InputWrapper>
                 <Input
-                  placeholder="Last Name"
+                  placeholder={t("surname") as string}
                   name="surname"
                   onChange={handleChange}
                   value={surname}
@@ -71,7 +73,7 @@ function ContactsForm() {
               </InputWrapper>
               <InputWrapper>
                 <Input
-                  placeholder="Phone number"
+                  placeholder={t("phone") as string}
                   name="phone"
                   onChange={handleChange}
                   value={phone}
@@ -83,7 +85,7 @@ function ContactsForm() {
               </InputWrapper>
             </Inputs>
             <TextArea
-              placeholder="Your message goes here ..."
+              placeholder={t("message") as string}
               name="usermessage"
               onChange={handleChange}
               value={usermessage}
@@ -91,7 +93,7 @@ function ContactsForm() {
             <ErrorMessage name="usermessage">
               {(msg) => <FormMessage>{msg}</FormMessage>}
             </ErrorMessage>
-            <Button disabled={disabled}>Submit</Button>
+            <Button disabled={disabled}>{t("submit")}</Button>
             <FormMessage>{message}</FormMessage>
           </Form>
         </FormikProvider>

@@ -31,7 +31,7 @@ export const NavigationLinks = styled.nav`
   }
 `;
 
-export const NavigationLink = styled(Link)`
+export const NavigationLink = styled(Link)<IStyles>`
   font-family: ${({ theme }) => theme.fonts.primary};
   position: relative;
   font-weight: 700;
@@ -41,7 +41,10 @@ export const NavigationLink = styled(Link)`
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     font-size: ${({ theme }) => theme.fontSizes.m};
   }
-  &:hover {
+
+  ${({ active }) =>
+    active &&
+    `
     &::after {
       position: absolute;
       content: "";
@@ -52,7 +55,8 @@ export const NavigationLink = styled(Link)`
       background: #e89b93;
       border-radius: 100px;
     }
-  }
+  `};
+
   &:nth-last-child(n + 2) {
     margin-right: ${({ theme }) => theme.gaps["2xl"]};
     @media (max-width: ${({ theme }) => theme.media.tablet}) {

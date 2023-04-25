@@ -1,13 +1,10 @@
 import { ErrorMessage, FormikProvider } from "formik";
+import { useTranslation } from "react-i18next";
 
-import facebook from "@assets/icons/Facebook.svg";
-import instagram from "@assets/icons/Instagram.svg";
-import pinterest from "@assets/icons/Pinterest.svg";
-import snapchat from "@assets/icons/Snapchat.svg";
-import twitter from "@assets/icons/Twitter.svg";
-import { EMAIL_TEMPLATE, SUBSCRIBE_SCHEMA } from "@constants";
+import { EMAIL_TEMPLATE, ROUTES, SUBSCRIBE_SCHEMA } from "@constants";
 import { useContact } from "@hooks";
 import { Container } from "@layout";
+import { SOCIAL } from "@mocks";
 
 import {
   Block,
@@ -28,10 +25,19 @@ import {
 } from "./styles";
 
 function Footer() {
+  const { t } = useTranslation();
   const { formik, form, disabled, message } = useContact(
     SUBSCRIBE_SCHEMA,
     EMAIL_TEMPLATE as string
   );
+
+  const { blog, home, about, contacts } = ROUTES;
+
+  const socialNetworks = SOCIAL.map((social) => {
+    const { id, image, link } = social;
+
+    return <Social key={id} href={link} image={image} />;
+  });
 
   return (
     <Wrapper>
@@ -39,15 +45,15 @@ function Footer() {
         <Container>
           <Content>
             <Block>
-              <Title>Customer Service</Title>
-              <FooterLink>Blog</FooterLink>
-              <FooterLink>Cancellations</FooterLink>
-              <FooterLink>Track Your Animal</FooterLink>
-              <FooterLink>Luxe's Annual Spa Day 2021</FooterLink>
-              <FooterLink>Payment Options</FooterLink>
+              <Title>{t("customer service")}</Title>
+              <FooterLink href={blog}>{t("blog")}</FooterLink>
+              <FooterLink href={home}>{t("cancellations")}</FooterLink>
+              <FooterLink href={home}>{t("track")}</FooterLink>
+              <FooterLink href={home}>{t("annual day")}</FooterLink>
+              <FooterLink href={home}>{t("payment options")}</FooterLink>
             </Block>
             <Block>
-              <Title>Subscribe to our Newsletter</Title>
+              <Title>{t("subscribe")}</Title>
 
               <FormikProvider value={formik}>
                 <FooterForm ref={form}>
@@ -58,7 +64,7 @@ function Footer() {
                     value={formik.values.email}
                     type="text"
                   />
-                  <Button disabled={disabled}>Submit</Button>
+                  <Button disabled={disabled}>{t("submit")}</Button>
                 </FooterForm>
                 <ErrorMessage name="email">
                   {(msg) => <FormMessage>{msg}</FormMessage>}
@@ -66,22 +72,16 @@ function Footer() {
                 <FormMessage>{message}</FormMessage>
               </FormikProvider>
 
-              <Title>Connect With Us On Social Media</Title>
-              <SocialNetworks>
-                <Social src={instagram} />
-                <Social src={facebook} />
-                <Social src={pinterest} />
-                <Social src={twitter} />
-                <Social src={snapchat} />
-              </SocialNetworks>
+              <Title>{t("connect")}</Title>
+              <SocialNetworks>{socialNetworks}</SocialNetworks>
             </Block>
             <Block>
-              <Title>Navigation</Title>
-              <FooterLink>Home</FooterLink>
-              <FooterLink>About Us</FooterLink>
-              <FooterLink>Contact Us</FooterLink>
-              <FooterLink>FAQs</FooterLink>
-              <FooterLink>Help with navigation</FooterLink>
+              <Title>{t("navigation")}</Title>
+              <FooterLink href={home}>{t("home")}</FooterLink>
+              <FooterLink href={about}>{t("about")}</FooterLink>
+              <FooterLink href={contacts}>{t("contact us")}</FooterLink>
+              <FooterLink href={home}>{t("FAQs")}</FooterLink>
+              <FooterLink href={home}>{t("help")}</FooterLink>
             </Block>
           </Content>
         </Container>
@@ -89,16 +89,14 @@ function Footer() {
 
       <Privacy>
         <PrivacyBlock>
-          <PrivacyInfo>Cookie Policy</PrivacyInfo>
-          <PrivacyInfo>Cookies Settings</PrivacyInfo>
+          <PrivacyInfo>{t("policy")}</PrivacyInfo>
+          <PrivacyInfo>{t("settings")}</PrivacyInfo>
         </PrivacyBlock>
-        <PrivacyInfo>
-          Copyright 2021 Luxe Animal Spa, LLC. All rights reserved.
-        </PrivacyInfo>
+        <PrivacyInfo>{t("copyright")}</PrivacyInfo>
         <PrivacyBlock>
-          <PrivacyInfo>Terms</PrivacyInfo>
-          <PrivacyInfo>Privacy</PrivacyInfo>
-          <PrivacyInfo>Security</PrivacyInfo>
+          <PrivacyInfo>{t("terms")}</PrivacyInfo>
+          <PrivacyInfo>{t("privacy")}</PrivacyInfo>
+          <PrivacyInfo>{t("security")}</PrivacyInfo>
         </PrivacyBlock>
       </Privacy>
     </Wrapper>

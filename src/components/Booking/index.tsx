@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import Calendar from "@components/Calendar";
 import Location from "@components/Location";
 import Payment from "@components/Payment";
@@ -16,28 +18,27 @@ import {
 } from "./styles";
 
 function Booking() {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <Wrapper>
         <Selection>
-          <Title>Enter your information here</Title>
+          <Title>{t("enter information")}</Title>
           <Form>
             <Inputs>
-              <Input placeholder="First name" />
-              <Input placeholder="Last name" />
+              <Input placeholder={t("name") as string} />
+              <Input placeholder={t("surname") as string} />
             </Inputs>
             <Inputs>
               <Input placeholder="Email" />
-              <Input placeholder="Phone number" />
+              <Input type="number" placeholder={t("phone") as string} />
             </Inputs>
             <Calendar />
-            <Requests placeholder="Any special requests for your pet(s)..." />
+            <Requests placeholder={t("special request") as string} />
             <Payment />
-            <Cancelling>
-              Please be advised cancelling within 24 hours of your scheduled
-              appointment will result in a cancellation fee of $300.00.
-            </Cancelling>
-            <Button>Book Appointment</Button>
+            <Cancelling>{t("cancelling")}</Cancelling>
+            <Button>{t("book appointment")}</Button>
           </Form>
         </Selection>
         <Location />

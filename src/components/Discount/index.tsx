@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 import { Text, Wrapper } from "./styles";
 
 function Discount() {
+  const { t } = useTranslation();
   return (
     <Wrapper>
-      <Text>Get 20% OFF When You Book A Spa Day For Your Animal Today!</Text>
+      <Text>{t("discount")}</Text>
     </Wrapper>
   );
 }

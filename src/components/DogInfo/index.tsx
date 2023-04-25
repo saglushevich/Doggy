@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
+
+import { Container } from "@layout";
 import { SectionHeader } from "@styles";
 
-import { Container } from "../../layout/Container";
 import {
   Block,
   Form,
@@ -11,18 +13,20 @@ import {
   Wrapper,
 } from "./styles";
 
-function ProductInfo() {
+function DogInfo() {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
       <Container>
-        <SectionHeader>INFO DOG</SectionHeader>
+        <SectionHeader>{t("info")}</SectionHeader>
         <Block>
           <Selection>
-            Current Selection:{" "}
+            {t("selection")}:{" "}
             <SelectionProduct>Beds & Cushions</SelectionProduct>
           </Selection>
           <Form>
-            <Input placeholder="Search" />
+            <Input placeholder={t("search") as string} />
             <InputIcon />
           </Form>
         </Block>
@@ -31,4 +35,4 @@ function ProductInfo() {
   );
 }
 
-export default ProductInfo;
+export default DogInfo;

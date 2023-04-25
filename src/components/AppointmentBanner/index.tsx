@@ -1,12 +1,15 @@
+import { useTranslation } from "react-i18next";
+
 import { Container } from "@layout";
 
 import { Title, Wrapper } from "./styles";
 
 function AppointmentBanner() {
+  const { t } = useTranslation();
   return (
     <Wrapper>
       <Container>
-        <Title>Book An Appointment With Our Groom Specialist Today!</Title>
+        <Title>{t("book visit")}</Title>
       </Container>
     </Wrapper>
   );

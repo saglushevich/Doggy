@@ -1,4 +1,5 @@
 import { ErrorMessage, Form, FormikProvider } from "formik";
+import { useTranslation } from "react-i18next";
 
 import signUpDog from "@assets/images/singUp_dog.webp";
 import { EMAIL_TEMPLATE, SUBSCRIBE_SCHEMA } from "@constants";
@@ -19,6 +20,7 @@ import {
 } from "./styles";
 
 function SignUp() {
+  const { t } = useTranslation();
   const { formik, form, disabled, message } = useContact(
     SUBSCRIBE_SCHEMA,
     EMAIL_TEMPLATE as string
@@ -28,8 +30,8 @@ function SignUp() {
     <Wrapper>
       <InnerWrapper>
         <Content>
-          <SignTitle>Sign Up to Bark Newsletter</SignTitle>
-          <SignDiscount>Get 10% Off Your First Spa Treatment </SignDiscount>
+          <SignTitle>{t("sign up")}</SignTitle>
+          <SignDiscount>{t("first treatment")}</SignDiscount>
           <FormikProvider value={formik}>
             <Form ref={form}>
               <SignInput
@@ -40,7 +42,7 @@ function SignUp() {
                 type="text"
               />
               <SignButton disabled={disabled} type="submit">
-                Sign Up
+                {t("sing up button")}
               </SignButton>
             </Form>
 
@@ -50,10 +52,8 @@ function SignUp() {
 
             <FormMessage>{message}</FormMessage>
           </FormikProvider>
-          <SignText>
-            *By completing this form you are signing up to receive our emails
-            and can unsubscribe at any time.
-          </SignText>
+
+          <SignText>{t("completing rules")}</SignText>
         </Content>
         <ImageWrapper>
           <Image src={signUpDog} />
