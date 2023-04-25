@@ -24,7 +24,8 @@
       "@mocks": ["./src/mocks"],
       "@constants": ["./src/constants"],
       "@hooks": ["./src/hooks"],
-      "@localization": ["./src/localization"]
+      "@localization": ["./src/localization"],
+      "@utils": ["./src/utils"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

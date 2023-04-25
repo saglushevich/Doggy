@@ -1,6 +1,8 @@
+/* eslint-disable no-nested-ternary */
 import styled from "styled-components";
 
 import checkmark from "@assets/icons/checkmark.svg";
+import { IStyles } from "@interfaces";
 
 export const CalendarWrapper = styled.div`
   width: 320px;
@@ -93,15 +95,23 @@ export const CalendarBlock = styled.div`
   align-items: center;
 `;
 
-export const Day = styled.div`
+export const Day = styled.div<IStyles>`
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Poppins";
   font-weight: 500;
-  font-size: 13px;
-  color: ${({ theme }) => theme.colors.black};
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  color: ${({ theme, day, gray }) =>
+    day ? theme.colors.primary : gray ? theme.colors.gray : theme.colors.black};
   cursor: pointer;
+  ${({ active, gray }) =>
+    active &&
+    !gray &&
+    `
+      background: #e89b93;
+      border-radius: 4px;
+  `}
 `;
 
 export const Control = styled.div`

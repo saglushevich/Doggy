@@ -1,7 +1,10 @@
 import { useTranslation } from "react-i18next";
 
 import arrow from "@assets/icons/arrow.svg";
+import { DAYS, MONTHS, MONTHS_SHORT } from "@constants";
+import { getCalendar } from "@utils";
 
+import { useCalendar } from "../../hooks/useCalendar";
 import {
   Arrow,
   CalendarBlock,
@@ -19,21 +22,47 @@ import {
 } from "./styles";
 
 function Calendar() {
+  const {
+    selectedDate,
+    selectedMonth,
+    selectedYear,
+    onSelectDate,
+    changeMonth,
+  } = useCalendar();
   const { t } = useTranslation();
-  // const date = new Date();
 
-  const days = ["S", "M", "T", "W", "T", "F", "S"].map((item, i) => (
-    <Day key={i}>{item}</Day>
+  const calendar = getCalendar(selectedMonth, selectedYear);
+
+  const days = DAYS.map((day, i) => (
+    <Day day key={i}>
+      {day}
+    </Day>
   ));
 
-  // console.log(33 - new Date(date.getFullYear(), date.getMonth(), 33).getDate())
-  // console.log(date.getDate());
-  // console.log(date.getDay())
+  const dates = calendar.map((row, i) => {
+    return row.map((date, j) => {
+      const anotherMonth = (i === 0 && date > 7) || (i === 4 && date < 8);
+      return (
+        <Day
+          onClick={onSelectDate(date, anotherMonth)}
+          gray={anotherMonth}
+          active={date === selectedDate}
+          key={j}
+        >
+          {date}
+        </Day>
+      );
+    });
+  });
+
+  const timeslot = `${MONTHS_SHORT[selectedMonth]} ${selectedDate}, ${selectedYear}`;
 
   return (
     <Visit>
       <TimeSlots>
-        <TimeTitle>{t("timeslot")} Dec. 11th, 2021:</TimeTitle>
+        <TimeTitle>
+          {t("timeslot")} {timeslot}
+        </TimeTitle>
         <Time>
           <Checkbox type="radio" id="time-1" name="time" />
           <Label htmlFor="time-1">11 am - 12 pm</Label>
@@ -59,18 +88,16 @@ function Calendar() {
         <Control>
           <ControlText>{t("dates")}</ControlText>
           <CalendarBlock>
-            <Arrow src={arrow} />
-            <ControlText>December 2021</ControlText>
-            <Arrow src={arrow} />
+            <Arrow onClick={changeMonth(-1)} src={arrow} />
+            <ControlText>
+              {MONTHS[selectedMonth]} {selectedYear}
+            </ControlText>
+            <Arrow onClick={changeMonth(1)} src={arrow} />
           </CalendarBlock>
         </Control>
         <Days>
           {days}
-          {days}
-          {days}
-          {days}
-          {days}
-          {days}
+          {dates}
         </Days>
       </CalendarWrapper>
     </Visit>
