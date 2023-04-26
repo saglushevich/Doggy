@@ -79,6 +79,7 @@ export const InputIcon = styled.div`
   height: 40px;
   object-fit: cover;
   background: url(${search});
+  cursor: pointer;
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
     top: 25px;
   }

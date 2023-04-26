@@ -5,6 +5,7 @@ import applePay from "@assets/icons/applePay.svg";
 import googlePay from "@assets/icons/googlePay.svg";
 import masterCard from "@assets/icons/masterCard.svg";
 import visa from "@assets/icons/visa.svg";
+import { IReducer } from "@interfaces";
 
 import {
   PaymentInput,
@@ -16,17 +17,30 @@ import {
   Wrapper,
 } from "./styles";
 
-function Payment() {
+function Payment({ onInputChange }: IReducer) {
   const { t } = useTranslation();
   return (
     <Wrapper>
       <PaymentTitle>{t("payment info")}</PaymentTitle>
-      <PaymentInputLarge placeholder={t("card number") as string} />
+      <PaymentInputLarge
+        onChange={onInputChange("SET_CARD_NUMBER")}
+        placeholder={t("card number") as string}
+      />
       <PaymentInputs>
-        <PaymentInput placeholder={t("expiry") as string} />
-        <PaymentInput placeholder="CVV" />
+        <PaymentInput
+          onChange={onInputChange("SET_CARD_EXPIRY")}
+          placeholder={t("expiry") as string}
+        />
+        <PaymentInput
+          type="password"
+          onChange={onInputChange("SET_CARD_CVV")}
+          placeholder="CVV"
+        />
       </PaymentInputs>
-      <PaymentInputLarge placeholder={t("name on card") as string} />
+      <PaymentInputLarge
+        onChange={onInputChange("SET_CARD_HOLDER")}
+        placeholder={t("name on card") as string}
+      />
       <PaymentMethods>
         <PaymentMethod src={applePay} />
         <PaymentMethod src={googlePay} />

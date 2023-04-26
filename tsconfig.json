@@ -25,7 +25,8 @@
       "@constants": ["./src/constants"],
       "@hooks": ["./src/hooks"],
       "@localization": ["./src/localization"],
-      "@utils": ["./src/utils"]
+      "@utils": ["./src/utils"],
+      "@apollo": ["./src/apollo"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

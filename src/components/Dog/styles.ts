@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  margin-top: 165px;
+  padding-top: ${({ theme }) => theme.gaps["4xl"]};
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    margin-top: 115px;
+    padding-top: ${({ theme }) => theme.gaps.l};
   }
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    margin-top: ${({ theme }) => theme.gaps["4xl"]};
+    padding-top: ${({ theme }) => theme.gaps.s};
   }
 `;
 

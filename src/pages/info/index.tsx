@@ -1,12 +1,10 @@
-import Dog from "@components/Dog";
-import DogInfo from "@components/DogInfo";
+import DogSearch from "@components/DogSearch";
 import { PageContainer } from "@layout";
 
 function InfoPage() {
   return (
     <PageContainer>
-      <DogInfo />
-      <Dog />
+      <DogSearch />
     </PageContainer>
   );
 }

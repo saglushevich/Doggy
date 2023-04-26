@@ -35,7 +35,7 @@ export const Title = styled.div`
   color: ${({ theme }) => theme.colors.black};
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   margin-top: ${({ theme }) => theme.gaps["7xl"]};
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
@@ -80,18 +80,10 @@ export const Input = styled.input`
   }
 `;
 
-export const Requests = styled.textarea`
+export const Requests = styled(Input)`
   width: 100%;
   padding: ${({ theme }) => `${theme.gaps.l} ${theme.gaps.m}`};
-  background: ${({ theme }) => theme.colors.white};
-  border: 1px solid #e0e0e0;
-  border-radius: ${({ theme }) => theme.borderSizes.m};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.s};
   line-height: ${({ theme }) => theme.lineHeights.xs};
-  color: ${({ theme }) => theme.colors.black};
-  resize: none;
   margin-top: ${({ theme }) => theme.gaps["7xl"]};
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {

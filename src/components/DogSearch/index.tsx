@@ -1,3 +1,4 @@
+import { useDeferredValue, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Container } from "@layout";
@@ -13,8 +14,14 @@ import {
   Wrapper,
 } from "./styles";
 
-function DogInfo() {
+function DogSearch() {
+  const [searchValue, setSearchValue] = useState("");
+  // const defferedSearchValue = useDeferredValue(searchValue);
   const { t } = useTranslation();
+
+  const onChangeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
 
   return (
     <Wrapper>
@@ -26,7 +33,11 @@ function DogInfo() {
             <SelectionProduct>Beds & Cushions</SelectionProduct>
           </Selection>
           <Form>
-            <Input placeholder={t("search") as string} />
+            <Input
+              onChange={onChangeSearchValue}
+              type="text"
+              placeholder={t("search") as string}
+            />
             <InputIcon />
           </Form>
         </Block>
@@ -35,4 +46,4 @@ function DogInfo() {
   );
 }
 
-export default DogInfo;
+export default DogSearch;

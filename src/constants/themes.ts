@@ -10,6 +10,7 @@ export const THEMES = {
     "4xl": "36px",
     "5xl": "40px",
     "6xl": "70px",
+    "7xl": "82px",
   },
   fonts: {
     primary: "Cormorant",
