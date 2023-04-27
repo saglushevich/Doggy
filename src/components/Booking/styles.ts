@@ -67,6 +67,7 @@ export const Input = styled.input`
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes.s};
   color: ${({ theme }) => theme.colors.black};
+
   &:nth-last-child(n + 2) {
     margin-right: ${({ theme }) => theme.gaps["7xl"]};
   }
@@ -121,4 +122,21 @@ export const Button = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.primary};
   margin: 0 auto;
   margin-top: ${({ theme }) => theme.gaps["3xl"]};
+  &:disabled {
+    background: ${({ theme }) => theme.colors.gray};
+  }
+`;
+
+export const Messages = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${({ theme }) => theme.gaps.xs};
+`;
+
+export const Message = styled.div`
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  color: #b78e80;
 `;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import PayPalButton from "@components/PayPalButton";
 import { PAYPAL_KEY } from "@constants";
@@ -16,6 +17,7 @@ import {
 
 function Modal({ toggleModalStatus, appointment }: IModal) {
   const [paymentMessage, setPaymentMessage] = useState("");
+  const { t } = useTranslation();
 
   const initialOptions = {
     "client-id": PAYPAL_KEY as string,
@@ -48,34 +50,36 @@ function Modal({ toggleModalStatus, appointment }: IModal) {
           ) : (
             <>
               <ModalText>
-                Ваше имя: <ModalHighlighted>{name}</ModalHighlighted>
+                {t("name")}: <ModalHighlighted>{name}</ModalHighlighted>
               </ModalText>
               <ModalText>
-                Ваша фамилия: <ModalHighlighted>{surname}</ModalHighlighted>
+                {t("surname")}: <ModalHighlighted>{surname}</ModalHighlighted>
               </ModalText>
               <ModalText>
                 Email: <ModalHighlighted>{email}</ModalHighlighted>
               </ModalText>
               <ModalText>
-                Телефон: <ModalHighlighted>{phone}</ModalHighlighted>
+                {t("phone")}: <ModalHighlighted>{phone}</ModalHighlighted>
               </ModalText>
               <ModalText>
-                Дата: <ModalHighlighted>{date}</ModalHighlighted>
+                {t("date")}: <ModalHighlighted>{date}</ModalHighlighted>
               </ModalText>
               <ModalText>
-                Время: <ModalHighlighted>{time}</ModalHighlighted>
+                {t("time")}: <ModalHighlighted>{time}</ModalHighlighted>
               </ModalText>
               <ModalText>
-                Номер карты: <ModalHighlighted>{cardNumber}</ModalHighlighted>
+                {t("card number")}:{" "}
+                <ModalHighlighted>{cardNumber}</ModalHighlighted>
               </ModalText>
               <ModalText>
-                Срок действия: <ModalHighlighted>{cardExpiry}</ModalHighlighted>
+                {t("expiry")}: <ModalHighlighted>{cardExpiry}</ModalHighlighted>
               </ModalText>
               <ModalText>
-                Имя на карте: <ModalHighlighted>{cardHolder}</ModalHighlighted>
+                {t("name on card")}:{" "}
+                <ModalHighlighted>{cardHolder}</ModalHighlighted>
               </ModalText>
               <ModalText>
-                Специальные пожелания: <ModalRequest>{request}</ModalRequest>
+                {t("requests")}: <ModalRequest>{request}</ModalRequest>
               </ModalText>
               <PayPalButton
                 appointment={appointment}

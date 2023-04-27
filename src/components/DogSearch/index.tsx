@@ -24,7 +24,9 @@ function DogSearch({ searchValue, onChangeSearchValue }: ISearch) {
         <Block>
           <Selection>
             {t("selection")}
-            <SelectionProduct>{searchValue || "Не выбрано"}</SelectionProduct>
+            <SelectionProduct>
+              {searchValue || t("not selected")}
+            </SelectionProduct>
           </Selection>
           <Form>
             <Input

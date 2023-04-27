@@ -20,7 +20,7 @@ export const Wrapper = styled.header`
 export const NavigationLinks = styled.nav`
   display: flex;
   align-items: center;
-  margin-left: 155px;
+  margin-left: ${({ theme }) => theme.gaps["8xl"]};
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     margin-left: ${({ theme }) => theme.gaps.s};
@@ -39,7 +39,7 @@ export const NavigationLink = styled(Link)<IStyles>`
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes.m};
+    font-size: ${({ theme }) => theme.fontSizes.s};
   }
 
   ${({ active }) =>
@@ -60,7 +60,37 @@ export const NavigationLink = styled(Link)<IStyles>`
   &:nth-last-child(n + 2) {
     margin-right: ${({ theme }) => theme.gaps["2xl"]};
     @media (max-width: ${({ theme }) => theme.media.tablet}) {
-      margin-right: ${({ theme }) => theme.gaps.l};
+      margin-right: ${({ theme }) => theme.gaps.m};
+    }
+  }
+`;
+
+export const Languages = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    display: none;
+  }
+`;
+
+export const Language = styled.div<IStyles>`
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: 32px;
+  color: ${({ theme, active }) =>
+    active ? theme.colors.primary : theme.colors.black};
+  cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: ${({ theme }) => theme.fontSizes.m};
+  }
+
+  &:nth-last-child(n + 2) {
+    margin-right: ${({ theme }) => theme.gaps.xl};
+    @media (max-width: ${({ theme }) => theme.media.tablet}) {
+      margin-right: ${({ theme }) => theme.gaps.s};
     }
   }
 `;

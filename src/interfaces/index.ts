@@ -1,5 +1,6 @@
 export * from "./Catalog";
 export * from "./ErrorBoundary";
+export * from "./MobileMenu";
 export * from "./Modal";
 export * from "./PageHeader";
 export * from "./PayPal";

@@ -40,3 +40,18 @@ export const MenuItem = styled(Link)`
     font-size: ${({ theme }) => theme.fontSizes.xl};
   }
 `;
+
+export const Languages = styled.div`
+  margin-top: ${({ theme }) => theme.gaps["8xl"]};
+`;
+
+export const Language = styled.div<IStyles>`
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: 32px;
+  color: ${({ theme }) => theme.colors.black};
+  cursor: pointer;
+  &:nth-last-child(n + 2) {
+    margin-bottom: ${({ theme }) => theme.gaps.l};
+  }
+`;

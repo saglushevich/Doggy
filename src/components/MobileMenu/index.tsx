@@ -1,8 +1,9 @@
+import { IMobileMenu } from "@interfaces";
 import { NAVIGATION } from "@mocks";
 
-import { Menu, MenuItem } from "./styles";
+import { Language, Languages, Menu, MenuItem } from "./styles";
 
-function MobileMenu({ menuStatus }: { menuStatus: boolean }) {
+function MobileMenu({ menuStatus, onChangeLang }: IMobileMenu) {
   const navigation = NAVIGATION.ru.map((nav) => {
     const { id, title, link } = nav;
 
@@ -13,7 +14,15 @@ function MobileMenu({ menuStatus }: { menuStatus: boolean }) {
     );
   });
 
-  return <Menu active={menuStatus}>{navigation}</Menu>;
+  return (
+    <Menu active={menuStatus}>
+      {navigation}
+      <Languages>
+        <Language onClick={onChangeLang("en")}>ENGLISH</Language>
+        <Language onClick={onChangeLang("ru")}>РУССКИЙ</Language>
+      </Languages>
+    </Menu>
+  );
 }
 
 export default MobileMenu;

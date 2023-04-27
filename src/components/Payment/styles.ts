@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  width: 510px;
+  display: block;
   padding-top: 65px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
 `;
 
 export const PaymentTitle = styled.div`
@@ -14,7 +13,7 @@ export const PaymentTitle = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.xl};
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: ${({ theme }) => theme.gaps.l};
 `;
 
 export const PaymentInput = styled.input`
@@ -27,7 +26,7 @@ export const PaymentInput = styled.input`
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSizes.s};
   color: ${({ theme }) => theme.colors.black};
-  margin-top: ${({ theme }) => theme.gaps.l};
+  margin-bottom: ${({ theme }) => theme.gaps.l};
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
     width: 100%;
@@ -59,9 +58,23 @@ export const PaymentInputLarge = styled(PaymentInput)`
 `;
 
 export const PaymentMethods = styled.div`
+  width: 510px;
   display: flex;
   align-items: center;
   margin-top: ${({ theme }) => theme.gaps.l};
+`;
+
+export const Messages = styled.div`
+  width: 510px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Message = styled.div`
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  color: #b78e80;
 `;
 
 export const PaymentMethod = styled.img`

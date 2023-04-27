@@ -58,8 +58,11 @@
   "saturday": "Saturday",
   "closed": "Closed",
   "timeslot": "Choose a timeslot on",
+  "time": "Time",
   "dates": "Select dates",
+  "date": "Date",
   "special request": "Any special requests for your pet(s)...",
+  "requests": "Special requests",
   "name": "First name",
   "surname": "Last name",
   "phone": "Phone number",
@@ -77,5 +80,9 @@
   "contact": "Contact",
   "service inquiries": "For customer service inquiries, please email us at ",
   "spa inquiries": " For spa inquiries, please include your animal's name for faster service. For your protection, please do not include your credit card or banking information details in your email.",
-  "message": "Your message goes here ..."
+  "message": "Your message goes here ...",
+  "not selected": "Not selected",
+  "loading": "Loading...",
+  "not found": "Not found! Try again!",
+  "went wrong": "Something went wrong! Try again!"
 }

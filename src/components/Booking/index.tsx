@@ -16,7 +16,8 @@ import {
   Forms,
   Input,
   Inputs,
-  // InputWrapper,
+  Message,
+  Messages,
   Requests,
   Selection,
   Title,
@@ -35,21 +36,20 @@ function Booking() {
     }
   };
 
-  const onFormSubmit = () => {
-    if (Object.values(appointment).every(Boolean)) {
-      toggleModalStatus();
-    }
-  };
-
   const formik = useFormik({
     initialValues: INITIAL_STATE,
     validationSchema: CLIENT_INFO,
-    onSubmit: onFormSubmit,
+    onSubmit: () => {
+      if (Object.values(appointment).every(Boolean)) {
+        toggleModalStatus();
+      }
+    },
   });
 
   const {
     values: { name, surname, phone, email },
     handleChange,
+    errors,
   } = formik;
 
   const onInputChange =
@@ -62,6 +62,12 @@ function Booking() {
     dispatch({ type: "SET_DATE", payload: value });
   };
 
+  const errorMessages = Object.keys(errors).map((err) => (
+    <ErrorMessage key={err} name={err}>
+      {(msg) => <Message>{msg}</Message>}
+    </ErrorMessage>
+  ));
+
   return (
     <Container>
       <Wrapper>
@@ -70,6 +76,14 @@ function Booking() {
           <FormikProvider value={formik}>
             <Form>
               <Forms>
+                <Messages>
+                  <ErrorMessage name="name">
+                    {(msg) => <Message>{msg}</Message>}
+                  </ErrorMessage>
+                  <ErrorMessage name="surname">
+                    {(msg) => <Message>{msg}</Message>}
+                  </ErrorMessage>
+                </Messages>
                 <Inputs>
                   <Input
                     name="name"
@@ -77,16 +91,21 @@ function Booking() {
                     onChange={onInputChange("SET_NAME")}
                     placeholder={t("name") as string}
                   />
-                  <ErrorMessage name="name" />
-
                   <Input
                     name="surname"
                     value={surname}
                     onChange={onInputChange("SET_SURNAME")}
                     placeholder={t("surname") as string}
                   />
-                  <ErrorMessage name="surname" />
                 </Inputs>
+                <Messages>
+                  <ErrorMessage name="email">
+                    {(msg) => <Message>{msg}</Message>}
+                  </ErrorMessage>
+                  <ErrorMessage name="phone">
+                    {(msg) => <Message>{msg}</Message>}
+                  </ErrorMessage>
+                </Messages>
                 <Inputs>
                   <Input
                     value={email}
@@ -94,7 +113,6 @@ function Booking() {
                     placeholder="Email"
                     name="email"
                   />
-                  <ErrorMessage name="email" />
                   <Input
                     value={phone}
                     onChange={onInputChange("SET_PHONE")}
@@ -102,7 +120,6 @@ function Booking() {
                     name="phone"
                     placeholder={t("phone") as string}
                   />
-                  <ErrorMessage name="phone" />
                 </Inputs>
                 <Calendar
                   onInputChange={onInputChange}
@@ -113,10 +130,11 @@ function Booking() {
                   placeholder={t("special request") as string}
                   name="request"
                 />
-                <ErrorMessage name="request" />
                 <Payment onInputChange={onInputChange} values={formik.values} />
                 <Cancelling>{t("cancelling")}</Cancelling>
-                <Button onClick={onFormSubmit}>{t("book appointment")}</Button>
+                <Button disabled={!!errorMessages.length} type="submit">
+                  {t("book appointment")}
+                </Button>
               </Forms>
             </Form>
           </FormikProvider>

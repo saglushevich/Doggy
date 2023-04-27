@@ -22,15 +22,15 @@ function Dog({ breed }: { breed: string }) {
   });
 
   if (loading) {
-    return <InfoText>Loading...</InfoText>;
+    return <InfoText>{t("loading")}</InfoText>;
   }
 
   if (!data || !data.dog) {
-    return <InfoText>Not found! Try again!</InfoText>;
+    return <InfoText>{t("not found")}</InfoText>;
   }
 
   if (error) {
-    return <InfoText>Something went wrong! Try again!</InfoText>;
+    return <InfoText>{t("went wrong")}</InfoText>;
   }
 
   const {

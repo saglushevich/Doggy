@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import * as yup from "yup";
 
 export const SUBSCRIBE_SCHEMA = yup.object().shape({
@@ -33,6 +34,9 @@ export const CONTACT_SCHEMA = yup.object().shape({
     .required("Message is required"),
 });
 
+const phoneRegExp =
+  /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
 export const CLIENT_INFO = yup.object().shape({
   name: yup
     .string()
@@ -51,7 +55,7 @@ export const CLIENT_INFO = yup.object().shape({
   request: yup.string().max(40, "Enter 16 characters"),
   phone: yup
     .string()
-    .min(6, "Minimum 6 characters!")
+    .matches(phoneRegExp, "Phone number is not valid")
     .required("Phone is required"),
   cardNumber: yup
     .string()
@@ -60,13 +64,15 @@ export const CLIENT_INFO = yup.object().shape({
     .required("Card number is required"),
   cardExpiry: yup
     .string()
-    .min(5, "Enter 5 characters")
-    .max(5, "Enter 5 characters")
+    .matches(
+      /([0-9]{2})\/([0-9]{2})/,
+      "Not a valid expiration date. Example: MM/YY"
+    )
     .required("Card dates are required"),
   cardCVV: yup
     .string()
-    .min(3, "Enter 3 characters")
-    .max(3, "Enter 3 characters")
+    .min(3, "Enter 3 CVV characters")
+    .max(3, "Enter 3 CVV characters")
     .required("Card CVV is required"),
   cardHolder: yup
     .string()

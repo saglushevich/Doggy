@@ -5,6 +5,8 @@ import { IReducer } from "@interfaces";
 import { PAYMENT } from "@mocks";
 
 import {
+  Message,
+  Messages,
   PaymentInput,
   PaymentInputLarge,
   PaymentInputs,
@@ -26,13 +28,23 @@ function Payment({ onInputChange, values }: IReducer) {
   return (
     <Wrapper>
       <PaymentTitle>{t("payment info")}</PaymentTitle>
+      <ErrorMessage name="cardNumber">
+        {(msg) => <Message>{msg}</Message>}
+      </ErrorMessage>
       <PaymentInputLarge
         name="cardNumber"
         value={cardNumber}
         onChange={onInputChange("SET_CARD_NUMBER")}
         placeholder={t("card number") as string}
       />
-      <ErrorMessage name="cardNumber" />
+      <Messages>
+        <ErrorMessage name="cardExpiry">
+          {(msg) => <Message>{msg}</Message>}
+        </ErrorMessage>
+        <ErrorMessage name="cardCVV">
+          {(msg) => <Message>{msg}</Message>}
+        </ErrorMessage>
+      </Messages>
       <PaymentInputs>
         <PaymentInput
           name="cardExpiry"
@@ -40,7 +52,6 @@ function Payment({ onInputChange, values }: IReducer) {
           onChange={onInputChange("SET_CARD_EXPIRY")}
           placeholder={t("expiry") as string}
         />
-        <ErrorMessage name="cardExpiry" />
         <PaymentInput
           type="password"
           value={cardCVV}
@@ -48,8 +59,10 @@ function Payment({ onInputChange, values }: IReducer) {
           onChange={onInputChange("SET_CARD_CVV")}
           placeholder="CVV"
         />
-        <ErrorMessage name="cardCVV" />
       </PaymentInputs>
+      <ErrorMessage name="cardHolder">
+        {(msg) => <Message>{msg}</Message>}
+      </ErrorMessage>
       <PaymentInputLarge
         value={cardHolder}
         onChange={onInputChange("SET_CARD_HOLDER")}
@@ -57,8 +70,6 @@ function Payment({ onInputChange, values }: IReducer) {
         type="text"
         placeholder={t("name on card") as string}
       />
-      <ErrorMessage name="cardHolder" />
-
       <PaymentMethods>{paymentsMethods}</PaymentMethods>
     </Wrapper>
   );
