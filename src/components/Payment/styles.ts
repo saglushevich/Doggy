@@ -34,6 +34,11 @@ export const PaymentInput = styled.input`
   }
 `;
 
+export const PaymentInputWrapper = styled.div`
+  display: block;
+  width: 240px;
+`;
+
 export const PaymentInputs = styled.div`
   width: 510px;
   display: flex;

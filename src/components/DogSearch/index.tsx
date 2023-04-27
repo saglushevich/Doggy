@@ -1,6 +1,6 @@
-import { useDeferredValue, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { ISearch } from "@interfaces";
 import { Container } from "@layout";
 import { SectionHeader } from "@styles";
 
@@ -14,14 +14,8 @@ import {
   Wrapper,
 } from "./styles";
 
-function DogSearch() {
-  const [searchValue, setSearchValue] = useState("");
-  // const defferedSearchValue = useDeferredValue(searchValue);
+function DogSearch({ searchValue, onChangeSearchValue }: ISearch) {
   const { t } = useTranslation();
-
-  const onChangeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-  };
 
   return (
     <Wrapper>
@@ -29,13 +23,14 @@ function DogSearch() {
         <SectionHeader>{t("info")}</SectionHeader>
         <Block>
           <Selection>
-            {t("selection")}:{" "}
-            <SelectionProduct>Beds & Cushions</SelectionProduct>
+            {t("selection")}
+            <SelectionProduct>{searchValue || "Не выбрано"}</SelectionProduct>
           </Selection>
           <Form>
             <Input
               onChange={onChangeSearchValue}
               type="text"
+              value={searchValue}
               placeholder={t("search") as string}
             />
             <InputIcon />

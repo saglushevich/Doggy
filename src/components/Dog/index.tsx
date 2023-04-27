@@ -1,41 +1,67 @@
+/* eslint-disable camelcase */
 import { useTranslation } from "react-i18next";
 
-// import { useQuery } from "@apollo/client";
-import collars2 from "@assets/images/collars_2.webp";
-import { IDog } from "@interfaces";
+import { useQuery } from "@apollo/client";
+import { GET_DOG } from "@apolloClient";
 import { Container } from "@layout";
 
 import {
-  Breed,
   Characteristic,
   Characteristics,
   Image,
   ImageWrapper,
+  InfoText,
   Wrapper,
 } from "./styles";
 
-function Dog({ selectedDog }: IDog) {
+function Dog({ breed }: { breed: string }) {
   const { t } = useTranslation();
 
-  // const { data, loading, error } = useQuery(GET_DOG_INFO);
+  const { data, loading, error } = useQuery(GET_DOG, {
+    variables: { breed },
+  });
 
-  // console.log(data, loading, error);
+  if (loading) {
+    return <InfoText>Loading...</InfoText>;
+  }
 
-  const { name, energy } = selectedDog;
+  if (!data || !data.dog) {
+    return <InfoText>Not found! Try again!</InfoText>;
+  }
+
+  if (error) {
+    return <InfoText>Something went wrong! Try again!</InfoText>;
+  }
+
+  const {
+    name,
+    image_link,
+    energy,
+    good_with_strangers,
+    good_with_other_dogs,
+    max_life_expectancy,
+  } = data.dog;
+
   return (
     <Wrapper>
       <Container>
         <ImageWrapper>
-          <Image src={collars2} />
-          <Breed>{name}</Breed>
+          <Image src={image_link} />
+          <InfoText>{name}</InfoText>
         </ImageWrapper>
         <Characteristics>
           <Characteristic>
             {t("energy")} {energy}
           </Characteristic>
-          <Characteristic>{t("life expectancy")} 5</Characteristic>
-          <Characteristic>{t("strangers")} 5</Characteristic>
-          <Characteristic>{t("other dogs")} 5</Characteristic>
+          <Characteristic>
+            {t("life expectancy")} {max_life_expectancy}
+          </Characteristic>
+          <Characteristic>
+            {t("strangers")} {good_with_strangers}
+          </Characteristic>
+          <Characteristic>
+            {t("other dogs")} {good_with_other_dogs}
+          </Characteristic>
         </Characteristics>
       </Container>
     </Wrapper>

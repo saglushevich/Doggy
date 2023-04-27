@@ -35,7 +35,7 @@ export const Title = styled.div`
   color: ${({ theme }) => theme.colors.black};
 `;
 
-export const Form = styled.div`
+export const Forms = styled.div`
   margin-top: ${({ theme }) => theme.gaps["7xl"]};
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {

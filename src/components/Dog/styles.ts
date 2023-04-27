@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding-top: ${({ theme }) => theme.gaps["4xl"]};
+  margin-top: 165px;
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    padding-top: ${({ theme }) => theme.gaps.l};
+    margin-top: 115px;
   }
-
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    padding-top: ${({ theme }) => theme.gaps.s};
+    margin-top: ${({ theme }) => theme.gaps["4xl"]};
   }
 `;
 
@@ -33,7 +32,7 @@ export const Image = styled.img`
   }
 `;
 
-export const Breed = styled.h2`
+export const InfoText = styled.h2`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: 64px;

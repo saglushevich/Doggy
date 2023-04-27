@@ -1,3 +1,4 @@
+import { ErrorMessage, Form, FormikProvider, useFormik } from "formik";
 import { SyntheticEvent, useReducer, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -5,16 +6,17 @@ import Calendar from "@components/Calendar";
 import Location from "@components/Location";
 import Modal from "@components/Modal";
 import Payment from "@components/Payment";
-import { INITIAL_STATE } from "@constants";
+import { CLIENT_INFO, INITIAL_STATE } from "@constants";
 import { Container } from "@layout";
 import { reducer } from "@utils";
 
 import {
   Button,
   Cancelling,
-  Form,
+  Forms,
   Input,
   Inputs,
+  // InputWrapper,
   Requests,
   Selection,
   Title,
@@ -33,19 +35,31 @@ function Booking() {
     }
   };
 
-  const onInputChange =
-    (action: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch({ type: action, payload: e.target.value });
-    };
-
-  const onSetCalendarDate = (value: string) => {
-    dispatch({ type: "SET_DATE", payload: value });
-  };
-
   const onFormSubmit = () => {
     if (Object.values(appointment).every(Boolean)) {
       toggleModalStatus();
     }
+  };
+
+  const formik = useFormik({
+    initialValues: INITIAL_STATE,
+    validationSchema: CLIENT_INFO,
+    onSubmit: onFormSubmit,
+  });
+
+  const {
+    values: { name, surname, phone, email },
+    handleChange,
+  } = formik;
+
+  const onInputChange =
+    (action: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch({ type: action, payload: e.target.value });
+      handleChange(e);
+    };
+
+  const onSetCalendarDate = (value: string) => {
+    dispatch({ type: "SET_DATE", payload: value });
   };
 
   return (
@@ -53,40 +67,59 @@ function Booking() {
       <Wrapper>
         <Selection>
           <Title>{t("enter information")}</Title>
-          <Form>
-            <Inputs>
-              <Input
-                onChange={onInputChange("SET_NAME")}
-                placeholder={t("name") as string}
-              />
-              <Input
-                onChange={onInputChange("SET_SURNAME")}
-                placeholder={t("surname") as string}
-              />
-            </Inputs>
-            <Inputs>
-              <Input
-                onChange={onInputChange("SET_EMAIL")}
-                placeholder="Email"
-              />
-              <Input
-                onChange={onInputChange("SET_PHONE")}
-                type="number"
-                placeholder={t("phone") as string}
-              />
-            </Inputs>
-            <Calendar
-              onInputChange={onInputChange}
-              onSetCalendarDate={onSetCalendarDate}
-            />
-            <Requests
-              onChange={onInputChange("SET_REQUEST")}
-              placeholder={t("special request") as string}
-            />
-            <Payment onInputChange={onInputChange} />
-            <Cancelling>{t("cancelling")}</Cancelling>
-            <Button onClick={onFormSubmit}>{t("book appointment")}</Button>
-          </Form>
+          <FormikProvider value={formik}>
+            <Form>
+              <Forms>
+                <Inputs>
+                  <Input
+                    name="name"
+                    value={name}
+                    onChange={onInputChange("SET_NAME")}
+                    placeholder={t("name") as string}
+                  />
+                  <ErrorMessage name="name" />
+
+                  <Input
+                    name="surname"
+                    value={surname}
+                    onChange={onInputChange("SET_SURNAME")}
+                    placeholder={t("surname") as string}
+                  />
+                  <ErrorMessage name="surname" />
+                </Inputs>
+                <Inputs>
+                  <Input
+                    value={email}
+                    onChange={onInputChange("SET_EMAIL")}
+                    placeholder="Email"
+                    name="email"
+                  />
+                  <ErrorMessage name="email" />
+                  <Input
+                    value={phone}
+                    onChange={onInputChange("SET_PHONE")}
+                    type="number"
+                    name="phone"
+                    placeholder={t("phone") as string}
+                  />
+                  <ErrorMessage name="phone" />
+                </Inputs>
+                <Calendar
+                  onInputChange={onInputChange}
+                  onSetCalendarDate={onSetCalendarDate}
+                />
+                <Requests
+                  onChange={onInputChange("SET_REQUEST")}
+                  placeholder={t("special request") as string}
+                  name="request"
+                />
+                <ErrorMessage name="request" />
+                <Payment onInputChange={onInputChange} values={formik.values} />
+                <Cancelling>{t("cancelling")}</Cancelling>
+                <Button onClick={onFormSubmit}>{t("book appointment")}</Button>
+              </Forms>
+            </Form>
+          </FormikProvider>
         </Selection>
         <Location />
       </Wrapper>
