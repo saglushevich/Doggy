@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-import "../secrets.js";
+
 import { RESTDataSource } from "apollo-datasource-rest";
 
 export class DogAPI extends RESTDataSource {
@@ -8,7 +8,7 @@ export class DogAPI extends RESTDataSource {
       `https://api.api-ninjas.com/v1/dogs?name=${breed}`,
       {
         headers: {
-          "X-Api-Key": process.env.DOG_API_KEY,
+          "X-Api-Key": "FZvdT5D6gVW1zV6qMdv5tw==1H3a9TU340W7LAKZ",
         },
       }
     );

@@ -7,6 +7,10 @@ export const Wrapper = styled.div`
   display: block;
   padding-top: 65px;
   margin: 0 auto;
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    width: 100%;
+  }
 `;
 
 export const PaymentTitle = styled.div`
@@ -21,7 +25,7 @@ export const PaymentTitle = styled.div`
 export const PaymentInput = styled(SectionInput)`
   width: 240px;
   padding: ${({ theme }) => `${theme.gaps.m} ${theme.gaps.l}`};
-  margin-bottom: ${({ theme }) => theme.gaps.l};
+  margin-top: ${({ theme }) => theme.gaps.l};
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
     width: 100%;
@@ -56,20 +60,22 @@ export const PaymentMethods = styled.div`
   width: 510px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: ${({ theme }) => theme.gaps.l};
+
+  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    width: 100%;
+  }
 `;
 
-export const Messages = styled.div`
-  width: 510px;
-  display: flex;
-  justify-content: space-between;
-`;
+export const InputWrapper = styled.div``;
 
 export const Message = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: #b78e80;
+  color: ${({ theme }) => theme.colors.primary};
+  text-align: center;
 `;
 
 export const PaymentMethod = styled.img`

@@ -16,8 +16,8 @@ import {
   Forms,
   Input,
   Inputs,
+  InputWrapper,
   Message,
-  Messages,
   Requests,
   Selection,
   Title,
@@ -60,12 +60,6 @@ function Booking() {
     dispatch({ type: "SET_DATE", payload: value });
   };
 
-  // const errorMessages = Object.keys(errors).map((err) => (
-  //   <ErrorMessage key={err} name={err}>
-  //     {(msg) => <Message>{msg}</Message>}
-  //   </ErrorMessage>
-  // ));
-
   return (
     <Container>
       <Wrapper>
@@ -74,50 +68,54 @@ function Booking() {
           <FormikProvider value={formik}>
             <Form>
               <Forms>
-                <Messages>
-                  <ErrorMessage name="name">
-                    {(msg) => <Message>{msg}</Message>}
-                  </ErrorMessage>
-                  <ErrorMessage name="surname">
-                    {(msg) => <Message>{msg}</Message>}
-                  </ErrorMessage>
-                </Messages>
                 <Inputs>
-                  <Input
-                    name="name"
-                    value={name}
-                    onChange={onInputChange("SET_NAME")}
-                    placeholder={t("name") as string}
-                  />
-                  <Input
-                    name="surname"
-                    value={surname}
-                    onChange={onInputChange("SET_SURNAME")}
-                    placeholder={t("surname") as string}
-                  />
+                  <InputWrapper>
+                    <Input
+                      name="name"
+                      value={name}
+                      onChange={onInputChange("SET_NAME")}
+                      placeholder={t("name") as string}
+                    />
+                    <ErrorMessage name="name">
+                      {(msg) => <Message>{msg}</Message>}
+                    </ErrorMessage>
+                  </InputWrapper>
+                  <InputWrapper>
+                    <Input
+                      name="surname"
+                      value={surname}
+                      onChange={onInputChange("SET_SURNAME")}
+                      placeholder={t("surname") as string}
+                    />
+                    <ErrorMessage name="surname">
+                      {(msg) => <Message>{msg}</Message>}
+                    </ErrorMessage>
+                  </InputWrapper>
                 </Inputs>
-                <Messages>
-                  <ErrorMessage name="email">
-                    {(msg) => <Message>{msg}</Message>}
-                  </ErrorMessage>
-                  <ErrorMessage name="phone">
-                    {(msg) => <Message>{msg}</Message>}
-                  </ErrorMessage>
-                </Messages>
                 <Inputs>
-                  <Input
-                    value={email}
-                    onChange={onInputChange("SET_EMAIL")}
-                    placeholder="Email"
-                    name="email"
-                  />
-                  <Input
-                    value={phone}
-                    onChange={onInputChange("SET_PHONE")}
-                    type="number"
-                    name="phone"
-                    placeholder={t("phone") as string}
-                  />
+                  <InputWrapper>
+                    <Input
+                      value={email}
+                      onChange={onInputChange("SET_EMAIL")}
+                      placeholder="Email"
+                      name="email"
+                    />
+                    <ErrorMessage name="email">
+                      {(msg) => <Message>{msg}</Message>}
+                    </ErrorMessage>
+                  </InputWrapper>
+                  <InputWrapper>
+                    <Input
+                      value={phone}
+                      onChange={onInputChange("SET_PHONE")}
+                      type="number"
+                      name="phone"
+                      placeholder={t("phone") as string}
+                    />
+                    <ErrorMessage name="phone">
+                      {(msg) => <Message>{msg}</Message>}
+                    </ErrorMessage>
+                  </InputWrapper>
                 </Inputs>
                 <Calendar
                   onInputChange={onInputChange}

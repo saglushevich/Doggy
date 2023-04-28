@@ -1,4 +1,4 @@
-import { gql } from "apollo-server";
+import { gql } from "apollo-server-lambda";
 
 export const typeDefs = gql`
   type Dog {
@@ -9,7 +9,6 @@ export const typeDefs = gql`
     good_with_strangers: Int!
     good_with_other_dogs: Int!
   }
-
   type Query {
     dog(breed: String!): Dog
   }

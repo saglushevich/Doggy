@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "start-server": "node src"
+    "start-server": "node src",
+    "start": "netlify-lambda serve src",
+    "build": "netlify-lambda build src"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,11 @@
   "dependencies": {
     "apollo-datasource-rest": "^3.7.0",
     "apollo-server": "^3.12.0",
+    "apollo-server-lambda": "^3.12.0",
     "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "netlify-lambda": "^2.0.16"
   }
 }

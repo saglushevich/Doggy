@@ -6,6 +6,7 @@
 .pnp.js
 /apolloServer/node_modules
 /apolloServer/secrets.js
+/apolloServer/build
 
 # testing
 /coverage

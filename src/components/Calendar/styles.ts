@@ -88,6 +88,11 @@ export const Days = styled.div`
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
     justify-content: center;
   }
+
+  @media (max-width: ${({ theme }) => theme.media.mobileSmall}) {
+    grid-template-columns: repeat(7, 20px);
+    grid-template-rows: repeat(6, 20px);
+  }
 `;
 
 export const CalendarBlock = styled.div`

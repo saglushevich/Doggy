@@ -48,13 +48,17 @@ export const Forms = styled.div`
 export const Inputs = styled.div`
   display: flex;
   align-items: center;
+  width: 750px;
+  justify-content: space-between;
   margin-bottom: ${({ theme }) => theme.gaps["4xl"]};
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    display: block;
+  @media (max-width: ${({ theme }) => theme.media.laptop}) {
+    width: 700px;
   }
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+    width: 100%;
+    display: block;
     margin-bottom: 0;
   }
 `;
@@ -62,18 +66,13 @@ export const Inputs = styled.div`
 export const Input = styled(SectionInput)`
   width: 335px;
 
-  &:nth-last-child(n + 2) {
-    margin-right: ${({ theme }) => theme.gaps["7xl"]};
-  }
-
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
     width: 100%;
-    &:nth-last-child(n + 2) {
-      margin-right: 0;
-    }
     margin-bottom: 20px;
   }
 `;
+
+export const InputWrapper = styled.div``;
 
 export const Requests = styled(Input)`
   width: 100%;
@@ -109,16 +108,10 @@ export const Button = styled(SectionButton)`
   margin-top: ${({ theme }) => theme.gaps["3xl"]};
 `;
 
-export const Messages = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: ${({ theme }) => theme.gaps.xs};
-`;
-
 export const Message = styled.div`
+  width: 335px;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: #b78e80;
+  color: ${({ theme }) => theme.colors.primary};
 `;

@@ -1,0 +1,25 @@
+name: E2E testing
+on: 
+  push:
+    branches: [master]
+jobs:
+  lint:
+    name: push
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: npm
+      - name: install modules
+        run: npm install
+      - name: start client
+        run: npm run dev
+      - name: start tests
+        run: npx cypress run
