@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { SectionButton, SectionInput } from "@styles";
+
 export const Wrapper = styled.div`
   padding: 100px 100px 120px;
 
@@ -16,16 +18,8 @@ export const InputWrapper = styled.div`
   display: block;
 `;
 
-export const Input = styled.input`
+export const Input = styled(SectionInput)`
   width: 605px;
-  padding: ${({ theme }) => `${theme.gaps.l} ${theme.gaps["2xl"]}`};
-  background: ${({ theme }) => theme.colors.white};
-  border: 1px solid #e0e0e0;
-  border-radius: ${({ theme }) => theme.borderSizes.m};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.l};
-  color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 100%;
@@ -70,7 +64,6 @@ export const FormMessage = styled.div`
   font-size: ${({ theme }) => theme.fontSizes["3xl"]};
   color: #b78e80;
   text-align: center;
-  margin-top: ${({ theme }) => theme.gaps.xl};
 `;
 
 export const Inputs = styled.div`
@@ -88,22 +81,11 @@ export const Inputs = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  display: block;
+export const Button = styled(SectionButton)`
   padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps["9xl"]}`};
-  background: ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderSizes.l};
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: ${({ theme }) => theme.colors.white};
-  cursor: pointer;
   margin: 0 auto;
   margin-top: 65px;
-  &:disabled {
-    background: ${({ theme }) => theme.colors.gray};
-  }
+  margin-bottom: ${({ theme }) => theme.gaps.xl};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     margin-top: ${({ theme }) => theme.gaps["3xl"]};

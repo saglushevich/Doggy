@@ -48,3 +48,44 @@ export const SectionHeader = styled.h1`
     line-height: ${({ theme }) => theme.lineHeights.xl};
   }
 `;
+
+export const SectionButton = styled.button`
+  display: block;
+  padding: ${({ theme }) => `${theme.gaps.m} ${theme.gaps["2xl"]}`};
+  background: ${({ theme }) => theme.colors.primary};
+  border-radius: ${({ theme }) => theme.borderSizes.l};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  color: ${({ theme }) => theme.colors.white};
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+
+  &:hover {
+    box-shadow: 0px 5px 30px ${({ theme }) => `${theme.colors.primary}b3`};
+  }
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors.gray};
+    border: 1px solid ${({ theme }) => theme.colors.gray};
+    box-shadow: none;
+  }
+`;
+
+export const SectionInput = styled.input`
+  width: 335px;
+  padding: ${({ theme }) => `${theme.gaps.l} ${theme.gaps["2xl"]}`};
+  background: ${({ theme }) => theme.colors.white};
+  border: 1px solid #e0e0e0;
+  border-radius: ${({ theme }) => theme.borderSizes.m};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 400;
+  font-size: ${({ theme }) => theme.fontSizes.l};
+  color: ${({ theme }) => theme.colors.black};
+
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
+  }
+`;

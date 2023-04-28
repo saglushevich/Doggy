@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { SectionInput } from "@styles";
+
 export const Wrapper = styled.div`
   width: 510px;
   display: block;
@@ -16,16 +18,9 @@ export const PaymentTitle = styled.div`
   margin-bottom: ${({ theme }) => theme.gaps.l};
 `;
 
-export const PaymentInput = styled.input`
+export const PaymentInput = styled(SectionInput)`
   width: 240px;
   padding: ${({ theme }) => `${theme.gaps.m} ${theme.gaps.l}`};
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: ${({ theme }) => theme.borderSizes.m};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.s};
-  color: ${({ theme }) => theme.colors.black};
   margin-bottom: ${({ theme }) => theme.gaps.l};
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {

@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   CONTACT_SCHEMA,
@@ -18,9 +19,7 @@ export const useContact = (
   const [disabled, setDisabled] = useState(false);
   const [message, setMessage] = useState("");
   const form = useRef<HTMLFormElement>(null);
-
-  //   const tMessage = t("We will contact");
-  //   const tError = t("Something went wrong");
+  const { t } = useTranslation();
 
   const formik = useFormik({
     initialValues: {
@@ -42,9 +41,9 @@ export const useContact = (
         )
         .then(
           () => {
-            setMessage("We will contact you!");
+            setMessage(t("we will contact") as string);
           },
-          () => setMessage("Something went wrong")
+          () => setMessage(t("went wrong") as string)
         )
         .finally(() => {
           formik.resetForm({});
@@ -55,7 +54,7 @@ export const useContact = (
 
   useEffect(() => {
     if (message) {
-      const timer = setTimeout(() => setMessage(""), 4000);
+      const timer = setTimeout(() => setMessage(""), 3500);
       return () => clearTimeout(timer);
     }
   }, [message]);

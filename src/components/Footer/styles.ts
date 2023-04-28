@@ -3,6 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 import { IStyles } from "@interfaces";
+import { SectionButton, SectionInput } from "@styles";
 
 export const Wrapper = styled.footer`
   background: ${({ theme }) => theme.colors.secondary};
@@ -120,16 +121,9 @@ export const FormMessage = styled(Title)`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled(SectionInput)`
   width: 500px;
-  background: ${({ theme }) => theme.colors.white};
-  border: 1px solid #e0e0e0;
-  border-radius: ${({ theme }) => theme.borderSizes.m};
   padding: ${({ theme }) => `${theme.gaps.l} ${theme.gaps.xl}`};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.s};
-  color: ${({ theme }) => theme.colors.gray};
   margin-right: ${({ theme }) => theme.gaps["2xl"]};
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
@@ -138,23 +132,10 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.button`
-  background: ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderSizes.l};
+export const Button = styled(SectionButton)`
   padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps["3xl"]}`};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: ${({ theme }) => theme.colors.white};
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  cursor: pointer;
-
-  &:disabled {
-    background: ${({ theme }) => theme.colors.gray};
-  }
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    display: block;
     margin: 0 auto;
     margin-top: ${({ theme }) => theme.gaps.l};
   }

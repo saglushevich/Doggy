@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { SectionButton, SectionInput } from "@styles";
+
 export const Wrapper = styled.div`
   position: absolute;
   top: 35px;
@@ -54,37 +56,18 @@ export const SignDiscount = styled.div`
   margin-top: ${({ theme }) => theme.gaps.l};
 `;
 
-export const SignInput = styled.input`
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: ${({ theme }) => theme.borderSizes.m};
-  padding: 13px;
+export const SignInput = styled(SectionInput)`
+  padding: ${({ theme }) => theme.gaps.m};
   margin-top: ${({ theme }) => theme.gaps.xl};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.s};
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.gray};
   width: 100%;
 `;
 
-export const SignButton = styled.button`
-  display: block;
+export const SignButton = styled(SectionButton)`
   padding: ${({ theme }) => `${theme.gaps.xs} ${theme.gaps["3xl"]}`};
-  background: #e89b93;
-  border-radius: ${({ theme }) => theme.borderSizes.l};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: ${({ theme }) => theme.colors.white};
-  cursor: pointer;
-  border: 1px solid #e89b93;
   margin: 0 auto;
   margin-top: ${({ theme }) => theme.gaps["3xl"]};
-  &:disabled {
-    background: ${({ theme }) => theme.colors.gray};
-  }
 `;
 
 export const FormMessage = styled.div`

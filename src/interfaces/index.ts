@@ -1,4 +1,5 @@
 export * from "./Catalog";
+export * from "./CatalogCard";
 export * from "./ErrorBoundary";
 export * from "./MobileMenu";
 export * from "./Modal";

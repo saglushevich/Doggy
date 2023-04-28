@@ -1,7 +1,7 @@
 import { ErrorMessage, FormikProvider } from "formik";
 import { useTranslation } from "react-i18next";
 
-import { EMAIL_TEMPLATE, ROUTES, SUBSCRIBE_SCHEMA } from "@constants";
+import { ROUTES, SUBSCRIBE_SCHEMA, SUBSCRIBE_TEMPLATE } from "@constants";
 import { useContact } from "@hooks";
 import { Container } from "@layout";
 import { SOCIAL } from "@mocks";
@@ -28,16 +28,14 @@ function Footer() {
   const { t } = useTranslation();
   const { formik, form, disabled, message } = useContact(
     SUBSCRIBE_SCHEMA,
-    EMAIL_TEMPLATE as string
+    SUBSCRIBE_TEMPLATE as string
   );
 
   const { blog, home, about, contacts } = ROUTES;
 
-  const socialNetworks = SOCIAL.map((social) => {
-    const { id, image, link } = social;
-
-    return <Social key={id} href={link} image={image} />;
-  });
+  const socialNetworks = SOCIAL.map(({ id, image, link }) => (
+    <Social key={id} href={link} image={image} />
+  ));
 
   return (
     <Wrapper>

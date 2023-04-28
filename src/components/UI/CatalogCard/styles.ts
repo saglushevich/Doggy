@@ -3,14 +3,18 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   width: 435px;
   cursor: pointer;
+  &:nth-child(n + 4) {
+    margin-top: ${({ theme }) => theme.gaps["9xl"]};
+  }
+
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 235px;
   }
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
     width: 100%;
-    &:nth-last-child(n + 2) {
-      margin-bottom: ${({ theme }) => theme.gaps["4xl"]};
+    &:nth-child(n + 2) {
+      margin-top: ${({ theme }) => theme.gaps["4xl"]};
     }
   }
 `;

@@ -25,6 +25,7 @@ function ContactsForm() {
   const {
     values: { name, surname, phone, email, usermessage },
     handleChange,
+    errors,
   } = formik;
 
   return (
@@ -93,7 +94,12 @@ function ContactsForm() {
             <ErrorMessage name="usermessage">
               {(msg) => <FormMessage>{msg}</FormMessage>}
             </ErrorMessage>
-            <Button disabled={disabled}>{t("submit")}</Button>
+            <Button
+              disabled={disabled || !!Object.keys(errors).length}
+              type="submit"
+            >
+              {t("submit")}
+            </Button>
             <FormMessage>{message}</FormMessage>
           </Form>
         </FormikProvider>

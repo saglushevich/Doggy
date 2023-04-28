@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import search from "@assets/icons/search.svg";
+import { SectionInput } from "@styles";
 
 export const Wrapper = styled.div`
   padding-top: ${({ theme }) => theme.gaps["8xl"]};
@@ -54,17 +55,10 @@ export const Form = styled.form`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled(SectionInput)`
   width: 100%;
   padding: ${({ theme }) => theme.gaps.l};
   padding-left: ${({ theme }) => theme.gaps["2xl"]};
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: ${({ theme }) => theme.borderSizes.m};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.s};
-  color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
     margin-top: ${({ theme }) => theme.gaps.m};

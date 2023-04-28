@@ -4,6 +4,7 @@ import Catalog from "@components/Catalog";
 import Promo from "@components/Promo";
 import SignUp from "@components/SignUp";
 import Trending from "@components/Trending";
+import { CARRY_ONS, COLLARS } from "@mocks";
 
 import { PageContainer } from "../layout/PageContainer";
 
@@ -15,8 +16,16 @@ function Homepage() {
       <Trending>
         <SignUp />
       </Trending>
-      <Catalog title={t("collars")} buttonText={t("more collars")} />
-      <Catalog title={t("carry Ons")} buttonText={t("more carry Ons")} />
+      <Catalog
+        title={t("collars")}
+        buttonText={t("more collars")}
+        products={COLLARS}
+      />
+      <Catalog
+        title={t("carry Ons")}
+        buttonText={t("more carry Ons")}
+        products={CARRY_ONS}
+      />
     </PageContainer>
   );
 }

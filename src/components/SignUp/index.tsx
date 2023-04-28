@@ -2,7 +2,7 @@ import { ErrorMessage, Form, FormikProvider } from "formik";
 import { useTranslation } from "react-i18next";
 
 import signUpDog from "@assets/images/singUp_dog.webp";
-import { EMAIL_TEMPLATE, SUBSCRIBE_SCHEMA } from "@constants";
+import { SUBSCRIBE_SCHEMA, SUBSCRIBE_TEMPLATE } from "@constants";
 import { useContact } from "@hooks";
 
 import {
@@ -23,7 +23,7 @@ function SignUp() {
   const { t } = useTranslation();
   const { formik, form, disabled, message } = useContact(
     SUBSCRIBE_SCHEMA,
-    EMAIL_TEMPLATE as string
+    SUBSCRIBE_TEMPLATE as string
   );
 
   return (

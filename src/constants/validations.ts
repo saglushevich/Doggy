@@ -1,6 +1,9 @@
 /* eslint-disable no-useless-escape */
 import * as yup from "yup";
 
+const phoneRegExp =
+  /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
 export const SUBSCRIBE_SCHEMA = yup.object().shape({
   email: yup
     .string()
@@ -24,8 +27,8 @@ export const CONTACT_SCHEMA = yup.object().shape({
     .email("Enter a valid email")
     .required("Email is required"),
   phone: yup
-    .number()
-    .min(6, "Minimum 6 characters!")
+    .string()
+    .matches(phoneRegExp, "Phone number is not valid")
     .required("Phone is required"),
   usermessage: yup
     .string()
@@ -33,9 +36,6 @@ export const CONTACT_SCHEMA = yup.object().shape({
     .max(400, "Maximum 400 characters!")
     .required("Message is required"),
 });
-
-const phoneRegExp =
-  /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
 export const CLIENT_INFO = yup.object().shape({
   name: yup
@@ -76,7 +76,7 @@ export const CLIENT_INFO = yup.object().shape({
     .required("Card CVV is required"),
   cardHolder: yup
     .string()
-    .min(3, "Minimum 5 characters")
+    .min(5, "Minimum 5 characters")
     .max(30, "Maximum 30 characters")
     .required("Card holder name is required"),
 });

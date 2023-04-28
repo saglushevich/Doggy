@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import PayPalButton from "@components/PayPalButton";
+import PayPalButton from "@components/UI/PayPalButton";
 import { PAYPAL_KEY } from "@constants";
 import { IModal } from "@interfaces";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";

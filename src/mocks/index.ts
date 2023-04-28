@@ -1,3 +1,4 @@
+export * from "./catalog";
 export * from "./coordinates";
 export * from "./navigation";
 export * from "./payment";

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import dog from "@assets/images/promo_dog.webp";
+import { SectionButton } from "@styles";
 
 export const Wrapper = styled.div`
   background: url(${dog}) center center / cover no-repeat;
@@ -72,17 +73,7 @@ export const Subtitle = styled.h2`
   }
 `;
 
-export const Button = styled.button`
-  display: block;
-  background: #e89b93;
-  border-radius: ${({ theme }) => theme.borderSizes.l};
-  padding: ${({ theme }) => `${theme.gaps.m} ${theme.gaps["2xl"]}`};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: ${({ theme }) => theme.colors.white};
-  cursor: pointer;
-  border: 1px solid #e89b93;
+export const Button = styled(SectionButton)`
   margin-top: 65px;
   margin-left: 100px;
 

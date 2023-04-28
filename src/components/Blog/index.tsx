@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import dog1 from "@assets/images/blog1.webp";
 import dog2 from "@assets/images/blog2.webp";
-import PageHeader from "@components/PageHeader";
+import PageHeader from "@components/UI/PageHeader";
 import { Container } from "@layout";
 
 import {

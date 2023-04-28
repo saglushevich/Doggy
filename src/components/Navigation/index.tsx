@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import logo from "@assets/logo/logo.png";
-import MobileMenu from "@components/MobileMenu";
+import MobileMenu from "@components/UI/MobileMenu";
 import { useLanguage } from "@hooks";
 import { Container } from "@layout";
 import { NAVIGATION } from "@mocks";

@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import SpaService from "@components/SpaService";
+import SpaService from "@components/UI/SpaService";
 import { useLanguage } from "@hooks";
 import { Container } from "@layout";
 import { SERVICES } from "@mocks";

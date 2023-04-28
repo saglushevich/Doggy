@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { SectionButton } from "@styles";
+
 export const Wrapper = styled.div`
   padding: ${({ theme }) =>
     `${theme.gaps["6xl"]} 120px 0 ${theme.gaps["6xl"]}`};
@@ -55,17 +57,7 @@ export const PackageDescription = styled(PackageName)`
   margin-top: ${({ theme }) => theme.gaps["4xl"]};
 `;
 
-export const PackageButton = styled.button`
-  display: block;
-  background: #dfb2a9;
-  border-radius: ${({ theme }) => theme.borderSizes.l};
-  padding: ${({ theme }) => `${theme.gaps.m} ${theme.gaps["4xl"]}`};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: 26px;
-  color: ${({ theme }) => theme.colors.white};
-  border: 1px solid #dfb2a9;
+export const PackageButton = styled(SectionButton)`
   margin: 0 auto;
   margin-top: 85px;
-  cursor: pointer;
 `;

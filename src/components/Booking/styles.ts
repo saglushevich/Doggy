@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { SectionButton, SectionInput } from "@styles";
+
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -57,16 +59,8 @@ export const Inputs = styled.div`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled(SectionInput)`
   width: 335px;
-  padding: ${({ theme }) => `${theme.gaps.l} ${theme.gaps["2xl"]}`};
-  background: ${({ theme }) => theme.colors.white};
-  border: 1px solid #e0e0e0;
-  border-radius: ${({ theme }) => theme.borderSizes.m};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.fontSizes.s};
-  color: ${({ theme }) => theme.colors.black};
 
   &:nth-last-child(n + 2) {
     margin-right: ${({ theme }) => theme.gaps["7xl"]};
@@ -109,22 +103,10 @@ export const Cancelling = styled.p`
   }
 `;
 
-export const Button = styled.button`
-  display: block;
-  background: ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderSizes.l};
+export const Button = styled(SectionButton)`
   padding: ${({ theme }) => `${theme.gaps.xs} ${theme.gaps["8xl"]}`};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: ${({ theme }) => theme.colors.white};
-  cursor: pointer;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
   margin: 0 auto;
   margin-top: ${({ theme }) => theme.gaps["3xl"]};
-  &:disabled {
-    background: ${({ theme }) => theme.colors.gray};
-  }
 `;
 
 export const Messages = styled.div`

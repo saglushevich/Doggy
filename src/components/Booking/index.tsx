@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import Calendar from "@components/Calendar";
 import Location from "@components/Location";
 import Modal from "@components/Modal";
-import Payment from "@components/Payment";
+import Payment from "@components/UI/Payment";
 import { CLIENT_INFO, INITIAL_STATE } from "@constants";
 import { Container } from "@layout";
 import { reducer } from "@utils";
@@ -40,9 +40,7 @@ function Booking() {
     initialValues: INITIAL_STATE,
     validationSchema: CLIENT_INFO,
     onSubmit: () => {
-      if (Object.values(appointment).every(Boolean)) {
-        toggleModalStatus();
-      }
+      toggleModalStatus();
     },
   });
 
@@ -62,11 +60,11 @@ function Booking() {
     dispatch({ type: "SET_DATE", payload: value });
   };
 
-  const errorMessages = Object.keys(errors).map((err) => (
-    <ErrorMessage key={err} name={err}>
-      {(msg) => <Message>{msg}</Message>}
-    </ErrorMessage>
-  ));
+  // const errorMessages = Object.keys(errors).map((err) => (
+  //   <ErrorMessage key={err} name={err}>
+  //     {(msg) => <Message>{msg}</Message>}
+  //   </ErrorMessage>
+  // ));
 
   return (
     <Container>
@@ -132,7 +130,7 @@ function Booking() {
                 />
                 <Payment onInputChange={onInputChange} values={formik.values} />
                 <Cancelling>{t("cancelling")}</Cancelling>
-                <Button disabled={!!errorMessages.length} type="submit">
+                <Button disabled={!!Object.keys(errors).length} type="submit">
                   {t("book appointment")}
                 </Button>
               </Forms>
