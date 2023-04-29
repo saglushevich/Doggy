@@ -6,6 +6,28 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
+  // webpack: (config, options) => {
+  //   config.module.rules.push({
+  //     test: /\.(png|jpe?g|gif|webp)$/i,
+  //     use: [
+  //       {
+  //         loader: "file-loader",
+  //       },
+  //     ],
+  //   })
+
+    // config.module.rules.push({
+    //   test: /\.(png|jpg|webp)$/i,
+    //   use: [
+    //     {
+    //       loader: "url-loader",
+    //     },
+    //   ],
+    // })
+
+    // console.log(config.module.rules[5].use);
+  //   return config
+  // },
   module: {
     rules: [
       {
@@ -18,6 +40,11 @@ const nextConfig = {
       },
     ],
   },
+  // webpack: (config, options) => {
+  //   console.log(config.module.rules)
+
+  //   return config;
+  // }
 };
 
 module.exports = withImages(nextConfig);

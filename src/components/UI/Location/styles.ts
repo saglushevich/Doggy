@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding-top: 175px;
   width: 495px;
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {

@@ -1,9 +1,10 @@
+import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
 import Catalog from "@components/Catalog";
 import Promo from "@components/Promo";
-import SignUp from "@components/SignUp";
 import Trending from "@components/Trending";
+import SignUp from "@components/UI/SignUp";
 import { CARRY_ONS, COLLARS } from "@mocks";
 
 import { PageContainer } from "../layout/PageContainer";
@@ -12,6 +13,9 @@ function Homepage() {
   const { t } = useTranslation();
   return (
     <PageContainer>
+      <Head>
+        <title>Homepage</title>
+      </Head>
       <Promo />
       <Trending>
         <SignUp />

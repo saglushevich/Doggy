@@ -75,7 +75,6 @@ export const Message = styled.div`
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes.xl};
   color: ${({ theme }) => theme.colors.primary};
-  text-align: center;
 `;
 
 export const PaymentMethod = styled.img`

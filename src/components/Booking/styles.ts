@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SectionButton, SectionInput } from "@styles";
 
 export const Wrapper = styled.div`
+  margin-top: 175px;
   display: flex;
   justify-content: space-between;
   padding: 0 ${({ theme }) => theme.gaps["6xl"]};
@@ -17,7 +18,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Selection = styled.div`
-  padding: ${({ theme }) => `${theme.gaps["8xl"]} ${theme.gaps.m} 0`};
+  padding-bottom: ${({ theme }) => theme.gaps["8xl"]};
   width: 750px;
 
   @media (max-width: ${({ theme }) => theme.media.laptop}) {

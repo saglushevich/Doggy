@@ -8,6 +8,16 @@ export const useCalendar = () => {
   const [selectedYear, setSelectedYear] = useState(date.getFullYear());
 
   const changeMonth = (value: number) => () => {
+    setSelectedDate(date.getDate());
+
+    if (
+      value < 0 &&
+      selectedMonth === date.getMonth() &&
+      selectedYear === date.getFullYear()
+    ) {
+      return;
+    }
+
     if (selectedMonth !== 0 && value < 0) {
       setSelectedMonth((prevSelectedMonth) => prevSelectedMonth - 1);
     }
@@ -27,15 +37,32 @@ export const useCalendar = () => {
     }
   };
 
-  const onSelectDate = (date: number, anotherMonth: boolean) => () => {
+  const onSelectDate = (selected: number, anotherMonth: boolean) => () => {
+    const currDate = date.getDate();
+    const currMonth = date.getMonth();
+    const currYear = date.getFullYear();
+
+    const current = new Date(currYear, currMonth, currDate).toISOString();
+    const selectedDates = new Date(
+      selectedYear,
+      selectedMonth,
+      selected
+    ).toISOString();
+
     if (anotherMonth) {
-      if (date > 20) {
+      if (selected > 20) {
         changeMonth(-1)();
       } else {
         changeMonth(1)();
       }
     }
-    setSelectedDate(date);
+
+    if (
+      current <= selectedDates &&
+      !(selected > 20 && anotherMonth && currMonth === selectedMonth)
+    ) {
+      setSelectedDate(selected);
+    }
   };
 
   return {

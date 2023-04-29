@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useDeferredValue, useState } from "react";
 
 import Dog from "@components/Dog";
@@ -14,6 +15,9 @@ function InfoPage() {
 
   return (
     <PageContainer>
+      <Head>
+        <title>Dog information</title>
+      </Head>
       <DogSearch
         searchValue={searchValue}
         onChangeSearchValue={onChangeSearchValue}

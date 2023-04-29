@@ -68,6 +68,7 @@ export const Checkbox = styled.input`
 `;
 
 export const Label = styled.label`
+  cursor: pointer;
   display: block;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 700;

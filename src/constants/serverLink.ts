@@ -1,1 +1,1 @@
-export const SERVER_LINK = "http://localhost:9000/.netlify/functions/graphql.js";
+export const SERVER_LINK = "https://modsen-doggy-server.netlify.app/";

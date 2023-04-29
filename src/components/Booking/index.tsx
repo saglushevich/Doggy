@@ -3,8 +3,8 @@ import { SyntheticEvent, useReducer, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Calendar from "@components/Calendar";
-import Location from "@components/Location";
 import Modal from "@components/Modal";
+import Location from "@components/UI/Location";
 import Payment from "@components/UI/Payment";
 import { CLIENT_INFO, INITIAL_STATE } from "@constants";
 import { Container } from "@layout";

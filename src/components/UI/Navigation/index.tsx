@@ -45,21 +45,21 @@ function Navigation() {
 
   return (
     <>
-      <Container>
-        <Wrapper>
-          <Logotype src={logo} />
-          <NavigationLinks>{navigation}</NavigationLinks>
-          <Burger onClick={toggleMobileMenu} active={menuStatus} />
-          <Languages>
-            <Language active={lang === "ru"} onClick={onChangeLang("ru")}>
-              RUS
-            </Language>
-            <Language active={lang === "en"} onClick={onChangeLang("en")}>
-              ENG
-            </Language>
-          </Languages>
-        </Wrapper>
-      </Container>
+      {/* <Container> */}
+      <Wrapper>
+        <Logotype src={logo} />
+        <NavigationLinks>{navigation}</NavigationLinks>
+        <Burger onClick={toggleMobileMenu} active={menuStatus} />
+        <Languages>
+          <Language active={lang === "ru"} onClick={onChangeLang("ru")}>
+            RUS
+          </Language>
+          <Language active={lang === "en"} onClick={onChangeLang("en")}>
+            ENG
+          </Language>
+        </Languages>
+      </Wrapper>
+      {/* </Container> */}
       <MobileMenu menuStatus={menuStatus} onChangeLang={onChangeLang} />
     </>
   );

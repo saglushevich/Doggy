@@ -6,6 +6,7 @@ import { SectionButton } from "@styles";
 export const Wrapper = styled.div`
   background: url(${dog}) center center / cover no-repeat;
   padding-bottom: 140px;
+  width: 100%;
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     padding-bottom: 90px;
   }

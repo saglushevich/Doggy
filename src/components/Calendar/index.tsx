@@ -66,12 +66,13 @@ function Calendar({ onInputChange, onSetCalendarDate }: IReducer) {
     });
   });
 
-  const timeslots = TIMESLOTS.map(({ id, value }) => (
+  const timeslots = TIMESLOTS.map(({ id, value, checked }) => (
     <Time key={id}>
       <Checkbox
         onChange={onInputChange("SET_TIME")}
         type="radio"
         id={id}
+        defaultChecked={checked}
         name="time"
         value={value}
       />
