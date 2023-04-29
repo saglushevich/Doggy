@@ -1,7 +1,7 @@
 import { ErrorMessage } from "formik";
 import { useTranslation } from "react-i18next";
 
-import { IReducer } from "@interfaces";
+import { IPayment } from "@interfaces";
 import { PAYMENT } from "@mocks";
 
 import {
@@ -16,7 +16,7 @@ import {
   Wrapper,
 } from "./styles";
 
-function Payment({ onInputChange, values }: IReducer) {
+function Payment({ onInputChange, values }: IPayment) {
   const { t } = useTranslation();
 
   const paymentsMethods = PAYMENT.map(({ id, icon }) => (

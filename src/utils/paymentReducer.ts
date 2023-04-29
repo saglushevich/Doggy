@@ -1,11 +1,11 @@
-import { INITIAL_STATE } from "@constants";
+import { PAYMENT } from "@constants";
 
 type TAction = {
   type: string;
   payload: string;
 };
 
-export function reducer(state: typeof INITIAL_STATE, action: TAction) {
+export function paymentReducer(state: typeof PAYMENT, action: TAction) {
   switch (action.type) {
     case "SET_NAME":
       return { ...state, name: action.payload };

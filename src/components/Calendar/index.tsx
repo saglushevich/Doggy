@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import arrow from "@assets/icons/arrow.svg";
 import { DAYS, MONTHS, MONTHS_SHORT } from "@constants";
 import { useCalendar } from "@hooks";
-import { IReducer } from "@interfaces";
+import { IPayment } from "@interfaces";
 import { TIMESLOTS } from "@mocks";
 import { getCalendar } from "@utils";
 
@@ -24,7 +24,7 @@ import {
   Visit,
 } from "./styles";
 
-function Calendar({ onInputChange, onSetCalendarDate }: IReducer) {
+function Calendar({ onInputChange, onSetCalendarDate }: IPayment) {
   const {
     selectedDate,
     selectedMonth,

@@ -6,28 +6,27 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
-  // webpack: (config, options) => {
-  //   config.module.rules.push({
-  //     test: /\.(png|jpe?g|gif|webp)$/i,
-  //     use: [
-  //       {
-  //         loader: "file-loader",
-  //       },
-  //     ],
-  //   })
+  webpack: (config, options) => {
+    const { dir, defaultLoaders } = options;
+    config.resolve.extensions.push('.ts', '.tsx');
 
-    // config.module.rules.push({
-    //   test: /\.(png|jpg|webp)$/i,
-    //   use: [
-    //     {
-    //       loader: "url-loader",
-    //     },
-    //   ],
-    // })
+    config.module.rules.push({
+      test: /\\.+(ts|tsx)$/,
+      include: [dir],
+      exclude: /node_modules/,
+      use: [
+        defaultLoaders.babel,
+        { loader: 'ts-loader', options: { transpileOnly: true } },
+      ],
+    });
 
-    // console.log(config.module.rules[5].use);
-  //   return config
-  // },
+    config.module.rules.push({
+      test: /\bmapbox-gl-csp-worker.js\b/i,
+      use: { loader: "worker-loader" },
+    })
+
+    return config;
+  },
   module: {
     rules: [
       {
@@ -40,11 +39,6 @@ const nextConfig = {
       },
     ],
   },
-  // webpack: (config, options) => {
-  //   console.log(config.module.rules)
-
-  //   return config;
-  // }
 };
 
 module.exports = withImages(nextConfig);

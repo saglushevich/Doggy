@@ -1,7 +1,7 @@
-import { INITIAL_STATE } from "@constants";
+import { PAYMENT } from "@constants";
 
-export interface IReducer {
+export interface IPayment {
   onInputChange: (field: string) => React.ChangeEventHandler<HTMLInputElement>;
   onSetCalendarDate?: (value: string) => void;
-  values?: typeof INITIAL_STATE;
+  values?: typeof PAYMENT;
 }

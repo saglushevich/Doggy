@@ -2,7 +2,7 @@ export * from "./apiKeys";
 export * from "./days";
 export * from "./mapLink";
 export * from "./months";
-export * from "./reducerState";
+export * from "./payment";
 export * from "./routes";
 export * from "./serverLink";
 export * from "./themes";

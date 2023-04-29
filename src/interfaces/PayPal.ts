@@ -1,6 +1,6 @@
-import { INITIAL_STATE } from "@constants";
+import { PAYMENT } from "@constants";
 
 export interface IPayPal {
-  appointment: typeof INITIAL_STATE;
+  appointment: typeof PAYMENT;
   onChangePaymentMessage: (message: string) => void;
 }

@@ -18,6 +18,7 @@ import {
 
 function Blog() {
   const { t } = useTranslation();
+
   return (
     <Wrapper>
       <Container>

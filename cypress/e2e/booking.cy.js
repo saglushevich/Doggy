@@ -4,8 +4,8 @@ describe("booking", () => {
     });
 
     it("emptry inputs", () => {
-        cy.get("button").contains("Book Appointment").click().should("be.disabled");
-        // cy.get("button").contains("Book Appointment")
+        cy.get("button").contains("Book Appointment").click();
+        cy.get("div").contains("Name is required").should("exist");
     });
 
     it("make booking", () => {

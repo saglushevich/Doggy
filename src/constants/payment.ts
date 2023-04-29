@@ -1,4 +1,4 @@
-export const INITIAL_STATE = {
+export const PAYMENT = {
   name: "",
   surname: "",
   phone: "",
@@ -8,6 +8,6 @@ export const INITIAL_STATE = {
   cardCVV: "",
   cardExpiry: "",
   cardHolder: "",
-  time: "",
+  time: "11am - 12pm",
   date: "",
 };

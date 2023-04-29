@@ -85,5 +85,7 @@
   "loading": "Loading...",
   "not found": "Not found! Try again!",
   "went wrong": "Something went wrong! Try again!",
-  "we will contact": "We will contact you!"
+  "we will contact": "We will contact you!",
+  "success message": "Success! Thank you! We will contact you as soon as possibly!",
+  "error message": "Something went wrong! Do not worry. Try again later!"
 }

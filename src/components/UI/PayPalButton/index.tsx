@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import { IPayPal } from "@interfaces";
 import {
@@ -10,7 +11,9 @@ import {
 import { ButtonsWrapper } from "./styles";
 
 function PayPalButton({ onChangePaymentMessage, appointment }: IPayPal) {
+  const { t } = useTranslation();
   const [{ options }, dispatch] = usePayPalScriptReducer();
+
   useEffect(() => {
     dispatch({
       type: "resetOptions",
@@ -34,15 +37,11 @@ function PayPalButton({ onChangePaymentMessage, appointment }: IPayPal) {
         ? actions.order
             .capture()
             .then(() => {
-              onChangePaymentMessage(
-                "Success! Thank you! We will contact you as soon as possibly!"
-              );
+              onChangePaymentMessage(t("success message"));
               localStorage.setItem("appointment", JSON.stringify(appointment));
             })
             .catch(() => {
-              onChangePaymentMessage(
-                "Something went wrong! Do not worry. Try again later!"
-              );
+              onChangePaymentMessage(t("error message"));
             })
         : Promise.resolve().then(() => {
             throw new Error("Error with Paypal API");

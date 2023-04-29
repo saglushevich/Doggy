@@ -25,7 +25,7 @@ function Catalog({ title, buttonText, products }: ICatalog) {
   });
 
   const onLoadCards = () => {
-    setCardsAmount((cardsAmount) => cardsAmount + 3);
+    setCardsAmount((prevCardsAmount) => prevCardsAmount + 3);
   };
 
   return (

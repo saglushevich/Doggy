@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import logo from "@assets/logo/logo.png";
 import MobileMenu from "@components/UI/MobileMenu";
 import { useLanguage } from "@hooks";
-import { Container } from "@layout";
 import { NAVIGATION } from "@mocks";
 
 import {
@@ -45,7 +44,6 @@ function Navigation() {
 
   return (
     <>
-      {/* <Container> */}
       <Wrapper>
         <Logotype src={logo} />
         <NavigationLinks>{navigation}</NavigationLinks>
@@ -59,7 +57,6 @@ function Navigation() {
           </Language>
         </Languages>
       </Wrapper>
-      {/* </Container> */}
       <MobileMenu menuStatus={menuStatus} onChangeLang={onChangeLang} />
     </>
   );

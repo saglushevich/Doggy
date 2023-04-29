@@ -4,7 +4,8 @@ describe("contacts", () => {
     });
 
     it("emptry inputs", () => {
-        cy.get("button").contains("Submit").click().should("be.disabled")
+        cy.get("button").contains("Submit").click();
+        cy.get("div").contains("Name is required").should("exist");
     });
 
     it("send contact data", () => {

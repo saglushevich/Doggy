@@ -6,9 +6,9 @@ import Calendar from "@components/Calendar";
 import Modal from "@components/Modal";
 import Location from "@components/UI/Location";
 import Payment from "@components/UI/Payment";
-import { CLIENT_INFO, INITIAL_STATE } from "@constants";
+import { CLIENT_INFO, PAYMENT } from "@constants";
 import { Container } from "@layout";
-import { reducer } from "@utils";
+import { paymentReducer } from "@utils";
 
 import {
   Button,
@@ -25,7 +25,7 @@ import {
 } from "./styles";
 
 function Booking() {
-  const [appointment, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const [appointment, dispatch] = useReducer(paymentReducer, PAYMENT);
 
   const [modalStatus, setModalStatus] = useState(false);
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ function Booking() {
   };
 
   const formik = useFormik({
-    initialValues: INITIAL_STATE,
+    initialValues: PAYMENT,
     validationSchema: CLIENT_INFO,
     onSubmit: () => {
       toggleModalStatus();
@@ -47,7 +47,6 @@ function Booking() {
   const {
     values: { name, surname, phone, email },
     handleChange,
-    errors,
   } = formik;
 
   const onInputChange =
@@ -128,9 +127,7 @@ function Booking() {
                 />
                 <Payment onInputChange={onInputChange} values={formik.values} />
                 <Cancelling>{t("cancelling")}</Cancelling>
-                <Button disabled={!!Object.keys(errors).length} type="submit">
-                  {t("book appointment")}
-                </Button>
+                <Button type="submit">{t("book appointment")}</Button>
               </Forms>
             </Form>
           </FormikProvider>

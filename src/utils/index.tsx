@@ -1,2 +1,2 @@
 export * from "./getCalendar";
-export * from "./reducer";
+export * from "./paymentReducer";
