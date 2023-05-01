@@ -35,7 +35,7 @@ function Payment({ onInputChange, values }: IPayment) {
         placeholder={t("card number") as string}
       />
       <ErrorMessage name="cardNumber">
-        {(msg) => <Message>{msg}</Message>}
+        {(msg) => <Message>{t(msg)}</Message>}
       </ErrorMessage>
       <PaymentInputs>
         <InputWrapper>
@@ -46,7 +46,7 @@ function Payment({ onInputChange, values }: IPayment) {
             placeholder={t("expiry") as string}
           />
           <ErrorMessage name="cardExpiry">
-            {(msg) => <Message>{msg}</Message>}
+            {(msg) => <Message>{t(msg)}</Message>}
           </ErrorMessage>
         </InputWrapper>
         <InputWrapper>
@@ -58,7 +58,7 @@ function Payment({ onInputChange, values }: IPayment) {
             placeholder="CVV"
           />
           <ErrorMessage name="cardCVV">
-            {(msg) => <Message>{msg}</Message>}
+            {(msg) => <Message>{t(msg)}</Message>}
           </ErrorMessage>
         </InputWrapper>
       </PaymentInputs>
@@ -71,7 +71,7 @@ function Payment({ onInputChange, values }: IPayment) {
           placeholder={t("name on card") as string}
         />
         <ErrorMessage name="cardHolder">
-          {(msg) => <Message>{msg}</Message>}
+          {(msg) => <Message>{t(msg)}</Message>}
         </ErrorMessage>
       </InputWrapper>
       <PaymentMethods>{paymentsMethods}</PaymentMethods>
