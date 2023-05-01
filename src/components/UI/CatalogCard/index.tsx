@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 import { ICatalogCard } from "@interfaces";
 
 import {
   Category,
-  Image,
+  ImageContainer,
   ImageWrapper,
   Info,
   Price,
@@ -14,7 +16,9 @@ function CatalogCard({ image, title, category, price }: ICatalogCard) {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image src={image} />
+        <ImageContainer>
+          <Image src={image} alt={`${title} image`} fill quality={100} />
+        </ImageContainer>
       </ImageWrapper>
       <Info>
         <Title>{title}</Title>

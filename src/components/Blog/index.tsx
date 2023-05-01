@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 import dog1 from "@assets/images/blog1.webp";
@@ -9,7 +10,7 @@ import {
   Article,
   ArticleBlock,
   ArticleTitle,
-  Image,
+  ImageContainer,
   ImageWrapper,
   Paragraph,
   ParagraphEnd,
@@ -27,7 +28,9 @@ function Blog() {
           <ArticleTitle>{t("article title")}</ArticleTitle>
           <ArticleBlock>
             <ImageWrapper>
-              <Image src={dog1} />
+              <ImageContainer>
+                <Image src={dog1} alt="playing dog" fill />
+              </ImageContainer>
             </ImageWrapper>
             <Paragraph>{t("paragraph1")}</Paragraph>
           </ArticleBlock>
@@ -37,7 +40,9 @@ function Blog() {
               <ParagraphEnd>{t("love you")}</ParagraphEnd>
             </Paragraph>
             <ImageWrapper>
-              <Image src={dog2} />
+              <ImageContainer>
+                <Image src={dog2} alt="dog in feathers" fill />
+              </ImageContainer>
             </ImageWrapper>
           </ArticleBlock>
         </Article>

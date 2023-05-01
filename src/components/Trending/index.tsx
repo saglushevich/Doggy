@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactNode } from "react";
 
 import dog from "@assets/images/trending_dog.webp";
@@ -6,7 +7,7 @@ import { SectionTitle } from "@styles";
 
 import {
   Content,
-  Image,
+  ImageContainer,
   ImageWrapper,
   PackageButton,
   PackageDescription,
@@ -23,7 +24,9 @@ function Trending({ children }: { children: ReactNode }) {
         <SectionTitle>Trending Spa Package</SectionTitle>
         <Content>
           <ImageWrapper>
-            <Image src={dog} />
+            <ImageContainer>
+              <Image src={dog} alt="smiling red dog" fill />
+            </ImageContainer>
           </ImageWrapper>
           <PackageInfo>
             <PackageName>Doggy Facial and Fur Cleanse Treatment</PackageName>

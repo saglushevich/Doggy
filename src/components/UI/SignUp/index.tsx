@@ -1,4 +1,5 @@
 import { ErrorMessage, Form, FormikProvider } from "formik";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 import signUpDog from "@assets/images/singUp_dog.webp";
@@ -8,7 +9,7 @@ import { useContact } from "@hooks";
 import {
   Content,
   FormMessage,
-  Image,
+  ImageContainer,
   ImageWrapper,
   InnerWrapper,
   SignButton,
@@ -56,7 +57,14 @@ function SignUp() {
           <SignText>{t("completing rules")}</SignText>
         </Content>
         <ImageWrapper>
-          <Image src={signUpDog} />
+          <ImageContainer>
+            <Image
+              src={signUpDog}
+              alt="dog and cat on the grass"
+              fill
+              quality={100}
+            />
+          </ImageContainer>
         </ImageWrapper>
       </InnerWrapper>
     </Wrapper>

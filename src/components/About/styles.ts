@@ -48,10 +48,10 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const ImageContainer = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 `;
 
 export const Paragraph = styled.p`

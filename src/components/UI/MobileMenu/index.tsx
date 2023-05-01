@@ -1,10 +1,12 @@
+import { useLanguage } from "@hooks";
 import { IMobileMenu } from "@interfaces";
 import { NAVIGATION } from "@mocks";
 
 import { Language, Languages, Menu, MenuItem } from "./styles";
 
 function MobileMenu({ menuStatus, onChangeLang }: IMobileMenu) {
-  const navigation = NAVIGATION.ru.map((nav) => {
+  const lang = useLanguage();
+  const navigation = NAVIGATION[lang].map((nav) => {
     const { id, title, link } = nav;
 
     return (
