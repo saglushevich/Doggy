@@ -1,14 +1,17 @@
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 import Contacts from "@components/Contacts";
 import ContactsForm from "@components/ContactsForm";
 import { PageContainer } from "@layout";
 
 function ContactsPage() {
+  const { t } = useTranslation();
+
   return (
     <PageContainer>
       <Head>
-        <title>Our contacts</title>
+        <title>{t("contact us")}</title>
       </Head>
       <Contacts />
       <ContactsForm />

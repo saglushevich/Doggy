@@ -1,6 +1,6 @@
 {
-  "header": "Ваша собака бесится в грязи?",
-  "book": "Забронируйте спа-день для собак!",
+  "header": "Собака обожает бегать по грязи?",
+  "book": "Забронируйте ей спа-день!",
   "book appointment": "Записаться на прием",
   "discount": "Получите скидку 20% при бронировании спа-дня для вашего животного сегодня!",
   "sign up": "Подпишитесь на новости",
@@ -87,5 +87,28 @@
   "went wrong": "Что-то пошло не так! Попробуйте снова!",
   "we will contact": "Мы свяжемся с вами!",
   "success message": "Успешно! Спасибо! Мы свяжемся с вами как можно скорее!",
-  "error message": "Что-то пошло не так! Не волнуйтесь. Попробуйте позже!"
+  "error message": "Что-то пошло не так! Не волнуйтесь. Попробуйте позже!",
+  "page not found": "Страница которую вы ищете не найдена.",
+  "go start page": "На стартовую",
+  "dog information": "Информация о собаках",
+
+  "Enter a valid email": "Адрес неверный",
+  "Email is required": "Почта обязательна!",
+  "Minimum 2 characters!": "Минимум 2 символа!",
+  "Maximum 30 characters!": "Максимум 30 символов!",
+  "Name is required": "Имя обязательно",
+  "Last name is required": "Фамилия обязательна",
+  "Phone number is not valid": "Номер неправильный",
+  "Phone is required": "Номер телефона обязателен",
+  "Minimum 20 characters!": "Минимум 20 символа!",
+  "Maximum 200 characters!": "Максимум 200 символов!",
+  "Message is required": "Оставьте сообщение",
+  "Enter 16 characters": "Введите 16 чисел",
+  "Card number is required": "Номер карты обязателен",
+  "Not a valid expiration date": "Неправильный ввод. Пример: MM/YY",
+  "Card dates are required": "Срок годности обязателен",
+  "Enter 3 CVV characters": "Введите 3 символа",
+  "Card CVV is required": "CVV обязателен",
+  "Minimum 5 characters": "Минимум 5 символов",
+  "Card holder name is required": "Имя на карте обязательно"
 }

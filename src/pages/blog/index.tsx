@@ -1,13 +1,16 @@
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 import Blog from "@components/Blog";
 import { PageContainer } from "@layout";
 
 function BlogPage() {
+  const { t } = useTranslation();
+
   return (
     <PageContainer>
       <Head>
-        <title>Blog</title>
+        <title>{t("blog")}</title>
       </Head>
       <Blog />
     </PageContainer>

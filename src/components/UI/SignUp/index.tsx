@@ -47,7 +47,7 @@ function SignUp() {
             </Form>
 
             <ErrorMessage name="email">
-              {(msg) => <FormMessage>{msg}</FormMessage>}
+              {(msg) => <FormMessage>{t(msg)}</FormMessage>}
             </ErrorMessage>
 
             <FormMessage>{message}</FormMessage>

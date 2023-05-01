@@ -20,7 +20,7 @@ export const CONTACT_SCHEMA = yup.object().shape({
   surname: yup
     .string()
     .min(2, "Minimum 2 characters!")
-    .max(30, "Maximum 35 characters!")
+    .max(30, "Maximum 30 characters!")
     .required("Last name is required"),
   email: yup
     .string()
@@ -46,13 +46,13 @@ export const CLIENT_INFO = yup.object().shape({
   surname: yup
     .string()
     .min(2, "Minimum 2 characters!")
-    .max(30, "Maximum 35 characters!")
+    .max(30, "Maximum 30 characters!")
     .required("Last name is required"),
   email: yup
     .string()
     .email("Enter a valid email")
     .required("Email is required"),
-  request: yup.string().max(40, "Enter 16 characters"),
+  request: yup.string().max(200, "Maximum 200 characters!"),
   phone: yup
     .string()
     .matches(phoneRegExp, "Phone number is not valid")
@@ -64,10 +64,7 @@ export const CLIENT_INFO = yup.object().shape({
     .required("Card number is required"),
   cardExpiry: yup
     .string()
-    .matches(
-      /([0-9]{2})\/([0-9]{2})/,
-      "Not a valid expiration date. Example: MM/YY"
-    )
+    .matches(/([0-9]{2})\/([0-9]{2})/, "Not a valid expiration date")
     .required("Card dates are required"),
   cardCVV: yup
     .string()
@@ -77,6 +74,6 @@ export const CLIENT_INFO = yup.object().shape({
   cardHolder: yup
     .string()
     .min(5, "Minimum 5 characters")
-    .max(30, "Maximum 30 characters")
+    .max(30, "Maximum 30 characters!")
     .required("Card holder name is required"),
 });

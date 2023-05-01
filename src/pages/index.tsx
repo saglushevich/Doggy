@@ -14,7 +14,7 @@ function Homepage() {
   return (
     <PageContainer>
       <Head>
-        <title>Homepage</title>
+        <title>{t("home")}</title>
       </Head>
       <Promo />
       <Trending>

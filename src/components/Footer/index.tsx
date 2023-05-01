@@ -65,7 +65,7 @@ function Footer() {
                   <Button disabled={disabled}>{t("submit")}</Button>
                 </FooterForm>
                 <ErrorMessage name="email">
-                  {(msg) => <FormMessage>{msg}</FormMessage>}
+                  {(msg) => <FormMessage>{t(msg)}</FormMessage>}
                 </ErrorMessage>
                 <FormMessage>{message}</FormMessage>
               </FormikProvider>

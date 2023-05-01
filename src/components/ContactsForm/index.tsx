@@ -42,7 +42,7 @@ function ContactsForm() {
                   type="text"
                 />
                 <ErrorMessage name="name">
-                  {(msg) => <FormMessage>{msg}</FormMessage>}
+                  {(msg) => <FormMessage>{t(msg)}</FormMessage>}
                 </ErrorMessage>
               </InputWrapper>
               <InputWrapper>
@@ -54,7 +54,7 @@ function ContactsForm() {
                   type="text"
                 />
                 <ErrorMessage name="surname">
-                  {(msg) => <FormMessage>{msg}</FormMessage>}
+                  {(msg) => <FormMessage>{t(msg)}</FormMessage>}
                 </ErrorMessage>
               </InputWrapper>
             </Inputs>
@@ -68,7 +68,7 @@ function ContactsForm() {
                   type="text"
                 />
                 <ErrorMessage name="email">
-                  {(msg) => <FormMessage>{msg}</FormMessage>}
+                  {(msg) => <FormMessage>{t(msg)}</FormMessage>}
                 </ErrorMessage>
               </InputWrapper>
               <InputWrapper>
@@ -80,7 +80,7 @@ function ContactsForm() {
                   type="number"
                 />
                 <ErrorMessage name="phone">
-                  {(msg) => <FormMessage>{msg}</FormMessage>}
+                  {(msg) => <FormMessage>{t(msg)}</FormMessage>}
                 </ErrorMessage>
               </InputWrapper>
             </Inputs>
@@ -91,7 +91,7 @@ function ContactsForm() {
               value={usermessage}
             />
             <ErrorMessage name="usermessage">
-              {(msg) => <FormMessage>{msg}</FormMessage>}
+              {(msg) => <FormMessage>{t(msg)}</FormMessage>}
             </ErrorMessage>
             <Button disabled={disabled} type="submit">
               {t("submit")}
