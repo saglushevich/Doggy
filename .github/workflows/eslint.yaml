@@ -18,8 +18,8 @@ jobs:
           node-version: latest
           cache: npm
       - name: install modules
-        run: npm install
+        run: yarn install
       - name: prettier test
-        run: npm run prettier
+        run: yarn run prettier
       - name: eslint code
-        run: npm run lint:fix
+        run: yarn run lint:fix

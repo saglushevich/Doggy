@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-import { useQuery } from "@apollo/client";
-import { GET_DOG } from "@apolloClient";
 import { Container } from "@components/layout";
+import { IDog } from "@types";
 
 import {
   Characteristic,
@@ -13,24 +12,8 @@ import {
   Wrapper,
 } from "./styles";
 
-function Dog({ breed }: { breed: string }) {
+function Dog({ dog }: { dog: IDog }) {
   const { t } = useTranslation();
-
-  const { data, loading, error } = useQuery(GET_DOG, {
-    variables: { breed },
-  });
-
-  if (loading) {
-    return <InfoText>{t("loading")}</InfoText>;
-  }
-
-  if (!data || !data.dog) {
-    return <InfoText>{t("not found")}</InfoText>;
-  }
-
-  if (error) {
-    return <InfoText>{t("went wrong")}</InfoText>;
-  }
 
   const {
     name,
@@ -39,7 +22,7 @@ function Dog({ breed }: { breed: string }) {
     good_with_strangers,
     good_with_other_dogs,
     max_life_expectancy,
-  } = data.dog;
+  } = dog;
 
   return (
     <Wrapper>

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  margin-top: 165px;
+  margin-top: ${({ theme }) => theme.gaps["13xl"]}px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    margin-top: 115px;
+    margin-top: ${({ theme }) => theme.gaps["12xl"]}px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     margin-top: ${({ theme }) => theme.gaps["4xl"]}px;
@@ -21,7 +21,7 @@ export const ImageWrapper = styled.div`
 
 export const Image = styled.img`
   display: block;
-  width: 730px;
+  width: ${({ theme }) => theme.sizes["7xl"]}px;
   height: ${({ theme }) => theme.sizes["4xl"]}px;
   object-fit: cover;
   margin: 0 auto;

@@ -1,4 +1,5 @@
+import { IDog } from "@types";
+
 export interface ISearch {
-  searchValue: string;
-  onChangeSearchValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  selectDog: (dog: IDog) => void;
 }

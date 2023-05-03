@@ -5,6 +5,7 @@ import { SectionInput } from "@styles";
 
 export const Wrapper = styled.div`
   padding-top: ${({ theme }) => theme.gaps["8xl"]}px;
+  padding-bottom: ${({ theme }) => theme.gaps["2xl"]}px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     padding-top: ${({ theme }) => theme.gaps["4xl"]}px;
   }
@@ -77,4 +78,23 @@ export const InputIcon = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     top: 25px;
   }
+`;
+
+export const SearchResult = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: ${({ theme }) => theme.sizes.m}%;
+  padding: ${({ theme }) => theme.gaps.l}px;
+  border: 2px solid ${({ theme }) => theme.colors.black};
+  bottom: -${({ theme }) => theme.positions.xl}px;
+  left: ${({ theme }) => theme.positions.xs}px;
+  border: 1px solid ${({ theme }) => theme.colors.lightGray};
+  border-radius: ${({ theme }) => theme.borderSizes.m}px;
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: ${({ theme }) => theme.fontWeights.l};
+  font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
+  color: ${({ theme }) => theme.colors.black};
+  cursor: pointer;
 `;

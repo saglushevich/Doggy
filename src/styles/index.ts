@@ -77,7 +77,7 @@ export const SectionInput = styled.input`
   width: ${({ theme }) => theme.sizes.xl}px;
   padding: ${({ theme }) => `${theme.gaps.l}px ${theme.gaps["2xl"]}px`};
   background: ${({ theme }) => theme.colors.white};
-  border: 1px solid #e0e0e0;
+  border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: ${({ theme }) => theme.borderSizes.m}px;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};

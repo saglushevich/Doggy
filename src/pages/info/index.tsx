@@ -1,18 +1,18 @@
 import Head from "next/head";
-import { useDeferredValue, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Dog from "@components/Dog";
 import DogSearch from "@components/DogSearch";
 import { PageContainer } from "@components/layout";
+import { IDog } from "@types";
 
 function InfoPage() {
   const { t } = useTranslation();
-  const [searchValue, setSearchValue] = useState("");
-  const defferedSearchValue = useDeferredValue(searchValue);
+  const [selectedDog, setSelectedDog] = useState<IDog>();
 
-  const onChangeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
+  const selectDog = (dog: IDog) => {
+    setSelectedDog(dog);
   };
 
   return (
@@ -20,11 +20,8 @@ function InfoPage() {
       <Head>
         <title>{t("dog information")}</title>
       </Head>
-      <DogSearch
-        searchValue={searchValue}
-        onChangeSearchValue={onChangeSearchValue}
-      />
-      {defferedSearchValue && <Dog breed={defferedSearchValue} />}
+      <DogSearch selectDog={selectDog} />
+      {selectedDog && <Dog dog={selectedDog} />}
     </PageContainer>
   );
 }

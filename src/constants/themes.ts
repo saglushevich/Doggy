@@ -66,6 +66,7 @@ export const THEMES = {
     s: 10,
     m: 40,
     l: 50,
+    xl: 80,
   },
   borderSizes: {
     s: 4,
@@ -78,6 +79,7 @@ export const THEMES = {
     primary: "#E89B93",
     secondary: "#DFB2A9",
     gray: "#959FA8",
+    lightGray: "#e0e0e0",
   },
   breakpoint: {
     mobileSmall: 340,

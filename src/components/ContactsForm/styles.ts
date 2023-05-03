@@ -48,7 +48,7 @@ export const TextArea = styled.textarea`
   line-height: ${({ theme }) => theme.lineHeights.xs}px;
   color: ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.white};
-  border: 1px solid #e0e0e0;
+  border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: ${({ theme }) => theme.borderSizes.m}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
@@ -64,7 +64,7 @@ export const FormMessage = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
   font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
-  color: #b78e80;
+  color: ${({ theme }) => theme.colors.secondary};
   text-align: center;
 `;
 
