@@ -2,26 +2,26 @@ export const TIMESLOTS = [
   {
     id: "time-1",
     value: "11am - 12pm",
-    checked: true,
+    disableTime: 11,
   },
   {
     id: "time-2",
     value: "12pm - 1pm",
-    checked: false,
+    disableTime: 12,
   },
   {
     id: "time-3",
     value: "1pm - 2pm",
-    checked: false,
+    disableTime: 13,
   },
   {
     id: "time-4",
     value: "3pm - 4pm",
-    checked: false,
+    disableTime: 15,
   },
   {
     id: "time-5",
     value: "4pm - 5pm",
-    checked: false,
+    disableTime: 16,
   },
 ];

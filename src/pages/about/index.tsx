@@ -2,7 +2,9 @@ import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
 import About from "@components/About";
-import { PageContainer } from "@layout";
+import { PageContainer } from "@components/layout";
+
+import { Title } from "./styles";
 
 function AboutPage() {
   const { t } = useTranslation();
@@ -10,7 +12,7 @@ function AboutPage() {
   return (
     <PageContainer>
       <Head>
-        <title>{t("about")}</title>
+        <Title>{t("about")}</Title>
       </Head>
       <About />
     </PageContainer>

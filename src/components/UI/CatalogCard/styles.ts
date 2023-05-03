@@ -4,62 +4,62 @@ export const Wrapper = styled.div`
   width: 435px;
   cursor: pointer;
   &:nth-child(n + 4) {
-    margin-top: ${({ theme }) => theme.gaps["9xl"]};
+    margin-top: ${({ theme }) => theme.gaps["9xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: 235px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    width: 100%;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
+    width: ${({ theme }) => theme.sizes.m}%;
     &:nth-child(n + 2) {
-      margin-top: ${({ theme }) => theme.gaps["4xl"]};
+      margin-top: ${({ theme }) => theme.gaps["4xl"]}px;
     }
   }
 `;
 
 export const ImageWrapper = styled.div`
-  width: 100%;
+  width: ${({ theme }) => theme.sizes.m}%;
   height: 445px;
   padding: 5px;
   background: ${({ theme }) => theme.colors.primary};
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     height: 325px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     height: 360px;
   }
 `;
 
 export const ImageContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: ${({ theme }) => theme.sizes.m}%;
+  height: ${({ theme }) => theme.sizes.m}%;
 `;
 
 export const Info = styled.div`
   margin-top: 55px;
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    margin-top: ${({ theme }) => theme.gaps["2xl"]};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin-top: ${({ theme }) => theme.gaps["2xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    margin-top: ${({ theme }) => theme.gaps.l};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
+    margin-top: ${({ theme }) => theme.gaps.l}px;
   }
 `;
 
 export const Title = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  line-height: ${({ theme }) => theme.lineHeights.s};
+  font-weight: ${({ theme }) => theme.fontWeights.l};
+  font-size: ${({ theme }) => theme.fontSizes.xl}px;
+  line-height: ${({ theme }) => theme.lineHeights.s}px;
   color: ${({ theme }) => theme.colors.black};
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes.l};
-    line-height: ${({ theme }) => theme.lineHeights.xs};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes.l}px;
+    line-height: ${({ theme }) => theme.lineHeights.xs}px;
   }
 `;
 
@@ -68,10 +68,10 @@ export const Category = styled(Title)`
 `;
 
 export const Price = styled(Title)`
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]};
-  line-height: ${({ theme }) => theme.lineHeights.s};
-  margin-top: ${({ theme }) => theme.gaps.m};
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    line-height: ${({ theme }) => theme.lineHeights.xs};
+  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.s}px;
+  margin-top: ${({ theme }) => theme.gaps.m}px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    line-height: ${({ theme }) => theme.lineHeights.xs}px;
   }
 `;

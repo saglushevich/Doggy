@@ -1,14 +1,20 @@
 import { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 import Footer from "@components/Footer";
-import Discount from "@components/UI/Discount";
 import Navigation from "@components/UI/Navigation";
 
+import { Discount, Text } from "./styles";
+
 export function PageContainer({ children }: { children: ReactNode }) {
+  const { t } = useTranslation();
+
   return (
     <>
       <Navigation />
-      <Discount />
+      <Discount>
+        <Text>{t("discount")}</Text>
+      </Discount>
       {children}
       <Footer />
     </>

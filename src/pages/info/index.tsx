@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import Dog from "@components/Dog";
 import DogSearch from "@components/DogSearch";
-import { PageContainer } from "@layout";
+import { PageContainer } from "@components/layout";
 
 function InfoPage() {
   const { t } = useTranslation();

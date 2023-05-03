@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
-import AppointmentBanner from "@components/AppointmentBanner";
 import Booking from "@components/Booking";
-import { PageContainer } from "@layout";
+import { Container, PageContainer } from "@components/layout";
+
+import { Title, Wrapper } from "./styles";
 
 function AppointmentPage() {
   const { t } = useTranslation();
@@ -13,7 +14,11 @@ function AppointmentPage() {
       <Head>
         <title>{t("book appointment")}</title>
       </Head>
-      <AppointmentBanner />
+      <Wrapper>
+        <Container>
+          <Title>{t("book visit")}</Title>
+        </Container>
+      </Wrapper>
       <Booking />
     </PageContainer>
   );

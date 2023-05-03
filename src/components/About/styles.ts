@@ -1,83 +1,84 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: ${({ theme }) => `${theme.gaps["9xl"]} 0 ${theme.gaps["6xl"]}`};
+  padding: ${({ theme }) => `${theme.gaps["9xl"]}px 0 ${theme.gaps["6xl"]}px`};
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    padding: ${({ theme }) => `${theme.gaps["3xl"]} 0 0`};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    padding: ${({ theme }) => `${theme.gaps["3xl"]}px 0 0`};
   }
 `;
 
 export const Article = styled.article`
   padding: 0 130px;
-  margin-top: 130px;
+  padding: ${({ theme }) => `0 ${theme.gaps["13xl"]}px`};
+  margin-top: ${({ theme }) => theme.gaps["13xl"]}px;
 
-  @media (max-width: ${({ theme }) => theme.media.laptop}) {
-    padding: 0 100px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    padding: 0 ${({ theme }) => theme.gaps["11xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    padding: ${({ theme }) => `0 ${theme.gaps["5xl"]}`};
-    margin-top: ${({ theme }) => theme.gaps["7xl"]};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    padding: ${({ theme }) => `0 ${theme.gaps["5xl"]}px`};
+    margin-top: ${({ theme }) => theme.gaps["7xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     padding: 0;
-    margin-top: ${({ theme }) => theme.gaps["2xl"]};
+    margin-top: ${({ theme }) => theme.gaps["2xl"]}px;
   }
 `;
 
 export const ImageWrapper = styled.div`
   width: 490px;
-  height: 480px;
-  padding: ${({ theme }) => theme.gaps.xs};
+  height: ${({ theme }) => theme.sizes["4xl"]}px;
+  padding: ${({ theme }) => theme.gaps.xs}px;
   background: ${({ theme }) => theme.colors.secondary};
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    width: 100%;
-    height: 450px;
-    margin: ${({ theme }) => `${theme.gaps.xl} 0`};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    width: ${({ theme }) => theme.sizes.m}%;
+    height: ${({ theme }) => theme.sizes["3xl"]}px;
+    margin: ${({ theme }) => `${theme.gaps.xl}px 0`};
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    height: 400px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
+    height: ${({ theme }) => theme.sizes["2xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    height: 340px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    height: ${({ theme }) => theme.sizes.xl}px;
   }
 `;
 
 export const ImageContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: ${({ theme }) => theme.sizes.m}%;
+  height: ${({ theme }) => theme.sizes.m}%;
 `;
 
 export const Paragraph = styled.p`
-  width: 590px;
+  width: ${({ theme }) => theme.sizes["6xl"]}px;
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 500;
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]};
-  line-height: ${({ theme }) => theme.lineHeights.m};
+  font-weight: ${({ theme }) => theme.fontWeights.m};
+  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.m}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
   &:nth-last-child(n + 2) {
-    margin-bottom: ${({ theme }) => theme.gaps["6xl"]};
+    margin-bottom: ${({ theme }) => theme.gaps["6xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    width: 100%;
-    padding: 0 ${({ theme }) => theme.gaps["2xl"]};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    width: ${({ theme }) => theme.sizes.m}%;
+    padding: 0 ${({ theme }) => theme.gaps["2xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    font-size: ${({ theme }) => theme.fontSizes["2xl"]};
-    line-height: ${({ theme }) => theme.lineHeights.l};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
+    font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
+    line-height: ${({ theme }) => theme.lineHeights.l}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    font-size: ${({ theme }) => theme.fontSizes.xl};
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSizes.xl}px;
   }
 `;
 
@@ -89,10 +90,10 @@ export const ArticleBlock = styled.div`
     margin-bottom: 160px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: block;
     &:nth-last-child(n + 2) {
-      margin-bottom: ${({ theme }) => theme.gaps["5xl"]};
+      margin-bottom: ${({ theme }) => theme.gaps["5xl"]}px;
     }
   }
 `;

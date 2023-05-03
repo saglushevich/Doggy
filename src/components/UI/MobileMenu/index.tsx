@@ -1,10 +1,14 @@
 import { useLanguage } from "@hooks";
-import { IMobileMenu } from "@interfaces";
 import { NAVIGATION } from "@mocks";
 
 import { Language, Languages, Menu, MenuItem } from "./styles";
+import { IMobileMenu } from "./types";
 
-function MobileMenu({ menuStatus, onChangeLang }: IMobileMenu) {
+function MobileMenu({
+  menuStatus,
+  onChangeLang,
+  toggleMobileMenu,
+}: IMobileMenu) {
   const lang = useLanguage();
   const navigation = NAVIGATION[lang].map((nav) => {
     const { id, title, link } = nav;
@@ -17,7 +21,7 @@ function MobileMenu({ menuStatus, onChangeLang }: IMobileMenu) {
   });
 
   return (
-    <Menu active={menuStatus}>
+    <Menu active={menuStatus} onClick={toggleMobileMenu}>
       {navigation}
       <Languages>
         <Language onClick={onChangeLang("en")}>ENGLISH</Language>

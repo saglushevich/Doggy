@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import arrow from "@assets/icons/arrow.svg";
 import { DAYS, MONTHS, MONTHS_SHORT } from "@constants";
 import { useCalendar } from "@hooks";
-import { IPayment } from "@interfaces";
 import { TIMESLOTS } from "@mocks";
+import { IPayment } from "@types";
 import { getCalendar } from "@utils";
 
 import {
@@ -44,15 +44,16 @@ function Calendar({ onInputChange, onSetCalendarDate }: IPayment) {
     }
   }, [selectedDate, selectedMonth, selectedYear]);
 
-  const days = DAYS.map((day, i) => (
-    <Day day key={i}>
+  const days = DAYS.map((day, index) => (
+    <Day day key={index}>
       {day}
     </Day>
   ));
 
-  const dates = calendar.map((row, i) => {
+  const dates = calendar.map((row, index) => {
     return row.map((date, j) => {
-      const anotherMonth = (i === 0 && date > 7) || (i === 4 && date < 8);
+      const anotherMonth =
+        (index === 0 && date > 7) || (index === 4 && date < 8);
       return (
         <Day
           onClick={onSelectDate(date, anotherMonth)}
@@ -66,19 +67,35 @@ function Calendar({ onInputChange, onSetCalendarDate }: IPayment) {
     });
   });
 
-  const timeslots = TIMESLOTS.map(({ id, value, checked }) => (
-    <Time key={id}>
-      <Checkbox
-        onChange={onInputChange("SET_TIME")}
-        type="radio"
-        id={id}
-        defaultChecked={checked}
-        name="time"
-        value={value}
-      />
-      <Label htmlFor={id}>{value}</Label>
-    </Time>
-  ));
+  const compareTimes = (disableTime: number) => {
+    const date = new Date();
+
+    return (
+      disableTime <= date.getHours() &&
+      selectedMonth === date.getMonth() &&
+      selectedYear === date.getFullYear() &&
+      selectedDate === date.getDate()
+    );
+  };
+
+  const timeslots = TIMESLOTS.map(({ id, value, disableTime }) => {
+    const disabled = compareTimes(disableTime);
+
+    return (
+      <Time key={id}>
+        <Checkbox
+          onChange={onInputChange("SET_TIME")}
+          type="radio"
+          id={id}
+          defaultChecked={disableTime > new Date().getDate()}
+          name="time"
+          value={value}
+          disabled={disabled}
+        />
+        <Label htmlFor={id}>{value}</Label>
+      </Time>
+    );
+  });
 
   return (
     <Visit>

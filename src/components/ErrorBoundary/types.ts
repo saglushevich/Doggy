@@ -6,4 +6,5 @@ export interface IErrorProps {
 export interface IErrorState {
   hasError: boolean;
   error?: null | string;
+  errorInfo?: null | string;
 }

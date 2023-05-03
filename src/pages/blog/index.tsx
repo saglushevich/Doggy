@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
 import Blog from "@components/Blog";
-import { PageContainer } from "@layout";
+import { PageContainer } from "@components/layout";
 
 function BlogPage() {
   const { t } = useTranslation();

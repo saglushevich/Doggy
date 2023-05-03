@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { ICatalogCard } from "@interfaces";
+import { ICatalogCard } from "@types";
 
 import {
   Category,

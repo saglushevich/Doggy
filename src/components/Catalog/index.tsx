@@ -1,11 +1,11 @@
 import { useState } from "react";
 
+import { Container } from "@components/layout";
 import CatalogCard from "@components/UI/CatalogCard";
-import { ICatalog } from "@interfaces";
-import { Container } from "@layout";
 import { SectionTitle } from "@styles";
 
 import { Button, Cards, Wrapper } from "./styles";
+import { ICatalog } from "./types";
 
 function Catalog({ title, buttonText, products }: ICatalog) {
   const [cardsAmount, setCardsAmount] = useState(3);

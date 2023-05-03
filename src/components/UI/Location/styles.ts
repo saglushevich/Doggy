@@ -3,58 +3,60 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   width: 495px;
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    padding-top: 90px;
-    width: 100%;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    padding-top: ${({ theme }) => theme.gaps["10xl"]}px;
+    width: ${({ theme }) => theme.sizes.m}%;
   }
 `;
 
 export const MapWrapper = styled.div`
-  width: 100%;
+  width: ${({ theme }) => theme.sizes.m}%;
   height: 500px;
-  padding: ${({ theme }) => theme.gaps.xs};
+  padding: ${({ theme }) => theme.gaps.xs}px;
   background: ${({ theme }) => theme.colors.secondary};
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     height: 420px;
   }
 `;
 
 export const Map = styled.div`
-  width: 100%;
-  height: 100%;
+  width: ${({ theme }) => theme.sizes.m}%;
+  height: ${({ theme }) => theme.sizes.m}%;
 `;
 
 export const Info = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: ${({ theme }) => theme.gaps["4xl"]};
-  width: 100%;
-  padding-right: ${({ theme }) => theme.gaps["3xl"]};
+  margin-top: ${({ theme }) => theme.gaps["4xl"]}px;
+  width: ${({ theme }) => theme.sizes.m}%;
+  padding-right: ${({ theme }) => theme.gaps["3xl"]}px;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     display: block;
   }
 `;
 
 export const InfoBlock = styled.div`
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     &:nth-last-child(n + 2) {
-      margin-bottom: ${({ theme }) => theme.gaps["2xl"]};
+      margin-bottom: ${({ theme }) => theme.gaps["2xl"]}px;
     }
   }
 `;
 
 export const Title = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  line-height: ${({ theme }) => theme.lineHeights.s};
-  color: #000000;
+  font-weight: ${({ theme }) => theme.fontWeights.l};
+  font-size: ${({ theme }) => theme.fontSizes.xl}px;
+  line-height: ${({ theme }) => theme.lineHeights.s}px;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
-export const Text = styled(Title)`
-  font-weight: 400;
+export const Operation = styled(Title)`
+  font-weight: ${({ theme }) => theme.fontWeights.s};
 `;
+
+export const OperationWrapper = styled.div``;
 
 export const Br = styled.br``;

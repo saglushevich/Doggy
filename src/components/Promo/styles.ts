@@ -6,47 +6,47 @@ import { SectionButton } from "@styles";
 export const Wrapper = styled.div`
   background: url(${dog}) center center / cover no-repeat;
   padding-bottom: 140px;
-  width: 100%;
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    padding-bottom: 90px;
+  width: ${({ theme }) => theme.sizes.m}%;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    padding-bottom: ${({ theme }) => theme.gaps["10xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    padding-bottom: ${({ theme }) => theme.gaps["7xl"]};
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    padding-bottom: ${({ theme }) => theme.gaps["7xl"]}px;
   }
 `;
 
 export const Content = styled.div`
-  padding-top: 130px;
-  padding-left: ${({ theme }) => theme.gaps["7xl"]};
+  padding-top: ${({ theme }) => theme.gaps["13xl"]}px;
+  padding-left: ${({ theme }) => theme.gaps["7xl"]}px;
   width: 580px;
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    padding-top: 120px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    padding-top: ${({ theme }) => theme.gaps["12xl"]}px;
     padding-left: 0;
     width: 370px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    padding-top: ${({ theme }) => theme.gaps["8xl"]};
-    width: 100%;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    padding-top: ${({ theme }) => theme.gaps["8xl"]}px;
+    width: ${({ theme }) => theme.sizes.m}%;
   }
 `;
 
 export const Title = styled.h1`
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes["6xl"]};
-  line-height: ${({ theme }) => theme.lineHeights["2xl"]};
+  font-weight: ${({ theme }) => theme.fontWeights.l};
+  font-size: ${({ theme }) => theme.fontSizes["6xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["2xl"]}px;
   color: ${({ theme }) => theme.colors.black};
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 64px;
     text-align: center;
     line-height: 64px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     color: ${({ theme }) => theme.colors.white};
     text-shadow: #000 0 0 2px;
   }
@@ -56,29 +56,29 @@ export const Subtitle = styled.h2`
   max-width: 430px;
   font-family: ${({ theme }) => theme.fonts.primary};
   text-align: center;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeights.l};
   font-size: 63px;
   line-height: 76px;
   color: ${({ theme }) => theme.colors.black};
-  margin-top: ${({ theme }) => theme.gaps["5xl"]};
+  margin-top: ${({ theme }) => theme.gaps["5xl"]}px;
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes["5xl"]};
-    line-height: ${({ theme }) => theme.lineHeights.xl};
-    margin-top: ${({ theme }) => theme.gaps["4xl"]};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
+    line-height: ${({ theme }) => theme.lineHeights.xl}px;
+    margin-top: ${({ theme }) => theme.gaps["4xl"]}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     color: ${({ theme }) => theme.colors.white};
     text-shadow: #000 0 0 2px;
   }
 `;
 
 export const Button = styled(SectionButton)`
-  margin-top: 65px;
-  margin-left: 100px;
+  margin-top: ${({ theme }) => theme.gaps["7xl"]}px;
+  margin-left: ${({ theme }) => theme.gaps["11xl"]}px;
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    margin: ${({ theme }) => theme.gaps["4xl"]} auto 0;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: ${({ theme }) => theme.gaps["4xl"]}px auto 0;
   }
 `;

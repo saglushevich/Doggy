@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 import dog from "@assets/images/trending_dog.webp";
-import { Container } from "@layout";
+import { Container } from "@components/layout";
 import { SectionTitle } from "@styles";
 
 import {

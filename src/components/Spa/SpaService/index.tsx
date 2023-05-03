@@ -1,6 +1,5 @@
-import { ISpaService } from "@interfaces";
-
 import { Description, Price, Title, Wrapper } from "./styles";
+import { ISpaService } from "./types";
 
 function SpaService({ title, price, description }: ISpaService) {
   return (

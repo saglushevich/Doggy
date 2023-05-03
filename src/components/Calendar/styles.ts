@@ -1,14 +1,13 @@
-/* eslint-disable no-nested-ternary */
 import styled from "styled-components";
 
 import checkmark from "@assets/icons/checkmark.svg";
-import { IStyles } from "@interfaces";
+import { IStyles } from "@types";
 
 export const CalendarWrapper = styled.div`
   width: 320px;
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    width: 100%;
-    margin-bottom: ${({ theme }) => theme.gaps["5xl"]};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
+    width: ${({ theme }) => theme.sizes.m}%;
+    margin-bottom: ${({ theme }) => theme.gaps["5xl"]}px;
   }
 `;
 
@@ -16,28 +15,28 @@ export const Visit = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     display: block;
   }
 `;
 
 export const TimeSlots = styled.div`
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
-    margin-bottom: ${({ theme }) => theme.gaps["5xl"]};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
+    margin-bottom: ${({ theme }) => theme.gaps["5xl"]}px;
   }
 `;
 
 export const TimeTitle = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.xl};
+  font-weight: ${({ theme }) => theme.fontWeights.l};
+  font-size: ${({ theme }) => theme.fontSizes.xl}px;
   color: ${({ theme }) => theme.colors.black};
-  margin-bottom: ${({ theme }) => theme.gaps.xl};
+  margin-bottom: ${({ theme }) => theme.gaps.xl}px;
 `;
 
 export const Time = styled.div`
   &:nth-last-child(n + 2) {
-    margin-bottom: ${({ theme }) => theme.gaps.m};
+    margin-bottom: ${({ theme }) => theme.gaps.m}px;
   }
 `;
 
@@ -52,11 +51,11 @@ export const Checkbox = styled.input`
   & + label::before {
     content: "";
     display: block;
-    width: 25px;
-    height: 25px;
+    width: ${({ theme }) => theme.sizes.xs}px;
+    height: ${({ theme }) => theme.sizes.xs}px;
     border: 1px solid ${({ theme }) => theme.colors.black};
-    border-radius: ${({ theme }) => theme.borderSizes.s};
-    margin-right: ${({ theme }) => theme.gaps.l};
+    border-radius: ${({ theme }) => theme.borderSizes.s}px;
+    margin-right: ${({ theme }) => theme.gaps.l}px;
   }
   &:checked + label::before {
     border-color: ${({ theme }) => theme.colors.primary};
@@ -71,26 +70,26 @@ export const Label = styled.label`
   cursor: pointer;
   display: block;
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeights.l};
   font-size: 15px;
   line-height: 18px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05%;
   color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Days = styled.div`
-  margin-top: ${({ theme }) => theme.gaps["2xl"]};
+  margin-top: ${({ theme }) => theme.gaps["2xl"]}px;
   display: grid;
   grid-template-columns: repeat(7, 30px);
   grid-template-rows: repeat(6, 30px);
-  column-gap: ${({ theme }) => theme.gaps.l};
-  row-gap: ${({ theme }) => theme.gaps.s};
+  column-gap: ${({ theme }) => theme.gaps.l}px;
+  row-gap: ${({ theme }) => theme.gaps.s}px;
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     justify-content: center;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobileSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileSmall}px) {
     grid-template-columns: repeat(7, 20px);
     grid-template-rows: repeat(6, 20px);
   }
@@ -106,16 +105,16 @@ export const Day = styled.div<IStyles>`
   align-items: center;
   justify-content: center;
   font-family: "Poppins";
-  font-weight: 500;
-  font-size: ${({ theme }) => theme.fontSizes.s};
+  font-weight: ${({ theme }) => theme.fontWeights.m};
+  font-size: ${({ theme }) => theme.fontSizes.s}px;
   color: ${({ theme, day, gray }) =>
     day ? theme.colors.primary : gray ? theme.colors.gray : theme.colors.black};
   cursor: pointer;
-  ${({ active, gray }) =>
+  ${({ active, gray, theme }) =>
     active &&
     !gray &&
     `
-      background: #e89b93;
+      background: ${theme.colors.primary};
       border-radius: 4px;
   `}
 `;
@@ -127,19 +126,19 @@ export const Control = styled.div`
 
 export const ControlText = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes.l};
+  font-weight: ${({ theme }) => theme.fontWeights.l};
+  font-size: ${({ theme }) => theme.fontSizes.l}px;
   line-height: 22px;
-  color: #2b2b2b;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Arrow = styled.img`
   cursor: pointer;
   &:nth-last-child(1) {
     transform: rotate(180deg);
-    margin-left: ${({ theme }) => theme.gaps.l};
+    margin-left: ${({ theme }) => theme.gaps.l}px;
   }
   &:nth-child(1) {
-    margin-right: ${({ theme }) => theme.gaps.l};
+    margin-right: ${({ theme }) => theme.gaps.l}px;
   }
 `;

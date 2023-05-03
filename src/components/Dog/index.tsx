@@ -1,9 +1,8 @@
-/* eslint-disable camelcase */
 import { useTranslation } from "react-i18next";
 
 import { useQuery } from "@apollo/client";
 import { GET_DOG } from "@apolloClient";
-import { Container } from "@layout";
+import { Container } from "@components/layout";
 
 import {
   Characteristic,

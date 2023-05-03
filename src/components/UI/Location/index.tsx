@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import { MAP_KEY, MAP_LINK } from "@constants";
-import { COORDINATES } from "@mocks";
+import { COORDINATES, SCHEDULE } from "@mocks";
 
 import {
   Br,
@@ -11,7 +11,8 @@ import {
   InfoBlock,
   Map,
   MapWrapper,
-  Text,
+  Operation,
+  OperationWrapper,
   Title,
   Wrapper,
 } from "./styles";
@@ -37,6 +38,13 @@ function Location() {
     return () => map.remove();
   }, []);
 
+  const schedule = SCHEDULE.map(({ id, day, time }) => (
+    <Operation key={id}>
+      {t(day)} - {t(time)}
+      <Br />
+    </Operation>
+  ));
+
   return (
     <Wrapper>
       <MapWrapper>
@@ -45,31 +53,16 @@ function Location() {
       <Info>
         <InfoBlock>
           <Title>{t("address")}</Title>
-          <Text>
-            Luxe Animal Spa <Br />
-            80 Smithe St <Br />
-            Vancouver, BC <Br />
+          <Operation>
+            {t("Luxe Animal Spa")} <Br />
+            {t("room")} <Br />
+            {t("region")} <Br />
             V6B 1M7 <Br />
-          </Text>
+          </Operation>
         </InfoBlock>
         <InfoBlock>
           <Title>{t("hours")}</Title>
-          <Text>
-            {t("sunday")} - {t("closed")}
-            <Br />
-            {t("monday")} 10 a.m.-5:30 p.m.
-            <Br />
-            {t("tuesday")} 10 a.m.-5:30 p.m.
-            <Br />
-            {t("wednesday")} 10 a.m.-5:30 p.m.
-            <Br />
-            {t("thursday")} 10 a.m.-5:30 p.m.
-            <Br />
-            {t("friday")} 10 a.m.-5:30 p.m.
-            <Br />
-            {t("saturday")} 10 a.m.-5:30 p.m.
-            <Br />
-          </Text>
+          <OperationWrapper>{schedule}</OperationWrapper>
         </InfoBlock>
       </Info>
     </Wrapper>

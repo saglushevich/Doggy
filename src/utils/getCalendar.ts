@@ -1,5 +1,3 @@
-/* eslint-disable no-plusplus */
-
 export const getCalendar = (month: number, year: number) => {
   const calendar = [];
   let calendarRow: number[] = [];

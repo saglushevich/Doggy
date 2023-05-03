@@ -1,16 +1,13 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import { IPayPal } from "@interfaces";
 import {
-  PayPalButtons,
   PayPalButtonsComponentProps,
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
+import { IPayPal } from "@types";
 
-import { ButtonsWrapper } from "./styles";
-
-function PayPalButton({ onChangePaymentMessage, appointment }: IPayPal) {
+export const usePayPal = ({ onChangePaymentMessage, appointment }: IPayPal) => {
   const { t } = useTranslation();
   const [{ options }, dispatch] = usePayPalScriptReducer();
 
@@ -47,11 +44,6 @@ function PayPalButton({ onChangePaymentMessage, appointment }: IPayPal) {
             throw new Error("Error with Paypal API");
           }),
   };
-  return (
-    <ButtonsWrapper>
-      <PayPalButtons {...payPalConfig} />
-    </ButtonsWrapper>
-  );
-}
 
-export default PayPalButton;
+  return payPalConfig;
+};

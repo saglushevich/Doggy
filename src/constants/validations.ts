@@ -1,8 +1,6 @@
-/* eslint-disable no-useless-escape */
 import * as yup from "yup";
 
-const phoneRegExp =
-  /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+const phoneRegExp = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
 
 export const SUBSCRIBE_SCHEMA = yup.object().shape({
   email: yup
@@ -59,8 +57,8 @@ export const CLIENT_INFO = yup.object().shape({
     .required("Phone is required"),
   cardNumber: yup
     .string()
-    .min(16, "Enter 16 characters")
-    .max(16, "Enter 16 characters")
+    .min(19, "Enter 16 characters")
+    .max(19, "Enter 16 characters")
     .required("Card number is required"),
   cardExpiry: yup
     .string()

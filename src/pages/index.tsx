@@ -2,12 +2,11 @@ import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
 import Catalog from "@components/Catalog";
+import { PageContainer } from "@components/layout";
 import Promo from "@components/Promo";
 import Trending from "@components/Trending";
 import SignUp from "@components/UI/SignUp";
 import { CARRY_ONS, COLLARS } from "@mocks";
-
-import { PageContainer } from "../layout/PageContainer";
 
 function Homepage() {
   const { t } = useTranslation();

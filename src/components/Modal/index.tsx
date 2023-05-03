@@ -1,96 +1,56 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import PayPalButton from "@components/UI/PayPalButton";
-import { PAYPAL_KEY } from "@constants";
-import { IModal } from "@interfaces";
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { MODAL_FIELDS } from "@constants";
+import { usePayPal } from "@hooks";
+import { PayPalButtons } from "@paypal/react-paypal-js";
 
 import {
+  ButtonsWrapper,
   ModalCloseBtn,
   ModalContent,
   ModalHighlighted,
-  ModalRequest,
   ModalText,
   ModalWrapper,
 } from "./styles";
+import { IModal } from "./types";
 
 function Modal({ toggleModalStatus, appointment }: IModal) {
   const [paymentMessage, setPaymentMessage] = useState("");
   const { t } = useTranslation();
 
-  const initialOptions = {
-    "client-id": PAYPAL_KEY as string,
-    components: "buttons",
-  };
-
   const onChangePaymentMessage = (message: string) => {
     setPaymentMessage(message);
   };
 
-  const {
-    name,
-    surname,
-    phone,
-    email,
-    request,
-    cardNumber,
-    cardExpiry,
-    cardHolder,
-    time,
-    date,
-  } = appointment;
+  const fields = MODAL_FIELDS.map(({ id, field }) => {
+    const appointmentField = appointment[field as keyof typeof appointment];
+
+    return (
+      <ModalText key={id}>
+        {t(field)}: <ModalHighlighted>{appointmentField}</ModalHighlighted>
+      </ModalText>
+    );
+  });
+
+  const payPalConfig = usePayPal({ onChangePaymentMessage, appointment });
 
   return (
-    <PayPalScriptProvider deferLoading options={initialOptions}>
-      <ModalWrapper onClick={toggleModalStatus}>
-        <ModalContent>
-          {paymentMessage ? (
-            <ModalText>{paymentMessage}</ModalText>
-          ) : (
-            <>
-              <ModalText>
-                {t("name")}: <ModalHighlighted>{name}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                {t("surname")}: <ModalHighlighted>{surname}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                Email: <ModalHighlighted>{email}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                {t("phone")}: <ModalHighlighted>{phone}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                {t("date")}: <ModalHighlighted>{date}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                {t("time")}: <ModalHighlighted>{time}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                {t("card number")}:{" "}
-                <ModalHighlighted>{cardNumber}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                {t("expiry")}: <ModalHighlighted>{cardExpiry}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                {t("name on card")}:{" "}
-                <ModalHighlighted>{cardHolder}</ModalHighlighted>
-              </ModalText>
-              <ModalText>
-                {t("requests")}: <ModalRequest>{request}</ModalRequest>
-              </ModalText>
-              <PayPalButton
-                appointment={appointment}
-                onChangePaymentMessage={onChangePaymentMessage}
-              />
-            </>
-          )}
-        </ModalContent>
-        <ModalCloseBtn onClick={toggleModalStatus}>&times;</ModalCloseBtn>
-      </ModalWrapper>
-    </PayPalScriptProvider>
+    <ModalWrapper onClick={toggleModalStatus}>
+      <ModalContent>
+        {paymentMessage ? (
+          <ModalText>{paymentMessage}</ModalText>
+        ) : (
+          <>
+            {fields}
+            <ButtonsWrapper>
+              <PayPalButtons {...payPalConfig} />
+            </ButtonsWrapper>
+          </>
+        )}
+      </ModalContent>
+      <ModalCloseBtn onClick={toggleModalStatus}>&times;</ModalCloseBtn>
+    </ModalWrapper>
   );
 }
 

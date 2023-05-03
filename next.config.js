@@ -6,6 +6,9 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
+  compiler: {
+    styledComponents: true
+  },
   webpack: (config, options) => {
     const { dir, defaultLoaders } = options;
     config.resolve.extensions.push('.ts', '.tsx');

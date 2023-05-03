@@ -4,9 +4,9 @@ import { SectionButton } from "@styles";
 
 export const Wrapper = styled.div`
   padding: ${({ theme }) =>
-    `${theme.gaps["6xl"]} 120px 0 ${theme.gaps["6xl"]}`};
+    `${theme.gaps["6xl"]}px ${theme.gaps["12xl"]}px 0 ${theme.gaps["6xl"]}px`};
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: none;
   }
 `;
@@ -18,24 +18,24 @@ export const Content = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  padding: ${({ theme }) => theme.gaps.s};
+  padding: ${({ theme }) => theme.gaps.s}px;
   width: 570px;
   height: 575px;
-  background: #dfb2a9;
+  background: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const ImageContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: ${({ theme }) => theme.sizes.m}%;
+  height: ${({ theme }) => theme.sizes.m}%;
 `;
 
 export const PackageName = styled.div`
-  width: 400px;
+  width: ${({ theme }) => theme.sizes["2xl"]}px;
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSizes["4xl"]};
-  line-height: ${({ theme }) => theme.lineHeights.xl};
+  font-weight: ${({ theme }) => theme.fontWeights.l};
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.xl}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 auto;
@@ -47,14 +47,14 @@ export const PackageInfo = styled.div`
 `;
 
 export const PackagePrice = styled(PackageName)`
-  color: #000;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const PackageDescription = styled(PackageName)`
   width: 600px;
-  font-size: ${({ theme }) => theme.fontSizes["2xl"]};
+  font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
   line-height: 27px;
-  margin-top: ${({ theme }) => theme.gaps["4xl"]};
+  margin-top: ${({ theme }) => theme.gaps["4xl"]}px;
 `;
 
 export const PackageButton = styled(SectionButton)`

@@ -44,9 +44,9 @@
   "enter information": "Введите информацию",
   "cancelling": "Обратите внимание, что отмена в течение 24 часов до запланированной встречи приведет к штрафу за отмену в размере 300$.",
   "payment info": "Введите платежную информацию",
-  "card number": "Номер карты",
-  "expiry": "Срок действия",
-  "name on card": "Имя на карте",
+  "cardNumber": "Номер карты",
+  "cardExpiry": "Срок действия",
+  "cardHolder": "Имя на карте",
   "address": "Наш адрес",
   "hours": "Время работы",
   "sunday": "Воскресенье",
@@ -62,7 +62,7 @@
   "dates": "Выберите дату",
   "date": "Дата",
   "special request": "Введите специальные пожелания...",
-  "requests": "Специальные пожелания",
+  "request": "Специальные пожелания",
   "name": "Имя",
   "surname": "Фамилия",
   "phone": "Номер телефона",
@@ -91,7 +91,7 @@
   "page not found": "Страница которую вы ищете не найдена.",
   "go start page": "На стартовую",
   "dog information": "Информация о собаках",
-
+  "email": "Почта",
   "Enter a valid email": "Адрес неверный",
   "Email is required": "Почта обязательна!",
   "Minimum 2 characters!": "Минимум 2 символа!",
@@ -110,5 +110,8 @@
   "Enter 3 CVV characters": "Введите 3 символа",
   "Card CVV is required": "CVV обязателен",
   "Minimum 5 characters": "Минимум 5 символов",
-  "Card holder name is required": "Имя на карте обязательно"
+  "Card holder name is required": "Имя на карте обязательно",
+  "Luxe Animal Spa": "Премиум спа-салон",
+  "room": "80 Смит Стрит",
+  "region": "Ванкувер, Британская Колумбия"
 }

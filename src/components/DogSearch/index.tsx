@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { ISearch } from "@interfaces";
-import { Container } from "@layout";
+import { Container } from "@components/layout";
 import { SectionHeader } from "@styles";
 
 import {
@@ -13,6 +12,7 @@ import {
   SelectionProduct,
   Wrapper,
 } from "./styles";
+import { ISearch } from "./types";
 
 function DogSearch({ searchValue, onChangeSearchValue }: ISearch) {
   const { t } = useTranslation();

@@ -1,8 +1,8 @@
-import { IPageHeader } from "@interfaces";
-import { Container } from "@layout";
+import { Container } from "@components/layout";
 import { SectionHeader } from "@styles";
 
 import { Subtitle } from "./styles";
+import { IPageHeader } from "./types";
 
 function PageHeader({ title, subtitle }: IPageHeader) {
   return (

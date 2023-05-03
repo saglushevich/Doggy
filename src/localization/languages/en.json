@@ -44,9 +44,9 @@
   "enter information": "Enter your information here",
   "cancelling": "Please be advised cancelling within 24 hours of your scheduled appointment will result in a cancellation fee of $300.00.",
   "payment info": "Enter your payment information",
-  "card number": "Credit Card Number",
-  "expiry": "Expiry Date",
-  "name on card": "Name on Card",
+  "cardNumber": "Credit Card Number",
+  "cardExpiry": "Expiry Date",
+  "cardHolder": "Name on Card",
   "address": "Our Address",
   "hours": "Hours of Operation:",
   "sunday": "Sunday",
@@ -62,7 +62,7 @@
   "dates": "Select dates",
   "date": "Date",
   "special request": "Any special requests for your pet(s)...",
-  "requests": "Special requests",
+  "request": "Special requests",
   "name": "First name",
   "surname": "Last name",
   "phone": "Phone number",
@@ -91,7 +91,7 @@
   "page not found": "The page you are looking for was not found",
   "go start page": "Go to start page",
   "dog information": "Dog information",
-
+  "email": "Email",
   "Enter a valid email": "Enter a valid email",
   "Email is required": "Email is required",
   "Minimum 2 characters!": "Minimum 2 characters!",
@@ -110,5 +110,8 @@
   "Enter 3 CVV characters": "Enter 3 CVV characters",
   "Card CVV is required": "Card CVV is required",
   "Minimum 5 characters": "Minimum 5 characters",
-  "Card holder name is required": "Card holder name is required"
+  "Card holder name is required": "Card holder name is required",
+  "Luxe Animal Spa": "Luxe Animal Spa",
+  "room": "80 Smithe St",
+  "region": "Vancouver, BC"
 }

@@ -1,8 +1,9 @@
 import { ErrorMessage } from "formik";
 import { useTranslation } from "react-i18next";
 
-import { IPayment } from "@interfaces";
 import { PAYMENT } from "@mocks";
+import { IPayment } from "@types";
+import { makeCardFormat } from "@utils";
 
 import {
   InputWrapper,
@@ -23,16 +24,17 @@ function Payment({ onInputChange, values }: IPayment) {
     <PaymentMethod key={id} src={icon} />
   ));
 
-  const { cardNumber, cardCVV, cardExpiry, cardHolder } = values!;
+  const { cardNumber, cardCVV, cardExpiry, cardHolder } = values;
 
   return (
     <Wrapper>
       <PaymentTitle>{t("payment info")}</PaymentTitle>
       <PaymentInputLarge
         name="cardNumber"
-        value={cardNumber}
+        value={makeCardFormat(cardNumber, 4, " ")}
         onChange={onInputChange("SET_CARD_NUMBER")}
         placeholder={t("card number") as string}
+        maxLength={19}
       />
       <ErrorMessage name="cardNumber">
         {(msg) => <Message>{t(msg)}</Message>}
@@ -41,9 +43,10 @@ function Payment({ onInputChange, values }: IPayment) {
         <InputWrapper>
           <PaymentInput
             name="cardExpiry"
-            value={cardExpiry}
+            value={makeCardFormat(cardExpiry, 2, "/")}
             onChange={onInputChange("SET_CARD_EXPIRY")}
             placeholder={t("expiry") as string}
+            maxLength={5}
           />
           <ErrorMessage name="cardExpiry">
             {(msg) => <Message>{t(msg)}</Message>}
@@ -56,6 +59,7 @@ function Payment({ onInputChange, values }: IPayment) {
             name="cardCVV"
             onChange={onInputChange("SET_CARD_CVV")}
             placeholder="CVV"
+            maxLength={3}
           />
           <ErrorMessage name="cardCVV">
             {(msg) => <Message>{t(msg)}</Message>}

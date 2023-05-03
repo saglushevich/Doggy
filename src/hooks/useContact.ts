@@ -30,27 +30,29 @@ export const useContact = (
       name: "",
     },
     validationSchema,
-    onSubmit: () => {
-      setDisabled(true);
-      emailjs
-        .sendForm(
-          EMAIL_ID as string,
-          emailTemplate as string,
-          form.current as HTMLFormElement,
-          EMAIL_KEY as string
-        )
-        .then(
-          () => {
-            setMessage(t("we will contact") as string);
-          },
-          () => setMessage(t("went wrong") as string)
-        )
-        .finally(() => {
-          formik.resetForm({});
-          setDisabled(false);
-        });
-    },
+    onSubmit: sendEmail,
   });
+
+  function sendEmail() {
+    setDisabled(true);
+    emailjs
+      .sendForm(
+        EMAIL_ID as string,
+        emailTemplate as string,
+        form.current as HTMLFormElement,
+        EMAIL_KEY as string
+      )
+      .then(
+        () => {
+          setMessage(t("we will contact") as string);
+        },
+        () => setMessage(t("went wrong") as string)
+      )
+      .finally(() => {
+        setDisabled(false);
+        formik.resetForm({});
+      });
+  }
 
   useEffect(() => {
     if (message) {

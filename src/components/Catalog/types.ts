@@ -1,4 +1,4 @@
-import { ICatalogCard } from "./CatalogCard";
+import { ICatalogCard } from "@types";
 
 export interface ICatalog {
   title: string;

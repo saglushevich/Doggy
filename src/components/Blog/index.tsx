@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import dog1 from "@assets/images/blog1.webp";
 import dog2 from "@assets/images/blog2.webp";
+import { Container } from "@components/layout";
 import PageHeader from "@components/UI/PageHeader";
-import { Container } from "@layout";
 
 import {
   Article,

@@ -1,6 +1,7 @@
 export * from "./apiKeys";
 export * from "./days";
 export * from "./mapLink";
+export * from "./modalFields";
 export * from "./months";
 export * from "./payment";
 export * from "./routes";

@@ -18,7 +18,6 @@ const config: StorybookConfig = {
       "@components": path.resolve(__dirname, "../src/components"),
       "@localization": path.resolve(__dirname, "../src/localization"),
       "@hooks": path.resolve(__dirname, "../src/hooks"),
-      "@layout": path.resolve(__dirname, "../src/layout")
     };
 
     return config;

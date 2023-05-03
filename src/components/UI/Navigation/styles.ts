@@ -1,17 +1,17 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-import { IStyles } from "@interfaces";
+import { IStyles } from "@types";
 
 export const Wrapper = styled.header`
   display: flex;
-  padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps["2xl"]}`};
+  padding: ${({ theme }) => `${theme.gaps.s}px ${theme.gaps["2xl"]}px`};
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps.m}`};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    padding: ${({ theme }) => `${theme.gaps.s}px ${theme.gaps.m}px`};
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     justify-content: space-between;
     align-items: center;
   }
@@ -20,13 +20,13 @@ export const Wrapper = styled.header`
 export const NavigationLinks = styled.nav`
   display: flex;
   align-items: center;
-  margin-left: ${({ theme }) => theme.gaps["8xl"]};
+  margin-left: ${({ theme }) => theme.gaps["8xl"]}px;
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    margin-left: ${({ theme }) => theme.gaps.s};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin-left: ${({ theme }) => theme.gaps.s}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     display: none;
   }
 `;
@@ -34,33 +34,33 @@ export const NavigationLinks = styled.nav`
 export const NavigationLink = styled(Link)<IStyles>`
   font-family: ${({ theme }) => theme.fonts.primary};
   position: relative;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeights.l};
   font-size: 26px;
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes.s};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes.s}px;
   }
 
-  ${({ active }) =>
+  ${({ active, theme }) =>
     active &&
     `
     &::after {
       position: absolute;
       content: "";
-      bottom: -10px;
-      left: 0;
-      width: 100%;
+      bottom: -${theme.positions.s}px;
+      left: ${theme.positions.xs}px;
+      width: ${theme.sizes.m}%;
       height: 6px;
-      background: #e89b93;
+      background: ${theme.colors.primary};
       border-radius: 100px;
     }
   `};
 
   &:nth-last-child(n + 2) {
-    margin-right: ${({ theme }) => theme.gaps["2xl"]};
-    @media (max-width: ${({ theme }) => theme.media.tablet}) {
-      margin-right: ${({ theme }) => theme.gaps.m};
+    margin-right: ${({ theme }) => theme.gaps["2xl"]}px;
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+      margin-right: ${({ theme }) => theme.gaps.m}px;
     }
   }
 `;
@@ -70,27 +70,27 @@ export const Languages = styled.div`
   align-items: center;
   margin-left: auto;
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     display: none;
   }
 `;
 
 export const Language = styled.div<IStyles>`
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeights.l};
   font-size: 32px;
   color: ${({ theme, active }) =>
     active ? theme.colors.primary : theme.colors.black};
   cursor: pointer;
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes.m};
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSizes.m}px;
   }
 
   &:nth-last-child(n + 2) {
-    margin-right: ${({ theme }) => theme.gaps.xl};
-    @media (max-width: ${({ theme }) => theme.media.tablet}) {
-      margin-right: ${({ theme }) => theme.gaps.s};
+    margin-right: ${({ theme }) => theme.gaps.xl}px;
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+      margin-right: ${({ theme }) => theme.gaps.s}px;
     }
   }
 `;
@@ -99,7 +99,7 @@ export const Logotype = styled.img`
   width: 155px;
   height: 80px;
   object-fit: cover;
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: 125px;
     height: 70px;
   }
@@ -114,29 +114,29 @@ export const Burger = styled.div<IStyles>`
   &:before {
     content: "";
     position: absolute;
-    top: -10px;
-    right: 0px;
+    top: -${({ theme }) => theme.positions.s}px;
+    right: ${({ theme }) => theme.positions.xs}px;
     width: 55px;
     transition: all 0.5s;
     transform: ${({ active }) =>
       active && "rotate(-45deg) translate(-11px, 3px)"};
-    height: 100%;
+    height: ${({ theme }) => theme.sizes.m}%;
     background: ${({ theme }) => theme.colors.black};
   }
   &:after {
     content: "";
     position: absolute;
-    bottom: -10px;
-    right: 0px;
+    bottom: -${({ theme }) => theme.positions.s}px;
+    right: ${({ theme }) => theme.positions.xs}px;
     width: 55px;
     transition: all 0.5s;
     transform: ${({ active }) =>
       active && "rotate(45deg) translate(-11px, -3px)"};
-    height: 100%;
+    height: ${({ theme }) => theme.sizes.m}%;
     background: ${({ theme }) => theme.colors.black};
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tabletSmall}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     display: block;
   }
 `;

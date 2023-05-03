@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { Container } from "@layout";
+import { Container } from "@components/layout";
 import { SectionHeader } from "@styles";
 
 import { EmailLink, Text, Wrapper } from "./styles";

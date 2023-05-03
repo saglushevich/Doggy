@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
+import { PageContainer } from "@components/layout";
 import Spa from "@components/Spa";
-import { PageContainer } from "@layout";
 
 function ServicesPage() {
   const { t } = useTranslation();

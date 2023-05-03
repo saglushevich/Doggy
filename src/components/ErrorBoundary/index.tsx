@@ -1,9 +1,9 @@
-import { Component } from "react";
+import { Component, ErrorInfo } from "react";
 
-import { IErrorProps, IErrorState } from "@interfaces";
-import { Container } from "@layout";
+import { Container } from "@components/layout";
 
 import { ErrorText } from "./styles";
+import { IErrorProps, IErrorState } from "./types";
 
 export class ErrorBoundary extends Component<IErrorProps, IErrorState> {
   constructor(props: IErrorProps) {
@@ -11,6 +11,7 @@ export class ErrorBoundary extends Component<IErrorProps, IErrorState> {
     this.state = {
       hasError: false,
       error: null,
+      errorInfo: null,
     };
   }
 
@@ -18,17 +19,22 @@ export class ErrorBoundary extends Component<IErrorProps, IErrorState> {
     return { hasError: true };
   }
 
-  public componentDidCatch(error: Error) {
-    this.setState({ error: error.toString() });
+  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    this.setState({
+      error: error.toString(),
+      errorInfo: errorInfo.toString(),
+    });
   }
 
   public render() {
-    const { hasError, error } = this.state;
+    const { hasError, error, errorInfo } = this.state;
     const { children } = this.props;
+
     if (hasError) {
       return (
         <Container>
           <ErrorText>{error}</ErrorText>
+          <ErrorText>{errorInfo}</ErrorText>
         </Container>
       );
     }
