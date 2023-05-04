@@ -1,5 +1,5 @@
 import mapboxgl from "mapbox-gl";
-import { useEffect, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import { MAP_KEY, MAP_LINK } from "@constants";
@@ -69,4 +69,4 @@ function Location() {
   );
 }
 
-export default Location;
+export default memo(Location);

@@ -1,5 +1,5 @@
 import { ErrorMessage, Form, FormikProvider, useFormik } from "formik";
-import { SyntheticEvent, useReducer, useState } from "react";
+import { SyntheticEvent, useCallback, useReducer, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Calendar from "@components/Calendar";
@@ -61,9 +61,9 @@ function Booking() {
       handleChange(e);
     };
 
-  const onSetCalendarDate = (value: string) => {
+  const onSetCalendarDate = useCallback((value: string) => {
     dispatch({ type: "SET_DATE", payload: value });
-  };
+  }, []);
 
   return (
     <PayPalScriptProvider deferLoading options={initialOptions}>

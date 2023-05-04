@@ -1,10 +1,11 @@
 import { ErrorMessage, FormikProvider } from "formik";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Container } from "@components/layout";
 import { SUBSCRIBE_SCHEMA, SUBSCRIBE_TEMPLATE } from "@constants";
 import { useContact } from "@hooks";
-import { FOOTER_LINKS, SOCIAL } from "@mocks";
+import { FOOTER_LINKS, PRIVACY, SOCIAL } from "@mocks";
 
 import {
   Block,
@@ -31,23 +32,51 @@ function Footer() {
     SUBSCRIBE_TEMPLATE as string
   );
 
-  const socialNetworks = SOCIAL.map(({ id, image, link }) => (
-    <Social key={id} target="_black" href={link} image={image} />
-  ));
+  const { policy, copyright, terms } = PRIVACY;
 
-  const customerService = FOOTER_LINKS.customerService.map(
-    ({ id, link, title }) => (
-      <FooterLink key={id} href={link}>
-        {t(title)}
-      </FooterLink>
-    )
+  const socialNetworks = useMemo(
+    () =>
+      SOCIAL.map(({ id, image, link }) => (
+        <Social key={id} target="_black" href={link} image={image} />
+      )),
+    []
   );
 
-  const navigation = FOOTER_LINKS.navigation.map(({ id, link, title }) => (
-    <FooterLink key={id} href={link}>
-      {t(title)}
-    </FooterLink>
-  ));
+  const customerService = useMemo(
+    () =>
+      FOOTER_LINKS.customerService.map(({ id, link, title }) => (
+        <FooterLink key={id} href={link}>
+          {t(title)}
+        </FooterLink>
+      )),
+    [t]
+  );
+
+  const navigation = useMemo(
+    () =>
+      FOOTER_LINKS.navigation.map(({ id, link, title }) => (
+        <FooterLink key={id} href={link}>
+          {t(title)}
+        </FooterLink>
+      )),
+    [t]
+  );
+
+  const policyElements = useMemo(
+    () =>
+      policy.map(({ id, title }) => (
+        <PrivacyInfo key={id}>{t(title)}</PrivacyInfo>
+      )),
+    [t, policy]
+  );
+
+  const termsElements = useMemo(
+    () =>
+      terms.map(({ id, title }) => (
+        <PrivacyInfo key={id}>{t(title)}</PrivacyInfo>
+      )),
+    [t, terms]
+  );
 
   return (
     <Wrapper>
@@ -90,16 +119,9 @@ function Footer() {
       </InnerWrapper>
 
       <Privacy>
-        <PrivacyBlock>
-          <PrivacyInfo>{t("policy")}</PrivacyInfo>
-          <PrivacyInfo>{t("settings")}</PrivacyInfo>
-        </PrivacyBlock>
-        <PrivacyInfo>{t("copyright")}</PrivacyInfo>
-        <PrivacyBlock>
-          <PrivacyInfo>{t("terms")}</PrivacyInfo>
-          <PrivacyInfo>{t("privacy")}</PrivacyInfo>
-          <PrivacyInfo>{t("security")}</PrivacyInfo>
-        </PrivacyBlock>
+        <PrivacyBlock>{policyElements}</PrivacyBlock>
+        <PrivacyInfo>{t(copyright)}</PrivacyInfo>
+        <PrivacyBlock>{termsElements}</PrivacyBlock>
       </Privacy>
     </Wrapper>
   );

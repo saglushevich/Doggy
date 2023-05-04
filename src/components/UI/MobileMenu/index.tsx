@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import { useLanguage } from "@hooks";
 import { NAVIGATION } from "@mocks";
 
@@ -10,15 +12,16 @@ function MobileMenu({
   toggleMobileMenu,
 }: IMobileMenu) {
   const lang = useLanguage();
-  const navigation = NAVIGATION[lang].map((nav) => {
-    const { id, title, link } = nav;
 
-    return (
-      <MenuItem key={id} href={link}>
-        {title}
-      </MenuItem>
-    );
-  });
+  const navigation = useMemo(
+    () =>
+      NAVIGATION[lang].map(({ id, title, link }) => (
+        <MenuItem key={id} href={link}>
+          {title}
+        </MenuItem>
+      )),
+    [lang]
+  );
 
   return (
     <Wrapper active={menuStatus} onClick={toggleMobileMenu}>

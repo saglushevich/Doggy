@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { memo } from "react";
 
 import { ICatalogCard } from "@types";
 
@@ -29,4 +30,4 @@ function CatalogCard({ image, title, category, price }: ICatalogCard) {
   );
 }
 
-export default CatalogCard;
+export default memo(CatalogCard);

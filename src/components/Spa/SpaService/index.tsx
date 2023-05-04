@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import { Description, Price, Title, Wrapper } from "./styles";
 import { ISpaService } from "./types";
 
@@ -13,4 +15,4 @@ function SpaService({ title, price, description }: ISpaService) {
   );
 }
 
-export default SpaService;
+export default memo(SpaService);
