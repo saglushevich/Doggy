@@ -17,8 +17,8 @@ export const Wrapper = styled.li`
 export const Title = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
-  line-height: 42px;
+  font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["2xl"]}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
 

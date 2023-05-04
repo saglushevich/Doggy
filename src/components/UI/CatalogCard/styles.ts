@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
 export const ImageWrapper = styled.div`
   width: ${({ theme }) => theme.sizes.m}%;
   height: 445px;
-  padding: 5px;
+  padding: ${({ theme }) => theme.gaps.xs}px;
   background: ${({ theme }) => theme.colors.primary};
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     height: 325px;
@@ -40,7 +40,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const Info = styled.div`
-  margin-top: 55px;
+  margin-top: ${({ theme }) => theme.gaps["6xl"]}px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     margin-top: ${({ theme }) => theme.gaps["2xl"]}px;
   }
@@ -54,24 +54,24 @@ export const Title = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
   font-size: ${({ theme }) => theme.fontSizes.xl}px;
-  line-height: ${({ theme }) => theme.lineHeights.s}px;
+  line-height: ${({ theme }) => theme.lineHeights.m}px;
   color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: ${({ theme }) => theme.fontSizes.l}px;
-    line-height: ${({ theme }) => theme.lineHeights.xs}px;
+    line-height: ${({ theme }) => theme.lineHeights.s}px;
   }
 `;
 
 export const Category = styled(Title)`
-  margin-top: 5px;
+  margin-top: ${({ theme }) => theme.gaps.xs}px;
 `;
 
 export const Price = styled(Title)`
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
-  line-height: ${({ theme }) => theme.lineHeights.s}px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.m}px;
   margin-top: ${({ theme }) => theme.gaps.m}px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    line-height: ${({ theme }) => theme.lineHeights.xs}px;
+    line-height: ${({ theme }) => theme.lineHeights.s}px;
   }
 `;

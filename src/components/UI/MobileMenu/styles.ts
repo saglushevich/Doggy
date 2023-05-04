@@ -35,7 +35,7 @@ export const MenuItem = styled(Link)`
   display: block;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   &:nth-last-child(n + 2) {
     margin-bottom: ${({ theme }) => theme.gaps["2xl"]}px;
@@ -57,7 +57,7 @@ export const Languages = styled.div`
 export const Language = styled.div<IStyles>`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: 32px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]};
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
   &:nth-last-child(n + 2) {

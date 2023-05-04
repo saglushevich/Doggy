@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 65px;
+  padding-top: ${({ theme }) => theme.gaps["7xl"]}px;
 `;
 
 export const ImageWrapper = styled.div`
@@ -34,8 +34,8 @@ export const PackageName = styled.div`
   width: ${({ theme }) => theme.sizes["2xl"]}px;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
-  line-height: ${({ theme }) => theme.lineHeights.xl}px;
+  font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["3xl"]}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 auto;
@@ -43,7 +43,7 @@ export const PackageName = styled.div`
 
 export const PackageInfo = styled.div`
   width: 600px;
-  padding-top: 85px;
+  padding-top: ${({ theme }) => theme.gaps["9xl"]}px;
 `;
 
 export const PackagePrice = styled(PackageName)`
@@ -53,11 +53,11 @@ export const PackagePrice = styled(PackageName)`
 export const PackageDescription = styled(PackageName)`
   width: 600px;
   font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
-  line-height: 27px;
+  line-height: ${({ theme }) => theme.lineHeights.l}px;
   margin-top: ${({ theme }) => theme.gaps["4xl"]}px;
 `;
 
 export const PackageButton = styled(SectionButton)`
   margin: 0 auto;
-  margin-top: 85px;
+  margin-top: ${({ theme }) => theme.gaps["9xl"]}px;
 `;

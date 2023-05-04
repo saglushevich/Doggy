@@ -71,8 +71,8 @@ export const Label = styled.label`
   display: block;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: 15px;
-  line-height: 18px;
+  font-size: ${({ theme }) => theme.fontSizes.m}px;
+  line-height: ${({ theme }) => theme.lineHeights.xs}px;
   letter-spacing: 0.05%;
   color: ${({ theme }) => theme.colors.black};
 `;
@@ -128,7 +128,7 @@ export const ControlText = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
   font-size: ${({ theme }) => theme.fontSizes.l}px;
-  line-height: 22px;
+  line-height: ${({ theme }) => theme.lineHeights.m}px;
   color: ${({ theme }) => theme.colors.black};
 `;
 

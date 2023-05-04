@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding-top: 95px;
+  padding-top: ${({ theme }) => theme.gaps["10xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     padding-top: ${({ theme }) => theme.gaps["7xl"]}px;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const Services = styled.ul`
   position: relative;
   margin-top: ${({ theme }) => theme.gaps["8xl"]}px;
-  padding: 125px 0;
+  padding: ${({ theme }) => theme.gaps["12xl"]}px 0;
   &:before {
     width: ${({ theme }) => theme.sizes["7xl"]}px;
     content: "";

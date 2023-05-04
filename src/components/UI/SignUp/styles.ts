@@ -4,7 +4,7 @@ import { SectionButton, SectionInput } from "@styles";
 
 export const Wrapper = styled.div`
   position: absolute;
-  top: 35px;
+  top: ${({ theme }) => theme.positions.m}px;
   left: ${({ theme }) => theme.positions.l}%;
   transform: translateX(-50%);
   padding: ${({ theme }) => theme.gaps.s}px;
@@ -42,8 +42,8 @@ export const SignTitle = styled.div`
   max-width: 200px;
   font-family: "Cinzel Decorative";
   font-weight: ${({ theme }) => theme.fontWeights.s};
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
-  line-height: ${({ theme }) => theme.lineHeights.l}px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["2xl"]}px;
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -52,7 +52,7 @@ export const SignDiscount = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};
   font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
-  line-height: 27px;
+  line-height: ${({ theme }) => theme.lineHeights.l}px;
   color: ${({ theme }) => theme.colors.black};
   margin-top: ${({ theme }) => theme.gaps.l}px;
 `;
@@ -84,7 +84,7 @@ export const SignText = styled.p`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};
   font-size: ${({ theme }) => theme.fontSizes.s}px;
-  line-height: 17px;
+  line-height: ${({ theme }) => theme.lineHeights.xs}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
   width: 230px;

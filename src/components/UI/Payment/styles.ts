@@ -5,7 +5,7 @@ import { SectionInput } from "@styles";
 export const Wrapper = styled.div`
   width: ${({ theme }) => theme.sizes["5xl"]}px;
   display: block;
-  padding-top: 65px;
+  padding-top: ${({ theme }) => theme.gaps["6xl"]}px;
   margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {

@@ -14,38 +14,38 @@ export default createGlobalStyle`
 export const SectionTitle = styled.h2`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: 66px;
-  line-height: 80px;
+  font-size: ${({ theme }) => theme.fontSizes["8xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["5xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    font-size: 52px;
+    font-size: ${({ theme }) => theme.fontSizes["7xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
+    font-size: ${({ theme }) => theme.fontSizes["6xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileSmall}px) {
-    font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+    font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
   }
 `;
 
 export const SectionHeader = styled.h1`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["6xl"]}px;
-  line-height: ${({ theme }) => theme.lineHeights["2xl"]}px;
+  font-size: ${({ theme }) => theme.fontSizes["9xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["6xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
+    font-size: ${({ theme }) => theme.fontSizes["6xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    line-height: ${({ theme }) => theme.lineHeights.xl}px;
+    line-height: ${({ theme }) => theme.lineHeights["3xl"]}px;
   }
 `;
 

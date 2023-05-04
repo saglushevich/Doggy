@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { SectionButton, SectionInput } from "@styles";
 
 export const Wrapper = styled.div`
-  margin-top: 175px;
+  margin-top: ${({ theme }) => theme.gaps["15xl"]}px;
   display: flex;
   justify-content: space-between;
   padding: 0 ${({ theme }) => theme.gaps["6xl"]}px;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    padding: 0;
+    padding: ${({ theme }) => theme.positions.xs}px;
   }
 `;
 
@@ -33,8 +33,8 @@ export const Selection = styled.div`
 export const Title = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
-  line-height: 48px;
+  font-size: ${({ theme }) => theme.fontSizes["6xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["3xl"]}px;
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -60,7 +60,7 @@ export const Inputs = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     width: ${({ theme }) => theme.sizes.m}%;
     display: block;
-    margin-bottom: 0;
+    margin-bottom: ${({ theme }) => theme.positions.xs}px;
   }
 `;
 
@@ -69,7 +69,7 @@ export const Input = styled(SectionInput)`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     width: ${({ theme }) => theme.sizes.m}%;
-    margin-bottom: 20px;
+    margin-bottom: ${({ theme }) => theme.gaps.l}px;
   }
 `;
 
@@ -78,11 +78,11 @@ export const InputWrapper = styled.div``;
 export const Requests = styled(Input)`
   width: ${({ theme }) => theme.sizes.m}%;
   padding: ${({ theme }) => `${theme.gaps.l}px ${theme.gaps.m}px`};
-  line-height: ${({ theme }) => theme.lineHeights.xs}px;
+  line-height: ${({ theme }) => theme.lineHeights.s}px;
   margin-top: ${({ theme }) => theme.gaps["7xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    margin-top: 0;
+    margin-top: ${({ theme }) => theme.positions.xs}px;
   }
 `;
 
@@ -92,7 +92,7 @@ export const Cancelling = styled.p`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};
   font-size: ${({ theme }) => theme.fontSizes.m}px;
-  line-height: 19px;
+  line-height: ${({ theme }) => theme.lineHeights.xs}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 auto;
