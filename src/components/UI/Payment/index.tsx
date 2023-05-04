@@ -1,4 +1,5 @@
 import { ErrorMessage } from "formik";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { PAYMENT } from "@mocks";
@@ -20,9 +21,13 @@ import {
 function Payment({ onInputChange, values }: IPayment) {
   const { t } = useTranslation();
 
-  const paymentsMethods = PAYMENT.map(({ id, icon }) => (
-    <PaymentMethod key={id} src={icon} />
-  ));
+  const paymentsMethods = useMemo(
+    () =>
+      PAYMENT.map(({ id, icon }) => {
+        return <PaymentMethod key={id} src={icon} />;
+      }),
+    []
+  );
 
   const { cardNumber, cardCVV, cardExpiry, cardHolder } = values;
 

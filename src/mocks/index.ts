@@ -3,6 +3,7 @@ export * from "./coordinates";
 export * from "./footerLinks";
 export * from "./navigation";
 export * from "./payment";
+export * from "./privacy";
 export * from "./schedule";
 export * from "./services";
 export * from "./social";

@@ -57,7 +57,7 @@ export const Languages = styled.div`
 export const Language = styled.div<IStyles>`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["4xl"]};
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
   &:nth-last-child(n + 2) {

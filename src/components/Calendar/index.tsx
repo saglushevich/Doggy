@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { memo, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import arrow from "@assets/icons/arrow.svg";
@@ -42,13 +42,17 @@ function Calendar({ onInputChange, onSetCalendarDate }: IPayment) {
     if (onSetCalendarDate) {
       onSetCalendarDate(selectedTimeslot);
     }
-  }, [selectedDate, selectedMonth, selectedYear]);
+  }, [onSetCalendarDate, selectedTimeslot]);
 
-  const days = DAYS.map((day, index) => (
-    <Day day key={index}>
-      {day}
-    </Day>
-  ));
+  const days = useMemo(
+    () =>
+      DAYS.map((day, index) => (
+        <Day day key={index}>
+          {day}
+        </Day>
+      )),
+    []
+  );
 
   const dates = calendar.map((row, index) => {
     return row.map((date, j) => {
@@ -127,4 +131,4 @@ function Calendar({ onInputChange, onSetCalendarDate }: IPayment) {
   );
 }
 
-export default Calendar;
+export default memo(Calendar);
