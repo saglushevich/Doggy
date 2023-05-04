@@ -45,7 +45,7 @@ export const TextArea = styled.textarea`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};
   font-size: ${({ theme }) => theme.fontSizes.xl}px;
-  line-height: ${({ theme }) => theme.lineHeights.xs}px;
+  line-height: ${({ theme }) => theme.lineHeights.s}px;
   color: ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.lightGray};
@@ -63,7 +63,7 @@ export const TextArea = styled.textarea`
 export const FormMessage = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
   color: ${({ theme }) => theme.colors.secondary};
   text-align: center;
 `;
@@ -78,7 +78,7 @@ export const Inputs = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: block;
     &:nth-last-child(n + 2) {
-      margin-bottom: 0;
+      margin-bottom: ${({ theme }) => theme.positions.xs}px;
     }
   }
 `;
@@ -86,7 +86,7 @@ export const Inputs = styled.div`
 export const Button = styled(SectionButton)`
   padding: ${({ theme }) => `${theme.gaps.s}px ${theme.gaps["9xl"]}px`};
   margin: 0 auto;
-  margin-top: 65px;
+  margin-top: ${({ theme }) => theme.gaps["7xl"]}px;
   margin-bottom: ${({ theme }) => theme.gaps.xl}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {

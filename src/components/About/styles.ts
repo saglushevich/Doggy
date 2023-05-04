@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Article = styled.article`
-  padding: 0 130px;
+  padding: 0 ${({ theme }) => theme.gaps["13xl"]}px;
   padding: ${({ theme }) => `0 ${theme.gaps["13xl"]}px`};
   margin-top: ${({ theme }) => theme.gaps["13xl"]}px;
 
@@ -23,7 +23,7 @@ export const Article = styled.article`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    padding: 0;
+    padding: ${({ theme }) => theme.positions.xs}px;
     margin-top: ${({ theme }) => theme.gaps["2xl"]}px;
   }
 `;
@@ -59,8 +59,8 @@ export const Paragraph = styled.p`
   width: ${({ theme }) => theme.sizes["6xl"]}px;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.m};
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
-  line-height: ${({ theme }) => theme.lineHeights.m}px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.xl}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
   &:nth-last-child(n + 2) {
@@ -74,7 +74,7 @@ export const Paragraph = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
-    line-height: ${({ theme }) => theme.lineHeights.l}px;
+    line-height: ${({ theme }) => theme.lineHeights["2xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
@@ -87,7 +87,7 @@ export const ArticleBlock = styled.div`
   align-items: center;
   justify-content: space-between;
   &:nth-last-child(n + 2) {
-    margin-bottom: 160px;
+    margin-bottom: ${({ theme }) => theme.gaps["14xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {

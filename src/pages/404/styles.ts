@@ -16,16 +16,16 @@ export const Wrapper = styled.div`
 
 export const Text = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: ${({ theme }) => theme.fontSizes["6xl"]}px;
+  font-size: ${({ theme }) => theme.fontSizes["9xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
+    font-size: ${({ theme }) => theme.fontSizes["6xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+    font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
   }
 `;
 

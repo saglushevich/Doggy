@@ -8,7 +8,7 @@ export const ModalWrapper = styled.div`
   display: block;
   width: ${({ theme }) => theme.sizes.m}%;
   height: ${({ theme }) => theme.sizes.m}%;
-  background-color: #00000099;
+  background-color: ${({ theme }) => theme.colors.black}99;
 `;
 
 export const ModalContent = styled.div`
@@ -16,7 +16,6 @@ export const ModalContent = styled.div`
   max-height: 550px;
   overflow: scroll;
   background-color: ${({ theme }) => theme.colors.white};
-  border: 1px solid #00000033;
   margin: ${({ theme }) => `${theme.gaps["5xl"]}px auto`};
   padding: ${({ theme }) => theme.gaps.xl}px;
 `;
@@ -25,7 +24,7 @@ export const ModalCloseBtn = styled.div`
   position: absolute;
   top: ${({ theme }) => theme.positions.xs}px;
   right: ${({ theme }) => theme.positions.m}px;
-  font-size: ${({ theme }) => theme.fontSizes["7xl"]}px;
+  font-size: ${({ theme }) => theme.fontSizes["10xl"]}px;
   font-weight: ${({ theme }) => theme.fontWeights.l};
   cursor: pointer;
   z-index: 1200;

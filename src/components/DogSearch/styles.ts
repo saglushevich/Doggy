@@ -14,18 +14,18 @@ export const Wrapper = styled.div`
 export const Selection = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
-  line-height: ${({ theme }) => theme.lineHeights.m}px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.xl}px;
   color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
-    line-height: ${({ theme }) => theme.lineHeights.s}px;
+    line-height: ${({ theme }) => theme.lineHeights.m}px;
   }
 `;
 
 export const Block = styled.div`
-  margin-top: 105px;
+  margin-top: ${({ theme }) => theme.gaps["11xl"]}px;
   display: flex;
   justify-content: space-between;
 

@@ -35,7 +35,7 @@ export const NavigationLink = styled(Link)<IStyles>`
   font-family: ${({ theme }) => theme.fonts.primary};
   position: relative;
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: 26px;
+  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
@@ -78,7 +78,7 @@ export const Languages = styled.div`
 export const Language = styled.div<IStyles>`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: 32px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
   color: ${({ theme, active }) =>
     active ? theme.colors.primary : theme.colors.black};
   cursor: pointer;
@@ -111,6 +111,7 @@ export const Burger = styled.div<IStyles>`
   width: ${({ active }) => (active ? 0 : 55)}px;
   height: 4px;
   background: ${({ theme }) => theme.colors.black};
+  cursor: pointer;
   &:before {
     content: "";
     position: absolute;

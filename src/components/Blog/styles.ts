@@ -19,14 +19,14 @@ export const Article = styled.article`
 export const ArticleTitle = styled.h3`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
-  line-height: ${({ theme }) => theme.lineHeights.xl}px;
+  font-size: ${({ theme }) => theme.fontSizes["5xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["3xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   margin-bottom: ${({ theme }) => theme.gaps["4xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
-    line-height: ${({ theme }) => theme.lineHeights.m}px;
+    line-height: ${({ theme }) => theme.lineHeights.xl}px;
   }
 `;
 
@@ -58,8 +58,8 @@ export const Paragraph = styled.p`
   padding: 0 ${({ theme }) => theme.gaps["11xl"]}px;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.m};
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
-  line-height: 46px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["3xl"]}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
 
@@ -70,7 +70,7 @@ export const Paragraph = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
-    line-height: ${({ theme }) => theme.lineHeights.l}px;
+    line-height: ${({ theme }) => theme.lineHeights["2xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {

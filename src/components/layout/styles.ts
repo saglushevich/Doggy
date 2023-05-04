@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     width: ${({ theme }) => theme.sizes.m}%;
-    padding: 0 5px;
+    padding: 0 ${({ theme }) => theme.gaps.xs}px;
   }
 `;
 
@@ -31,8 +31,8 @@ export const Discount = styled.div`
 export const Text = styled.p`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: 26px;
-  line-height: 31px;
+  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.l}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
 

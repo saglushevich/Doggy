@@ -8,8 +8,8 @@ export const Text = styled.p`
   position: relative;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
-  line-height: ${({ theme }) => theme.lineHeights.m}px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.xl}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
   margin-top: ${({ theme }) => theme.gaps["8xl"]}px;

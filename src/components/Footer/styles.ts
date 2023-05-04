@@ -63,19 +63,18 @@ export const Content = styled.div`
 export const Title = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
-  font-size: 32px;
-  line-height: 39px;
+  font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights["2xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   margin-bottom: ${({ theme }) => theme.gaps["2xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
-    line-height: 36px;
+    line-height: ${({ theme }) => theme.lineHeights.xl}px;
     margin-bottom: ${({ theme }) => theme.gaps.l}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    font-size: 24px;
+    font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileSmall}px) {
@@ -87,8 +86,8 @@ export const FooterLink = styled(Link)`
   display: block;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};
-  font-size: 26px;
-  line-height: 31px;
+  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
+  line-height: ${({ theme }) => theme.lineHeights.l}px;
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
   &:nth-last-child(n + 2) {
@@ -97,7 +96,6 @@ export const FooterLink = styled(Link)`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: ${({ theme }) => theme.fontSizes.xl}px;
-    line-height: 26px;
   }
 `;
 
@@ -129,7 +127,7 @@ export const Input = styled(SectionInput)`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     width: ${({ theme }) => theme.sizes.m}%;
-    margin-right: 0;
+    margin-right: ${({ theme }) => theme.positions.xs}px;
   }
 `;
 
@@ -195,7 +193,7 @@ export const PrivacyInfo = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};
   font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
-  line-height: 27px;
+  line-height: ${({ theme }) => theme.lineHeights.l}px;
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
   &:nth-last-child(n + 2) {

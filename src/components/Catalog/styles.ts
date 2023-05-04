@@ -22,7 +22,7 @@ export const Cards = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 85px;
+  margin-top: ${({ theme }) => theme.gaps["9xl"]}px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     margin-top: ${({ theme }) => theme.gaps["6xl"]}px;
   }
@@ -39,7 +39,7 @@ export const Cards = styled.div`
 
 export const Button = styled(SectionButton)`
   padding: ${({ theme }) => `${theme.gaps.m}px ${theme.gaps["6xl"]}px`};
-  font-size: 26px;
+  font-size: ${({ theme }) => theme.fontSizes["3xl"]}px;
   margin: 0 auto;
   margin-top: ${({ theme }) => theme.gaps["7xl"]}px;
 

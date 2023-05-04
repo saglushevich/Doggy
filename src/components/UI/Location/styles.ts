@@ -49,7 +49,7 @@ export const Title = styled.div`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.l};
   font-size: ${({ theme }) => theme.fontSizes.xl}px;
-  line-height: ${({ theme }) => theme.lineHeights.s}px;
+  line-height: ${({ theme }) => theme.lineHeights.m}px;
   color: ${({ theme }) => theme.colors.black};
 `;
 
