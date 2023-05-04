@@ -3,8 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import About from "@components/About";
 import { PageContainer } from "@components/layout";
-
-import { Title } from "./styles";
+import { Title } from "@styles";
 
 function AboutPage() {
   const { t } = useTranslation();

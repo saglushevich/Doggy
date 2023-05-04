@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Blog from "@components/Blog";
 import { PageContainer } from "@components/layout";
+import { Title } from "@styles";
 
 function BlogPage() {
   const { t } = useTranslation();
@@ -10,7 +11,7 @@ function BlogPage() {
   return (
     <PageContainer>
       <Head>
-        <title>{t("blog")}</title>
+        <Title>{t("blog")}</Title>
       </Head>
       <Blog />
     </PageContainer>

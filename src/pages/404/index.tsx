@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { PageContainer } from "@components/layout";
 import { ROUTES } from "@constants";
+import { Title } from "@styles";
 
 import { Button, Text, Wrapper } from "./styles";
 
@@ -21,7 +22,7 @@ function NotFoundPage() {
   return (
     <PageContainer>
       <Head>
-        <title>{t("page not found")}</title>
+        <Title>{t("page not found")}</Title>
       </Head>
       <Wrapper>
         <Text>{t("page not found")}</Text>

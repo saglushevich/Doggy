@@ -7,13 +7,14 @@ import Promo from "@components/Promo";
 import Trending from "@components/Trending";
 import SignUp from "@components/UI/SignUp";
 import { CARRY_ONS, COLLARS } from "@mocks";
+import { Title } from "@styles";
 
 function Homepage() {
   const { t } = useTranslation();
   return (
     <PageContainer>
       <Head>
-        <title>{t("home")}</title>
+        <Title>{t("home")}</Title>
       </Head>
       <Promo />
       <Trending>

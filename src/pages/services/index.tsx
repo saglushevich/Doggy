@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { PageContainer } from "@components/layout";
 import Spa from "@components/Spa";
+import { Title } from "@styles";
 
 function ServicesPage() {
   const { t } = useTranslation();
@@ -10,7 +11,7 @@ function ServicesPage() {
   return (
     <PageContainer>
       <Head>
-        <title>{t("spa services")}</title>
+        <Title>{t("spa services")}</Title>
       </Head>
       <Spa />
     </PageContainer>

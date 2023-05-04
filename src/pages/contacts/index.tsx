@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Contacts from "@components/Contacts";
 import ContactsForm from "@components/ContactsForm";
 import { PageContainer } from "@components/layout";
+import { Title } from "@styles";
 
 function ContactsPage() {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ function ContactsPage() {
   return (
     <PageContainer>
       <Head>
-        <title>{t("contact us")}</title>
+        <Title>{t("contact us")}</Title>
       </Head>
       <Contacts />
       <ContactsForm />

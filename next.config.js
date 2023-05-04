@@ -42,6 +42,7 @@ const nextConfig = {
       },
     ],
   },
+  pageExtensions: ["tsx"]
 };
 
 module.exports = withImages(nextConfig);

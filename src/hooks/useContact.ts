@@ -1,14 +1,8 @@
 import { useFormik } from "formik";
-import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useEffect, useRef } from "react";
 
-import {
-  CONTACT_SCHEMA,
-  EMAIL_ID,
-  EMAIL_KEY,
-  SUBSCRIBE_SCHEMA,
-} from "@constants";
-import emailjs from "@emailjs/browser";
+import { CONTACT_SCHEMA, SUBSCRIBE_SCHEMA } from "@constants";
+import { useEmail } from "@hooks";
 
 type FormikSchema = typeof SUBSCRIBE_SCHEMA | typeof CONTACT_SCHEMA;
 
@@ -16,10 +10,11 @@ export const useContact = (
   validationSchema: FormikSchema,
   emailTemplate: string
 ) => {
-  const [disabled, setDisabled] = useState(false);
-  const [message, setMessage] = useState("");
   const form = useRef<HTMLFormElement>(null);
-  const { t } = useTranslation();
+  const { disabled, message, sendEmail, setMessage } = useEmail(
+    emailTemplate,
+    form
+  );
 
   const formik = useFormik({
     initialValues: {
@@ -30,29 +25,11 @@ export const useContact = (
       name: "",
     },
     validationSchema,
-    onSubmit: sendEmail,
+    onSubmit(_, { resetForm }) {
+      sendEmail();
+      resetForm({});
+    },
   });
-
-  function sendEmail() {
-    setDisabled(true);
-    emailjs
-      .sendForm(
-        EMAIL_ID as string,
-        emailTemplate as string,
-        form.current as HTMLFormElement,
-        EMAIL_KEY as string
-      )
-      .then(
-        () => {
-          setMessage(t("we will contact") as string);
-        },
-        () => setMessage(t("went wrong") as string)
-      )
-      .finally(() => {
-        setDisabled(false);
-        formik.resetForm({});
-      });
-  }
 
   useEffect(() => {
     if (message) {

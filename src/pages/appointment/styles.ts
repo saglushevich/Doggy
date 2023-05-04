@@ -32,3 +32,5 @@ export const Title = styled.h1`
     line-height: 68px;
   }
 `;
+
+export const HeadTitle = styled.title``;

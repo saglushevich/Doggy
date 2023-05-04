@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import Booking from "@components/Booking";
 import { Container, PageContainer } from "@components/layout";
 
-import { Title, Wrapper } from "./styles";
+import { HeadTitle, Title, Wrapper } from "./styles";
 
 function AppointmentPage() {
   const { t } = useTranslation();
@@ -12,7 +12,7 @@ function AppointmentPage() {
   return (
     <PageContainer>
       <Head>
-        <title>{t("book appointment")}</title>
+        <HeadTitle>{t("book appointment")}</HeadTitle>
       </Head>
       <Wrapper>
         <Container>
