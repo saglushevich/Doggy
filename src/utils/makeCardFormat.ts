@@ -11,5 +11,5 @@ export const makeCardFormat = (
     parts.push(newValue.slice(i, i + length));
   }
 
-  return parts.length > 1 ? parts.join(insert) : value;
+  return parts.length > 1 ? parts.join(insert) : newValue;
 };
