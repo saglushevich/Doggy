@@ -1,7 +1,7 @@
 import { useLanguage } from "@hooks";
 import { NAVIGATION } from "@mocks";
 
-import { Language, Languages, Menu, MenuItem } from "./styles";
+import { Language, Languages, Menu, MenuItem, Wrapper } from "./styles";
 import { IMobileMenu } from "./types";
 
 function MobileMenu({
@@ -21,13 +21,15 @@ function MobileMenu({
   });
 
   return (
-    <Menu active={menuStatus} onClick={toggleMobileMenu}>
-      {navigation}
-      <Languages>
-        <Language onClick={onChangeLang("en")}>ENGLISH</Language>
-        <Language onClick={onChangeLang("ru")}>РУССКИЙ</Language>
-      </Languages>
-    </Menu>
+    <Wrapper active={menuStatus} onClick={toggleMobileMenu}>
+      <Menu active={menuStatus}>
+        {navigation}
+        <Languages>
+          <Language onClick={onChangeLang("en")}>ENGLISH</Language>
+          <Language onClick={onChangeLang("ru")}>РУССКИЙ</Language>
+        </Languages>
+      </Menu>
+    </Wrapper>
   );
 }
 

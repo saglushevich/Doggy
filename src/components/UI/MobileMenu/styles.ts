@@ -3,11 +3,24 @@ import styled from "styled-components";
 
 import { IStyles } from "@types";
 
-export const Menu = styled.nav<IStyles>`
+export const Wrapper = styled.div<IStyles>`
   display: none;
+  width: 100%;
+  height: 100vh;
+  background: transparent;
   position: absolute;
   top: ${({ theme }) => theme.positions.xs}px;
   left: ${({ theme }) => theme.positions.xs}px;
+  transition: all 0.5s;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
+    display: block;
+    z-index: ${({ active }) => (active ? "1000" : "-1000")};
+    transform: ${({ active }) =>
+      active ? `translateX(0%)` : `translateX(-150%)`};
+  }
+`;
+
+export const Menu = styled.nav<IStyles>`
   transform: ${({ active }) =>
     active ? `translateX(0%)` : `translateX(-150%)`};
   width: 70%;
@@ -16,10 +29,6 @@ export const Menu = styled.nav<IStyles>`
   padding: ${({ theme }) => `${theme.gaps["3xl"]}px ${theme.gaps.m}px`};
   transition: all 0.5s;
   z-index: 500;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    display: block;
-  }
 `;
 
 export const MenuItem = styled(Link)`

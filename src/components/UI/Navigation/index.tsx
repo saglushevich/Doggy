@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import logo from "@assets/logo/logo.png";
@@ -28,8 +28,10 @@ function Navigation() {
     i18n.changeLanguage(selectedLang);
   };
 
-  const toggleMobileMenu = () => {
-    setMenuStatus((prevMenuStatus) => !prevMenuStatus);
+  const toggleMobileMenu = (e: SyntheticEvent) => {
+    if (e.target === e.currentTarget) {
+      setMenuStatus((prevMenuStatus) => !prevMenuStatus);
+    }
   };
 
   const navigation = NAVIGATION[lang].map((nav) => {
@@ -44,10 +46,10 @@ function Navigation() {
 
   return (
     <>
-      <Wrapper onClick={toggleMobileMenu}>
+      <Wrapper>
         <Logotype src={logo} />
         <NavigationLinks>{navigation}</NavigationLinks>
-        <Burger active={menuStatus} />
+        <Burger active={menuStatus} onClick={toggleMobileMenu} />
         <Languages>
           <Language active={lang === "ru"} onClick={onChangeLang("ru")}>
             RUS
