@@ -27,7 +27,6 @@ export const Selection = styled.div`
 export const Block = styled.div`
   margin-top: 105px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
@@ -80,16 +79,16 @@ export const InputIcon = styled.div`
   }
 `;
 
-export const SearchResult = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+export const SearchResults = styled.ul`
+  display: block;
   position: absolute;
   width: ${({ theme }) => theme.sizes.m}%;
-  padding: ${({ theme }) => theme.gaps.l}px;
-  border: 2px solid ${({ theme }) => theme.colors.black};
-  bottom: -${({ theme }) => theme.positions.xl}px;
+  top: ${({ theme }) => theme.positions.xl}px;
   left: ${({ theme }) => theme.positions.xs}px;
+  z-index: 100;
+`;
+
+export const SearchResult = styled.li`
   border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: ${({ theme }) => theme.borderSizes.m}px;
   font-family: ${({ theme }) => theme.fonts.primary};
@@ -97,4 +96,14 @@ export const SearchResult = styled.div`
   font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
+  padding: ${({ theme }) => theme.gaps.l}px;
+  background: ${({ theme }) => theme.colors.white};
+  z-index: 100;
+`;
+
+export const SearchMessage = styled(SearchResult)`
+  position: absolute;
+  width: ${({ theme }) => theme.sizes.m}%;
+  top: ${({ theme }) => theme.positions.xl}px;
+  left: ${({ theme }) => theme.positions.xs}px;
 `;

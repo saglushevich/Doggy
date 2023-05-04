@@ -5,13 +5,16 @@ import { useQuery } from "@apollo/client";
 import { GET_DOG } from "@apolloClient";
 import { Container } from "@components/layout";
 import { SectionHeader } from "@styles";
+import { IDog } from "@types";
 
 import {
   Block,
   Form,
   Input,
   InputIcon,
+  SearchMessage,
   SearchResult,
+  SearchResults,
   Selection,
   SelectionProduct,
   Wrapper,
@@ -33,21 +36,31 @@ function DogSearch({ selectDog }: ISearch) {
   });
 
   const loadingStatus = loading && defferedSearchValue && (
-    <SearchResult>{t("loading")}</SearchResult>
+    <SearchMessage>{t("loading")}</SearchMessage>
   );
 
   const errorStatus = error && defferedSearchValue && (
-    <SearchResult>{t("went wrong")}</SearchResult>
+    <SearchMessage>{t("went wrong")}</SearchMessage>
   );
 
   const notFoundStatus =
-    !data || (!data.dog && <SearchResult>{t("not found")}</SearchResult>);
+    !data ||
+    (!data.dog.length && <SearchMessage>{t("not found")}</SearchMessage>);
 
-  const onSelectDog = () => {
-    selectDog(data.dog);
-    setDogName(data.dog.name);
+  const onSelectDog = (dog: IDog) => () => {
+    selectDog(dog);
+    setDogName(dog.name);
     setSearchValue("");
   };
+
+  const dogsList = data?.dog.slice(0, 5).map((dog: IDog) => {
+    const { name } = dog;
+    return (
+      <SearchResult onClick={onSelectDog(dog)} key={name}>
+        {name}
+      </SearchResult>
+    );
+  });
 
   return (
     <Wrapper>
@@ -69,9 +82,7 @@ function DogSearch({ selectDog }: ISearch) {
             {loadingStatus}
             {notFoundStatus}
             {errorStatus}
-            {data?.dog && (
-              <SearchResult onClick={onSelectDog}>{data.dog.name}</SearchResult>
-            )}
+            <SearchResults>{dogsList}</SearchResults>
           </Form>
         </Block>
       </Container>
