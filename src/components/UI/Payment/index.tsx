@@ -55,7 +55,7 @@ function Payment({ onInputChange, values }: IPayment) {
         <InputWrapper>
           <PaymentInput
             type="password"
-            value={cardCVV}
+            value={makeCardFormat(cardCVV, 3, "")}
             name="cardCVV"
             onChange={onInputChange("SET_CARD_CVV")}
             placeholder="CVV"
@@ -68,7 +68,7 @@ function Payment({ onInputChange, values }: IPayment) {
       </PaymentInputs>
       <InputWrapper>
         <PaymentInputLarge
-          value={cardHolder}
+          value={cardHolder.replace(/[0-9]/gi, "")}
           onChange={onInputChange("SET_CARD_HOLDER")}
           name="cardHolder"
           type="text"
