@@ -84,14 +84,13 @@ function Calendar({ onInputChange, onSetCalendarDate }: IPayment) {
 
   const timeslots = TIMESLOTS.map(({ id, value, disableTime }) => {
     const disabled = compareTimes(disableTime);
-
     return (
       <Time key={id}>
         <Checkbox
           onChange={onInputChange("SET_TIME")}
           type="radio"
           id={id}
-          defaultChecked={disableTime > new Date().getDate()}
+          defaultChecked={disableTime > new Date().getHours()}
           name="time"
           value={value}
           disabled={disabled}
