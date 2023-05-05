@@ -28,7 +28,7 @@ export const Image = styled.img`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     width: ${({ theme }) => theme.sizes.m}%;
-    height: 320px;
+    height: ${({ theme }) => theme.sizes.xl}px;
   }
 `;
 

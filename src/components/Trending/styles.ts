@@ -19,8 +19,8 @@ export const Content = styled.div`
 
 export const ImageWrapper = styled.div`
   padding: ${({ theme }) => theme.gaps.s}px;
-  width: 570px;
-  height: 575px;
+  width: ${({ theme }) => theme.sizes["6xl"]}px;
+  height: ${({ theme }) => theme.sizes["6xl"]}px;
   background: ${({ theme }) => theme.colors.secondary};
 `;
 
@@ -42,7 +42,7 @@ export const PackageName = styled.div`
 `;
 
 export const PackageInfo = styled.div`
-  width: 600px;
+  width: ${({ theme }) => theme.sizes["6xl"]}px;
   padding-top: ${({ theme }) => theme.gaps["9xl"]}px;
 `;
 
@@ -51,7 +51,7 @@ export const PackagePrice = styled(PackageName)`
 `;
 
 export const PackageDescription = styled(PackageName)`
-  width: 600px;
+  width: ${({ theme }) => theme.sizes["6xl"]}px;
   font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
   line-height: ${({ theme }) => theme.lineHeights.l}px;
   margin-top: ${({ theme }) => theme.gaps["4xl"]}px;

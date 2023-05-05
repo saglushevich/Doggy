@@ -4,7 +4,7 @@ import checkmark from "@assets/icons/checkmark.svg";
 import { IStyles } from "@types";
 
 export const CalendarWrapper = styled.div`
-  width: 320px;
+  width: ${({ theme }) => theme.sizes.xl}px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     width: ${({ theme }) => theme.sizes.m}%;
     margin-bottom: ${({ theme }) => theme.gaps["5xl"]}px;
@@ -42,7 +42,7 @@ export const Time = styled.div`
 
 export const Checkbox = styled.input`
   position: absolute;
-  z-index: -1;
+  z-index: -${({ theme }) => theme.zIndexs.xs};
   opacity: 0;
   & + label {
     display: flex;
@@ -80,8 +80,8 @@ export const Label = styled.label`
 export const Days = styled.div`
   margin-top: ${({ theme }) => theme.gaps["2xl"]}px;
   display: grid;
-  grid-template-columns: repeat(7, 30px);
-  grid-template-rows: repeat(6, 30px);
+  grid-template-columns: repeat(7, ${({ theme }) => theme.gaps["2xl"]}px);
+  grid-template-rows: repeat(6, ${({ theme }) => theme.gaps["2xl"]}px);
   column-gap: ${({ theme }) => theme.gaps.l}px;
   row-gap: ${({ theme }) => theme.gaps.s}px;
 
@@ -90,8 +90,8 @@ export const Days = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileSmall}px) {
-    grid-template-columns: repeat(7, 20px);
-    grid-template-rows: repeat(6, 20px);
+    grid-template-columns: repeat(7, ${({ theme }) => theme.gaps.l}px);
+    grid-template-rows: repeat(6, ${({ theme }) => theme.gaps.l}px);
   }
 `;
 
@@ -104,7 +104,7 @@ export const Day = styled.div<IStyles>`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins";
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.m};
   font-size: ${({ theme }) => theme.fontSizes.s}px;
   color: ${({ theme, day, gray }) =>
@@ -115,7 +115,7 @@ export const Day = styled.div<IStyles>`
     !gray &&
     `
       background: ${theme.colors.primary};
-      border-radius: 4px;
+      border-radius: ${theme.borderSizes.s}px;
   `}
 `;
 

@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: ${({ theme }) => `${theme.gaps["7xl"]}px 0 ${theme.gaps["12xl"]}px`};
+  padding: ${({ theme }) =>
+    `${theme.gaps["7xl"]}px ${theme.gaps.xxs} ${theme.gaps["12xl"]}px`};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    padding: ${({ theme }) => `${theme.gaps["4xl"]}px 0`};
+    padding: ${({ theme }) => `${theme.gaps["4xl"]}px ${theme.gaps.xxs}`};
   }
 `;
 
 export const Article = styled.article`
-  padding: ${({ theme }) => `${theme.gaps["3xl"]}px ${theme.gaps.xl}px 0`};
+  padding: ${({ theme }) =>
+    `${theme.gaps["3xl"]}px ${theme.gaps.xl}px ${theme.gaps.xxs}`};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    padding: ${({ theme }) => `${theme.gaps.xl}px 0 0`};
+    padding: ${({ theme }) =>
+      `${theme.gaps.xl}px ${theme.gaps.xxs} ${theme.gaps.xxs}`};
   }
 `;
 
@@ -55,7 +58,7 @@ export const ImageContainer = styled.div`
 
 export const Paragraph = styled.p`
   width: 720px;
-  padding: 0 ${({ theme }) => theme.gaps["11xl"]}px;
+  padding: ${({ theme }) => `${theme.gaps.xxs} ${theme.gaps["11xl"]}px`};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.m};
   font-size: ${({ theme }) => theme.fontSizes["4xl"]}px;
@@ -65,7 +68,7 @@ export const Paragraph = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: ${({ theme }) => theme.sizes.m}%;
-    padding: 0 ${({ theme }) => theme.gaps["2xl"]}px;
+    padding: ${({ theme }) => `${theme.gaps.xxs} ${theme.gaps["2xl"]}px`};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {

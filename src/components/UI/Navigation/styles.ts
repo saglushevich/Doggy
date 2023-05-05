@@ -12,6 +12,7 @@ export const Wrapper = styled.header`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
+    cursor: pointer;
     justify-content: space-between;
     align-items: center;
   }
@@ -51,9 +52,9 @@ export const NavigationLink = styled(Link)<IStyles>`
       bottom: -${theme.positions.s}px;
       left: ${theme.positions.xs}px;
       width: ${theme.sizes.m}%;
-      height: 6px;
+      height: ${theme.sizes.xxs}px;
       background: ${theme.colors.primary};
-      border-radius: 100px;
+      border-radius: ${theme.borderSizes.xl}px;
     }
   `};
 
@@ -109,9 +110,8 @@ export const Burger = styled.div<IStyles>`
   display: none;
   position: relative;
   width: ${({ active }) => (active ? 0 : 55)}px;
-  height: 4px;
+  height: ${({ theme }) => theme.sizes.xxs}px;
   background: ${({ theme }) => theme.colors.black};
-  cursor: pointer;
   &:before {
     content: "";
     position: absolute;

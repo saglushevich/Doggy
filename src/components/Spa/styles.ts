@@ -19,7 +19,7 @@ export const Services = styled.ul`
     top: ${({ theme }) => theme.positions.xs}px;
     left: ${({ theme }) => theme.positions.l}%;
     transform: translateX(-50%);
-    border: 1px solid #000000;
+    border: 1px solid ${({ theme }) => theme.colors.black};
   }
   &:after {
     width: ${({ theme }) => theme.sizes["7xl"]}px;
@@ -28,12 +28,12 @@ export const Services = styled.ul`
     bottom: ${({ theme }) => theme.positions.xs}px;
     left: ${({ theme }) => theme.positions.l}%;
     transform: translateX(-50%);
-    border: 1px solid #000000;
+    border: 1px solid ${({ theme }) => theme.colors.black};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     margin-top: ${({ theme }) => theme.gaps["6xl"]}px;
-    padding: ${({ theme }) => theme.gaps["8xl"]}px 0;
+    padding: ${({ theme }) => `${theme.gaps["8xl"]}px ${theme.gaps.xxs}`};
     &:before {
       width: ${({ theme }) => theme.sizes.s}%;
     }

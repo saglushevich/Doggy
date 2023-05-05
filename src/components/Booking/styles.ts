@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   margin-top: ${({ theme }) => theme.gaps["15xl"]}px;
   display: flex;
   justify-content: space-between;
-  padding: 0 ${({ theme }) => theme.gaps["6xl"]}px;
+  padding: ${({ theme }) => `${theme.gaps.xxs} ${theme.gaps["6xl"]}px`};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: block;
@@ -19,10 +19,10 @@ export const Wrapper = styled.div`
 
 export const Selection = styled.div`
   padding-bottom: ${({ theme }) => theme.gaps["8xl"]}px;
-  width: 750px;
+  width: ${({ theme }) => theme.sizes["8xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
-    width: 700px;
+    width: ${({ theme }) => theme.sizes["7xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
@@ -49,12 +49,12 @@ export const Forms = styled.div`
 export const Inputs = styled.div`
   display: flex;
   align-items: center;
-  width: 750px;
+  width: ${({ theme }) => theme.sizes["8xl"]}px;
   justify-content: space-between;
   margin-bottom: ${({ theme }) => theme.gaps["4xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
-    width: 700px;
+    width: ${({ theme }) => theme.sizes["7xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
@@ -88,7 +88,7 @@ export const Requests = styled(Input)`
 
 export const Cancelling = styled.p`
   display: block;
-  width: 485px;
+  width: ${({ theme }) => theme.sizes["4xl"]}px;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};
   font-size: ${({ theme }) => theme.fontSizes.m}px;

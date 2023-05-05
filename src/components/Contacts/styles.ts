@@ -20,7 +20,7 @@ export const Text = styled.p`
     top: -${({ theme }) => theme.positions.m}px;
     left: ${({ theme }) => theme.positions.l}%;
     transform: translateX(-50%);
-    border: 1px solid #000000;
+    border: 1px solid ${({ theme }) => theme.colors.black};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
@@ -31,7 +31,7 @@ export const Text = styled.p`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileSmall}px) {
-    font-size: ${({ theme }) => theme.fontSizes.xl}px;
+    font-size: ${({ theme }) => theme.fontSizes.l}px;
     &:before {
       width: ${({ theme }) => theme.sizes.s}%;
     }

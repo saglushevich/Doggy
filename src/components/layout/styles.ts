@@ -14,18 +14,18 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    width: 405px;
+    width: ${({ theme }) => theme.sizes["2xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     width: ${({ theme }) => theme.sizes.m}%;
-    padding: 0 ${({ theme }) => theme.gaps.xs}px;
+    padding: ${({ theme }) => `${theme.gaps.xxs} ${theme.gaps.xs}px`};
   }
 `;
 
 export const Discount = styled.div`
   padding: ${({ theme }) => `${theme.gaps.s}px 0`};
-  background: #f3ded7;
+  background: ${({ theme }) => theme.colors.primaryLight};
 `;
 
 export const Text = styled.p`
