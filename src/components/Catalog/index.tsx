@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 
 import { Container } from "@components/layout";
-import CatalogCard from "@components/UI/CatalogCard";
 import { SectionTitle } from "@styles";
 
 import { Button, Cards, Wrapper } from "./styles";
 import { ICatalog } from "./types";
+
+const LazyCatalogCard = lazy(() => import("@components/UI/CatalogCard"));
 
 function Catalog({ title, buttonText, products }: ICatalog) {
   const [cardsAmount, setCardsAmount] = useState(3);
@@ -14,7 +15,7 @@ function Catalog({ title, buttonText, products }: ICatalog) {
     const { id, image, title, category, price } = product;
 
     return (
-      <CatalogCard
+      <LazyCatalogCard
         key={id}
         title={title}
         category={category}
@@ -29,15 +30,20 @@ function Catalog({ title, buttonText, products }: ICatalog) {
   };
 
   return (
-    <Wrapper>
-      <Container>
-        <SectionTitle>{title}</SectionTitle>
-        <Cards>{catalogCards}</Cards>
-        <Button onClick={onLoadCards} disabled={products.length <= cardsAmount}>
-          {buttonText}
-        </Button>
-      </Container>
-    </Wrapper>
+    <Suspense>
+      <Wrapper>
+        <Container>
+          <SectionTitle>{title}</SectionTitle>
+          <Cards>{catalogCards}</Cards>
+          <Button
+            onClick={onLoadCards}
+            disabled={products.length <= cardsAmount}
+          >
+            {buttonText}
+          </Button>
+        </Container>
+      </Wrapper>
+    </Suspense>
   );
 }
 
