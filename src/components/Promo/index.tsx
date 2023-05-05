@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
 import { ROUTES } from "@constants";
 

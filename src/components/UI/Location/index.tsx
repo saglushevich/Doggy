@@ -1,6 +1,6 @@
-import mapboxgl from "mapbox-gl";
 import { memo, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import mapboxgl from "mapbox-gl";
 
 import { MAP_KEY, MAP_LINK } from "@constants";
 import { COORDINATES, SCHEDULE } from "@mocks";

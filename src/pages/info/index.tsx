@@ -1,6 +1,6 @@
-import Head from "next/head";
 import { lazy, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Head from "next/head";
 
 import DogSearch from "@components/DogSearch";
 import { PageContainer } from "@components/layout";

@@ -1,6 +1,6 @@
+import { useTranslation } from "react-i18next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useTranslation } from "react-i18next";
 
 import { PageContainer } from "@components/layout";
 import { ROUTES } from "@constants";

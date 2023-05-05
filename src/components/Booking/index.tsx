@@ -1,4 +1,3 @@
-import { ErrorMessage, Form, FormikProvider, useFormik } from "formik";
 import {
   lazy,
   Suspense,
@@ -8,6 +7,7 @@ import {
   useState,
 } from "react";
 import { useTranslation } from "react-i18next";
+import { ErrorMessage, Form, FormikProvider, useFormik } from "formik";
 
 import { Container } from "@components/layout";
 import { CLIENT_INFO, PAYMENT, PAYPAL_KEY } from "@constants";

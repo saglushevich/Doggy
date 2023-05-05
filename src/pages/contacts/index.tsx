@@ -1,5 +1,5 @@
-import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import Head from "next/head";
 
 import Contacts from "@components/Contacts";
 import ContactsForm from "@components/ContactsForm";

@@ -1,6 +1,6 @@
-import { ErrorMessage, FormikProvider } from "formik";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { ErrorMessage, FormikProvider } from "formik";
 
 import { Container } from "@components/layout";
 import { SUBSCRIBE_SCHEMA, SUBSCRIBE_TEMPLATE } from "@constants";
