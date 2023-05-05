@@ -48,7 +48,7 @@ export const SelectionProduct = styled.span`
 
 export const Form = styled.form`
   position: relative;
-  width: 330px;
+  width: ${({ theme }) => theme.sizes.xl}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     width: ${({ theme }) => theme.sizes.m}%;
@@ -68,14 +68,14 @@ export const Input = styled(SectionInput)`
 export const InputIcon = styled.div`
   position: absolute;
   top: ${({ theme }) => theme.positions.s}px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
+  right: ${({ theme }) => theme.positions.s}px;
+  width: ${({ theme }) => theme.gaps["4xl"]}px;
+  height: ${({ theme }) => theme.gaps["4xl"]}px;
   object-fit: cover;
   background: url(${search});
   cursor: pointer;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    top: 25px;
+    top: ${({ theme }) => theme.gaps.xl}px;
   }
 `;
 
@@ -85,7 +85,7 @@ export const SearchResults = styled.ul`
   width: ${({ theme }) => theme.sizes.m}%;
   top: ${({ theme }) => theme.positions.xl}px;
   left: ${({ theme }) => theme.positions.xs}px;
-  z-index: 100;
+  z-index: ${({ theme }) => theme.zIndexs.s};
 `;
 
 export const SearchResult = styled.li`
@@ -98,7 +98,7 @@ export const SearchResult = styled.li`
   cursor: pointer;
   padding: ${({ theme }) => theme.gaps.l}px;
   background: ${({ theme }) => theme.colors.white};
-  z-index: 100;
+  z-index: ${({ theme }) => theme.zIndexs.s};
 `;
 
 export const SearchMessage = styled(SearchResult)`

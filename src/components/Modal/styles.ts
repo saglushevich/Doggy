@@ -4,7 +4,7 @@ export const ModalWrapper = styled.div`
   position: fixed;
   top: ${({ theme }) => theme.positions.xs}px;
   left: ${({ theme }) => theme.positions.xs}px;
-  z-index: 1050;
+  z-index: ${({ theme }) => theme.zIndexs.s};
   display: block;
   width: ${({ theme }) => theme.sizes.m}%;
   height: ${({ theme }) => theme.sizes.m}%;
@@ -27,7 +27,7 @@ export const ModalCloseBtn = styled.div`
   font-size: ${({ theme }) => theme.fontSizes["10xl"]}px;
   font-weight: ${({ theme }) => theme.fontWeights.l};
   cursor: pointer;
-  z-index: 1200;
+  z-index: ${({ theme }) => theme.zIndexs.m};
 `;
 
 export const ModalText = styled.div`

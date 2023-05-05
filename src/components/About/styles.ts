@@ -1,24 +1,25 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: ${({ theme }) => `${theme.gaps["9xl"]}px 0 ${theme.gaps["6xl"]}px`};
+  padding: ${({ theme }) =>
+    `${theme.gaps["9xl"]}px ${theme.gaps.xxs} ${theme.gaps["6xl"]}px`};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    padding: ${({ theme }) => `${theme.gaps["3xl"]}px 0 0`};
+    padding: ${({ theme }) =>
+      `${theme.gaps["3xl"]}px ${theme.gaps.xxs} ${theme.gaps.xxs}`};
   }
 `;
 
 export const Article = styled.article`
-  padding: 0 ${({ theme }) => theme.gaps["13xl"]}px;
-  padding: ${({ theme }) => `0 ${theme.gaps["13xl"]}px`};
+  padding: ${({ theme }) => `${theme.gaps.xxs} ${theme.gaps["13xl"]}px`};
   margin-top: ${({ theme }) => theme.gaps["13xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
-    padding: 0 ${({ theme }) => theme.gaps["11xl"]}px;
+    padding: ${({ theme }) => `${theme.gaps.xxs} ${theme.gaps["11xl"]}px`};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    padding: ${({ theme }) => `0 ${theme.gaps["5xl"]}px`};
+    padding: ${({ theme }) => `${theme.gaps.xxs} ${theme.gaps["5xl"]}px`};
     margin-top: ${({ theme }) => theme.gaps["7xl"]}px;
   }
 
@@ -37,7 +38,7 @@ export const ImageWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: ${({ theme }) => theme.sizes.m}%;
     height: ${({ theme }) => theme.sizes["3xl"]}px;
-    margin: ${({ theme }) => `${theme.gaps.xl}px 0`};
+    margin: ${({ theme }) => `${theme.gaps.xl}px ${theme.gaps.xxs}`};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {

@@ -37,6 +37,7 @@ export const THEMES = {
     "6xl": 85,
   },
   sizes: {
+    xxs: 6,
     xs: 25,
     s: 90,
     m: 100,
@@ -48,8 +49,16 @@ export const THEMES = {
     "5xl": 510,
     "6xl": 590,
     "7xl": 735,
+    "8xl": 750,
+    "9xl": 970,
+  },
+  zIndexs: {
+    xs: 1,
+    s: 100,
+    m: 1000,
   },
   gaps: {
+    xxs: 0,
     xs: 8,
     s: 10,
     m: 15,
@@ -81,6 +90,7 @@ export const THEMES = {
     s: 4,
     m: 8,
     l: 30,
+    xl: 100,
   },
   colors: {
     black: "#4C4C4B",

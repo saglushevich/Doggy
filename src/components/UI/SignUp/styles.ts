@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   transform: translateX(-50%);
   padding: ${({ theme }) => theme.gaps.s}px;
   background: ${({ theme }) => theme.colors.secondary};
-  width: 970px;
+  width: ${({ theme }) => theme.sizes["9xl"]}px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     position: static;
     transform: translateX(0);
@@ -48,7 +48,7 @@ export const SignTitle = styled.div`
 `;
 
 export const SignDiscount = styled.div`
-  max-width: 250px;
+  max-width: ${({ theme }) => theme.sizes.l}px;
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: ${({ theme }) => theme.fontWeights.s};
   font-size: ${({ theme }) => theme.fontSizes["2xl"]}px;
@@ -87,7 +87,7 @@ export const SignText = styled.p`
   line-height: ${({ theme }) => theme.lineHeights.xs}px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
-  width: 230px;
+  width: ${({ theme }) => theme.sizes.l}px;
   margin: 0 auto;
   margin-top: ${({ theme }) => theme.gaps["3xl"]}px;
 `;

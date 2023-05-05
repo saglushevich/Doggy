@@ -7,11 +7,11 @@ import { IStyles } from "@types";
 
 export const Wrapper = styled.footer`
   background: ${({ theme }) => theme.colors.secondary};
-  padding: ${({ theme }) => `${theme.gaps.s}px 0`};
+  padding: ${({ theme }) => `${theme.gaps.s}px ${theme.gaps.xxs}`};
   margin-top: ${({ theme }) => theme.gaps["9xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    padding: ${({ theme }) => `${theme.gaps.xs}px 0`}
+    padding: ${({ theme }) => `${theme.gaps.xs}px ${theme.gaps.xxs}`}
     margin-top: ${({ theme }) => theme.gaps["7xl"]}px;
   }
 
@@ -25,20 +25,23 @@ export const Wrapper = styled.footer`
 `;
 
 export const InnerWrapper = styled.div`
-  padding: 55px 0 ${({ theme }) => theme.gaps["9xl"]}px;
-  background: #f3ded7;
+  padding: ${({ theme }) =>
+    `${theme.gaps["6xl"]}px ${theme.gaps.xxs} ${theme.gaps["9xl"]}px`};
+  background: ${({ theme }) => theme.colors.primaryLight};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     padding: ${({ theme }) =>
-      `${theme.gaps["2xl"]}px 0 ${theme.gaps["3xl"]}px`};
+      `${theme.gaps["2xl"]}px ${theme.gaps.xxs} ${theme.gaps["3xl"]}px`};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
-    padding: ${({ theme }) => `${theme.gaps.l}px 0 ${theme.gaps.xl}px`};
+    padding: ${({ theme }) =>
+      `${theme.gaps.l}px ${theme.gaps.xxs} ${theme.gaps.xl}px`};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileSmall}px) {
-    padding: ${({ theme }) => `${theme.gaps.m}px 0 ${theme.gaps.xl}px`};
+    padding: ${({ theme }) =>
+      `${theme.gaps.m}px ${theme.gaps.xxs} ${theme.gaps.xl}px`};
   }
 `;
 
@@ -121,7 +124,7 @@ export const FormMessage = styled(Title)`
 `;
 
 export const Input = styled(SectionInput)`
-  width: 500px;
+  width: ${({ theme }) => theme.sizes["5xl"]}px;
   padding: ${({ theme }) => `${theme.gaps.l}px ${theme.gaps.xl}px`};
   margin-right: ${({ theme }) => theme.gaps["2xl"]}px;
 
@@ -153,8 +156,8 @@ export const SocialNetworks = styled.div`
 export const Social = styled(Link)<IStyles>`
   cursor: pointer;
   display: block;
-  width: 38px;
-  height: 30px;
+  width: ${({ theme }) => theme.gaps["4xl"]}px;
+  height: ${({ theme }) => theme.gaps["2xl"]}px;
   background: ${({ image }) => `url(${image}) center center/contain no-repeat`};
   &:nth-last-child(n + 2) {
     margin-right: ${({ theme }) => theme.gaps["6xl"]}px;
@@ -172,12 +175,12 @@ export const Privacy = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1385px;
+  width: ${({ theme }) => theme.sizes.m}%;
+  padding: ${({ theme }) => `${theme.gaps.xxs} ${theme.gaps.l}px`};
   padding-top: ${({ theme }) => theme.gaps.m}px;
   margin: 0 auto;
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: block;
-    width: 95%;
   }
 `;
 
@@ -185,7 +188,7 @@ export const PrivacyBlock = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    margin: ${({ theme }) => `${theme.gaps.xs}px 0`};
+    margin: ${({ theme }) => `${theme.gaps.xs}px ${theme.gaps.xxs}`};
   }
 `;
 

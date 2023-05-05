@@ -21,7 +21,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const Input = styled(SectionInput)`
-  width: 605px;
+  width: ${({ theme }) => theme.sizes["6xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: ${({ theme }) => theme.sizes.m}%;
@@ -39,7 +39,7 @@ export const Input = styled(SectionInput)`
 
 export const TextArea = styled.textarea`
   width: ${({ theme }) => theme.sizes.m}%;
-  height: 315px;
+  height: ${({ theme }) => theme.sizes.xl}px;
   resize: none;
   padding: ${({ theme }) => theme.gaps["2xl"]}px;
   font-family: ${({ theme }) => theme.fonts.primary};
@@ -52,11 +52,7 @@ export const TextArea = styled.textarea`
   border-radius: ${({ theme }) => theme.borderSizes.m}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    height: 230px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    height: 200px;
+    height: ${({ theme }) => theme.sizes.l}px;
   }
 `;
 

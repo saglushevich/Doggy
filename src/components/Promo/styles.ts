@@ -19,12 +19,12 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   padding-top: ${({ theme }) => theme.gaps["13xl"]}px;
   padding-left: ${({ theme }) => theme.gaps["7xl"]}px;
-  width: 580px;
+  width: ${({ theme }) => theme.sizes["6xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     padding-top: ${({ theme }) => theme.gaps["12xl"]}px;
     padding-left: ${({ theme }) => theme.positions.xs}px;
-    width: 370px;
+    width: ${({ theme }) => theme.sizes["2xl"]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
@@ -48,12 +48,12 @@ export const Title = styled.h1`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     color: ${({ theme }) => theme.colors.white};
-    text-shadow: #000 0 0 2px;
+    text-shadow: ${({ theme }) => `${theme.colors.black} 0 0 2px`};
   }
 `;
 
 export const Subtitle = styled.h2`
-  max-width: 430px;
+  max-width: ${({ theme }) => theme.sizes["3xl"]}px;
   font-family: ${({ theme }) => theme.fonts.primary};
   text-align: center;
   font-weight: ${({ theme }) => theme.fontWeights.l};
@@ -70,7 +70,6 @@ export const Subtitle = styled.h2`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     color: ${({ theme }) => theme.colors.white};
-    text-shadow: #000 0 0 2px;
   }
 `;
 
@@ -79,6 +78,6 @@ export const Button = styled(SectionButton)`
   margin-left: ${({ theme }) => theme.gaps["11xl"]}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    margin: ${({ theme }) => theme.gaps["4xl"]}px auto 0;
+    margin: ${({ theme }) => `${theme.gaps["4xl"]}px auto ${theme.gaps.xxs}`};
   }
 `;

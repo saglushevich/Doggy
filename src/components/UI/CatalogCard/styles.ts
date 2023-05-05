@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    width: 235px;
+    width: ${({ theme }) => theme.sizes.l}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
@@ -21,12 +21,9 @@ export const Wrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   width: ${({ theme }) => theme.sizes.m}%;
-  height: 445px;
+  height: ${({ theme }) => theme.sizes["3xl"]}px;
   padding: ${({ theme }) => theme.gaps.xs}px;
   background: ${({ theme }) => theme.colors.primary};
-  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    height: 325px;
-  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     height: 360px;

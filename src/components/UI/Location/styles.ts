@@ -7,16 +7,20 @@ export const Wrapper = styled.div`
     padding-top: ${({ theme }) => theme.gaps["10xl"]}px;
     width: ${({ theme }) => theme.sizes.m}%;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    padding-top: ${({ theme }) => theme.gaps.xxs};
+  }
 `;
 
 export const MapWrapper = styled.div`
   width: ${({ theme }) => theme.sizes.m}%;
-  height: 500px;
+  height: ${({ theme }) => theme.sizes["5xl"]}px;
   padding: ${({ theme }) => theme.gaps.xs}px;
   background: ${({ theme }) => theme.colors.secondary};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    height: 420px;
+    height: ${({ theme }) => theme.sizes["3xl"]}px;
   }
 `;
 

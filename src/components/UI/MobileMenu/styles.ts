@@ -5,16 +5,18 @@ import { IStyles } from "@types";
 
 export const Wrapper = styled.div<IStyles>`
   display: none;
-  width: 100%;
-  height: 100vh;
+  width: ${({ theme }) => theme.sizes.m}%;
+  height: ${({ theme }) => theme.sizes.m}vh;
   background: transparent;
   position: absolute;
   top: ${({ theme }) => theme.positions.xs}px;
   left: ${({ theme }) => theme.positions.xs}px;
   transition: all 0.5s;
+  cursor: pointer;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletSmall}px) {
     display: block;
-    z-index: ${({ active }) => (active ? "1000" : "-1000")};
+    z-index: ${({ active, theme }) =>
+      active ? theme.zIndexs.m : -theme.zIndexs.m};
     transform: ${({ active }) =>
       active ? `translateX(0%)` : `translateX(-150%)`};
   }
@@ -28,7 +30,7 @@ export const Menu = styled.nav<IStyles>`
   background: ${({ theme }) => theme.colors.secondary};
   padding: ${({ theme }) => `${theme.gaps["3xl"]}px ${theme.gaps.m}px`};
   transition: all 0.5s;
-  z-index: 500;
+  z-index: ${({ theme }) => theme.zIndexs.m};
 `;
 
 export const MenuItem = styled(Link)`
