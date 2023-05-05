@@ -1,20 +1,24 @@
+import { lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
 
-import About from "@components/About";
 import { PageContainer } from "@components/layout";
 import { Title } from "@styles";
+
+const LazyAbout = lazy(() => import("@components/About"));
 
 function AboutPage() {
   const { t } = useTranslation();
 
   return (
-    <PageContainer>
-      <Head>
-        <Title>{t("about")}</Title>
-      </Head>
-      <About />
-    </PageContainer>
+    <Suspense>
+      <PageContainer>
+        <Head>
+          <Title>{t("about")}</Title>
+        </Head>
+        <LazyAbout />
+      </PageContainer>
+    </Suspense>
   );
 }
 

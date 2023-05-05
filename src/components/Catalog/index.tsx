@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, useState } from "react";
 
 import { Container } from "@components/layout";
 import { SectionTitle } from "@styles";
@@ -30,20 +30,15 @@ function Catalog({ title, buttonText, products }: ICatalog) {
   };
 
   return (
-    <Suspense>
-      <Wrapper>
-        <Container>
-          <SectionTitle>{title}</SectionTitle>
-          <Cards>{catalogCards}</Cards>
-          <Button
-            onClick={onLoadCards}
-            disabled={products.length <= cardsAmount}
-          >
-            {buttonText}
-          </Button>
-        </Container>
-      </Wrapper>
-    </Suspense>
+    <Wrapper>
+      <Container>
+        <SectionTitle>{title}</SectionTitle>
+        <Cards>{catalogCards}</Cards>
+        <Button onClick={onLoadCards} disabled={products.length <= cardsAmount}>
+          {buttonText}
+        </Button>
+      </Container>
+    </Wrapper>
   );
 }
 

@@ -1,15 +1,12 @@
-import {
-  lazy,
-  Suspense,
-  SyntheticEvent,
-  useCallback,
-  useReducer,
-  useState,
-} from "react";
+import { SyntheticEvent, useCallback, useReducer, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ErrorMessage, Form, FormikProvider, useFormik } from "formik";
 
+import Calendar from "@components/Calendar";
 import { Container } from "@components/layout";
+import Modal from "@components/Modal";
+import Location from "@components/UI/Location";
+import Payment from "@components/UI/Payment";
 import { CLIENT_INFO, PAYMENT, PAYPAL_KEY } from "@constants";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { paymentReducer } from "@utils";
@@ -27,11 +24,6 @@ import {
   Title,
   Wrapper,
 } from "./styles";
-
-const LazyLocation = lazy(() => import("@components/UI/Location"));
-const LazyModal = lazy(() => import("@components/Modal"));
-const LazyCalendar = lazy(() => import("@components/Calendar"));
-const LazyPayment = lazy(() => import("@components/UI/Payment"));
 
 function Booking() {
   const [appointment, dispatch] = useReducer(paymentReducer, PAYMENT);
@@ -74,94 +66,89 @@ function Booking() {
   }, []);
 
   return (
-    <Suspense>
-      <PayPalScriptProvider deferLoading options={initialOptions}>
-        <Container>
-          <Wrapper>
-            <Selection>
-              <Title>{t("enter information")}</Title>
-              <FormikProvider value={formik}>
-                <Form>
-                  <Forms>
-                    <Inputs>
-                      <InputWrapper>
-                        <Input
-                          name="name"
-                          value={name}
-                          onChange={onInputChange("SET_NAME")}
-                          placeholder={t("name") as string}
-                        />
-                        <ErrorMessage name="name">
-                          {(msg) => <Message>{msg}</Message>}
-                        </ErrorMessage>
-                      </InputWrapper>
-                      <InputWrapper>
-                        <Input
-                          name="surname"
-                          value={surname}
-                          onChange={onInputChange("SET_SURNAME")}
-                          placeholder={t("surname") as string}
-                        />
-                        <ErrorMessage name="surname">
-                          {(msg) => <Message>{msg}</Message>}
-                        </ErrorMessage>
-                      </InputWrapper>
-                    </Inputs>
-                    <Inputs>
-                      <InputWrapper>
-                        <Input
-                          value={email}
-                          onChange={onInputChange("SET_EMAIL")}
-                          placeholder="Email"
-                          name="email"
-                        />
-                        <ErrorMessage name="email">
-                          {(msg) => <Message>{msg}</Message>}
-                        </ErrorMessage>
-                      </InputWrapper>
-                      <InputWrapper>
-                        <Input
-                          value={phone}
-                          onChange={onInputChange("SET_PHONE")}
-                          name="phone"
-                          placeholder={t("phone") as string}
-                        />
-                        <ErrorMessage name="phone">
-                          {(msg) => <Message>{msg}</Message>}
-                        </ErrorMessage>
-                      </InputWrapper>
-                    </Inputs>
-                    <LazyCalendar
-                      onInputChange={onInputChange}
-                      onSetCalendarDate={onSetCalendarDate}
-                      values={appointment}
-                    />
-                    <Requests
-                      onChange={onInputChange("SET_REQUEST")}
-                      placeholder={t("special request") as string}
-                      name="request"
-                    />
-                    <LazyPayment
-                      onInputChange={onInputChange}
-                      values={appointment}
-                    />
-                    <Cancelling>{t("cancelling")}</Cancelling>
-                    <Button type="submit">{t("book appointment")}</Button>
-                  </Forms>
-                </Form>
-              </FormikProvider>
-            </Selection>
-            <LazyLocation />
-          </Wrapper>
-          {modalStatus && (
-            <LazyModal
-              appointment={appointment}
-              toggleModalStatus={toggleModalStatus}
-            />
-          )}
-        </Container>
-      </PayPalScriptProvider>
-    </Suspense>
+    <PayPalScriptProvider deferLoading options={initialOptions}>
+      <Container>
+        <Wrapper>
+          <Selection>
+            <Title>{t("enter information")}</Title>
+            <FormikProvider value={formik}>
+              <Form>
+                <Forms>
+                  <Inputs>
+                    <InputWrapper>
+                      <Input
+                        name="name"
+                        value={name}
+                        onChange={onInputChange("SET_NAME")}
+                        placeholder={t("name") as string}
+                      />
+                      <ErrorMessage name="name">
+                        {(msg) => <Message>{msg}</Message>}
+                      </ErrorMessage>
+                    </InputWrapper>
+                    <InputWrapper>
+                      <Input
+                        name="surname"
+                        value={surname}
+                        onChange={onInputChange("SET_SURNAME")}
+                        placeholder={t("surname") as string}
+                      />
+                      <ErrorMessage name="surname">
+                        {(msg) => <Message>{msg}</Message>}
+                      </ErrorMessage>
+                    </InputWrapper>
+                  </Inputs>
+                  <Inputs>
+                    <InputWrapper>
+                      <Input
+                        value={email}
+                        onChange={onInputChange("SET_EMAIL")}
+                        placeholder="Email"
+                        name="email"
+                      />
+                      <ErrorMessage name="email">
+                        {(msg) => <Message>{msg}</Message>}
+                      </ErrorMessage>
+                    </InputWrapper>
+                    <InputWrapper>
+                      <Input
+                        value={phone}
+                        onChange={onInputChange("SET_PHONE")}
+                        name="phone"
+                        placeholder={t("phone") as string}
+                      />
+                      <ErrorMessage name="phone">
+                        {(msg) => <Message>{msg}</Message>}
+                      </ErrorMessage>
+                    </InputWrapper>
+                  </Inputs>
+                  <Calendar
+                    onInputChange={onInputChange}
+                    onSetCalendarDate={onSetCalendarDate}
+                    values={appointment}
+                  />
+                  <Requests
+                    onChange={onInputChange("SET_REQUEST")}
+                    placeholder={t("special request") as string}
+                    name="request"
+                  />
+                  <Payment onInputChange={onInputChange} values={appointment} />
+                  <Cancelling>{t("cancelling")}</Cancelling>
+                  <Button type="submit">{t("book appointment")}</Button>
+                </Forms>
+              </Form>
+            </FormikProvider>
+          </Selection>
+          <Location />
+        </Wrapper>
+        {modalStatus && (
+          <Modal
+            appointment={appointment}
+            toggleModalStatus={toggleModalStatus}
+          />
+        )}
+      </Container>
+    </PayPalScriptProvider>
   );
 }
 
