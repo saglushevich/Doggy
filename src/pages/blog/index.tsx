@@ -1,5 +1,5 @@
-import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import Head from "next/head";
 
 import Blog from "@components/Blog";
 import { PageContainer } from "@components/layout";

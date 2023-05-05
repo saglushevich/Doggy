@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
 import { SyntheticEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
 import logo from "@assets/logo/logo.png";
 import MobileMenu from "@components/UI/MobileMenu";

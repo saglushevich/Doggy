@@ -1,6 +1,6 @@
+import { useTranslation } from "react-i18next";
 import { ErrorMessage, Form, FormikProvider } from "formik";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
 
 import signUpDog from "@assets/images/singUp_dog.webp";
 import { SUBSCRIBE_SCHEMA, SUBSCRIBE_TEMPLATE } from "@constants";

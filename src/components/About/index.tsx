@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 import dog from "@assets/images/about1.webp";
 import cat from "@assets/images/about2.webp";

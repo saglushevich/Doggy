@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ReactNode } from "react";
+import Image from "next/image";
 
 import dog from "@assets/images/trending_dog.webp";
 import { Container } from "@components/layout";
