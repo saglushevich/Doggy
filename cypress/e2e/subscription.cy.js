@@ -9,9 +9,9 @@ describe("subscription", () => {
       cy.get("div").contains("We will contact you!").should("exist");
     });
 
-    it("empty email input", () => {
-      cy.get("input[placeholder='Email']");
+    it("Incorrect input", () => {
+      cy.get("input[placeholder='Email']").type("se");
       cy.get("button").contains("Submit").click();
-      cy.get("div").contains("Email is required").should("exist");
+      cy.get("div").contains("Enter a valid email").should("exist");
     });
 });

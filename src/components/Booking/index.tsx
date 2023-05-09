@@ -83,7 +83,7 @@ function Booking() {
                         placeholder={t("name") as string}
                       />
                       <ErrorMessage name="name">
-                        {(msg) => <Message>{msg}</Message>}
+                        {(msg) => <Message>{t(msg)}</Message>}
                       </ErrorMessage>
                     </InputWrapper>
                     <InputWrapper>
@@ -94,7 +94,7 @@ function Booking() {
                         placeholder={t("surname") as string}
                       />
                       <ErrorMessage name="surname">
-                        {(msg) => <Message>{msg}</Message>}
+                        {(msg) => <Message>{t(msg)}</Message>}
                       </ErrorMessage>
                     </InputWrapper>
                   </Inputs>
@@ -107,7 +107,7 @@ function Booking() {
                         name="email"
                       />
                       <ErrorMessage name="email">
-                        {(msg) => <Message>{msg}</Message>}
+                        {(msg) => <Message>{t(msg)}</Message>}
                       </ErrorMessage>
                     </InputWrapper>
                     <InputWrapper>
@@ -118,7 +118,7 @@ function Booking() {
                         placeholder={t("phone") as string}
                       />
                       <ErrorMessage name="phone">
-                        {(msg) => <Message>{msg}</Message>}
+                        {(msg) => <Message>{t(msg)}</Message>}
                       </ErrorMessage>
                     </InputWrapper>
                   </Inputs>

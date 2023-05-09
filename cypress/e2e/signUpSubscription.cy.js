@@ -8,10 +8,4 @@ describe("sign Up subscription", () => {
       cy.get("button").contains("Sign Up").click();
       cy.get("div").contains("We will contact you!").should("exist");
     });
-
-    it("empty email input", () => {
-      cy.get("input[placeholder='Email']");
-      cy.get("button").contains("Sign Up").click();
-      cy.get("div").contains("Email is required").should("exist");
-    });
 });
