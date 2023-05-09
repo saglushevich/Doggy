@@ -43,12 +43,10 @@ function Navigation() {
   });
 
   return (
-    <>
+    <Suspense>
       <Wrapper onClick={toggleMobileMenu}>
         <Logotype src={logo} />
-        <Suspense>
-          <NavigationLinks>{navigation}</NavigationLinks>
-        </Suspense>
+        <NavigationLinks>{navigation}</NavigationLinks>
         <Burger active={menuStatus} />
         <Languages>
           <Language active={lang === "ru"} onClick={onChangeLang("ru")}>
@@ -64,7 +62,7 @@ function Navigation() {
         onChangeLang={onChangeLang}
         toggleMobileMenu={toggleMobileMenu}
       />
-    </>
+    </Suspense>
   );
 }
 
