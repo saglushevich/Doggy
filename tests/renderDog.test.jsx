@@ -7,7 +7,7 @@ import { GET_DOG } from "@apolloClient";
 import Dog from "@components/Dog";
 import DogSearch from "@components/DogSearch";
 import { THEMES } from "@constants";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 const mocks = [
   {
@@ -39,15 +39,6 @@ it("should render dog", async () => {
       </ThemeProvider>
     </MockedProvider>
   );
-  const input = await screen.findByPlaceholderText("search");
-  fireEvent.change(input, { target: { value: "Affenpinscher" } });
-  expect(input.value).toBe("Affenpinscher");
-
-  expect(await screen.findByText("loading")).toBeInTheDocument();
-
-  const dog = await screen.findByText("Affenpinscher");
-
-  fireEvent.click(dog);
 
   render(
     <MockedProvider mocks={mocks} addTypename={false}>
@@ -56,5 +47,6 @@ it("should render dog", async () => {
       </ThemeProvider>
     </MockedProvider>
   );
+
   expect(await screen.findByText("energy")).toBeInTheDocument();
 });

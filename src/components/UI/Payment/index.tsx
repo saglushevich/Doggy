@@ -38,7 +38,7 @@ function Payment({ onInputChange, values }: IPayment) {
         name="cardNumber"
         value={makeCardFormat(cardNumber, 4, " ")}
         onChange={onInputChange("SET_CARD_NUMBER")}
-        placeholder={t("card number") as string}
+        placeholder={t("cardNumber") as string}
         maxLength={19}
       />
       <ErrorMessage name="cardNumber">
@@ -50,7 +50,7 @@ function Payment({ onInputChange, values }: IPayment) {
             name="cardExpiry"
             value={makeCardFormat(cardExpiry, 2, "/")}
             onChange={onInputChange("SET_CARD_EXPIRY")}
-            placeholder={t("expiry") as string}
+            placeholder={t("cardExpiry") as string}
             maxLength={5}
           />
           <ErrorMessage name="cardExpiry">
@@ -77,7 +77,7 @@ function Payment({ onInputChange, values }: IPayment) {
           onChange={onInputChange("SET_CARD_HOLDER")}
           name="cardHolder"
           type="text"
-          placeholder={t("name on card") as string}
+          placeholder={t("cardHolder") as string}
         />
         <ErrorMessage name="cardHolder">
           {(msg) => <Message>{t(msg)}</Message>}

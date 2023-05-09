@@ -5,16 +5,16 @@ describe("search dog", () => {
 
     it("not found status", () => {
         cy.get("input[placeholder='Search']").type("Sibsaxeriban")
-        cy.get("h2").contains("Not found! Try again!").should("exist");
+        cy.get("li").contains("Not found! Try again!").should("exist");
     });
 
     it("loading status", () => {
         cy.get("input[placeholder='Search']").type("Siberian")
-        cy.get("h2").contains("Loading...").should("exist");
+        cy.get("li").contains("Loading...").should("exist");
     });
 
     it("find dog", () => {
         cy.get("input[placeholder='Search']").type("Siberian")
-        cy.get("h2").contains("Siberian Husky").should("exist");
+        cy.get("li").contains("Siberian Husky").should("exist");
     });
 });

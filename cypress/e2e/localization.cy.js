@@ -4,8 +4,9 @@ describe("localization", () => {
     });
 
     it("ENG to RUS", () => {
+      cy.get("div").contains("ENG").click();
       cy.get("div").contains("RUS").click();
-      cy.get("h1").contains("Ваша собака бесится в грязи?").should("exist");
+      cy.get("h1").contains("Собака обожает бегать по грязи?").should("exist");
     });
 
     it("RUS to ENG", () => {

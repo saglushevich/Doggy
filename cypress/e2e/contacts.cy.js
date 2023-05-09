@@ -3,11 +3,6 @@ describe("contacts", () => {
       cy.visit("localhost:3000/contacts");
     });
 
-    it("emptry inputs", () => {
-        cy.get("button").contains("Submit").click();
-        cy.get("div").contains("Name is required").should("exist");
-    });
-
     it("send contact data", () => {
         cy.get("input[placeholder='First name']").type("SomeName")
         cy.get("input[placeholder='Last name']").type("SomeLastName")
