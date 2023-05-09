@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { Suspense, SyntheticEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 
@@ -34,9 +34,7 @@ function Navigation() {
     }
   };
 
-  const navigation = NAVIGATION[lang].map((nav) => {
-    const { id, title, link } = nav;
-
+  const navigation = NAVIGATION[lang].map(({ id, title, link }) => {
     return (
       <NavigationLink key={id} href={link} active={pathname === link}>
         {title}
@@ -48,7 +46,9 @@ function Navigation() {
     <>
       <Wrapper onClick={toggleMobileMenu}>
         <Logotype src={logo} />
-        <NavigationLinks>{navigation}</NavigationLinks>
+        <Suspense>
+          <NavigationLinks>{navigation}</NavigationLinks>
+        </Suspense>
         <Burger active={menuStatus} />
         <Languages>
           <Language active={lang === "ru"} onClick={onChangeLang("ru")}>

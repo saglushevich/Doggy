@@ -23,26 +23,18 @@ import {
 import { ISearch } from "./types";
 
 function DogSearch({ selectDog }: ISearch) {
-  const { t } = useTranslation();
   const [searchValue, setSearchValue] = useState("");
   const [dogName, setDogName] = useState("");
   const debouncedValue = useDebounce(searchValue, 400);
-
-  const onChangeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-  };
+  const { t } = useTranslation();
 
   const { data, loading, error } = useQuery(GET_DOG, {
     variables: { breed: debouncedValue },
   });
 
-  const loadingStatus = loading && debouncedValue && (
-    <SearchMessage>{t("loading")}</SearchMessage>
-  );
-
-  const errorStatus = error && debouncedValue && (
-    <SearchMessage>{t("went wrong")}</SearchMessage>
-  );
+  const onChangeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
 
   const onSelectDog = (dog: IDog) => () => {
     selectDog(dog);
@@ -68,6 +60,14 @@ function DogSearch({ selectDog }: ISearch) {
   const notFoundStatus =
     !data ||
     (!foundDogs.length && <SearchMessage>{t("not found")}</SearchMessage>);
+
+  const loadingStatus = loading && debouncedValue && (
+    <SearchMessage>{t("loading")}</SearchMessage>
+  );
+
+  const errorStatus = error && debouncedValue && (
+    <SearchMessage>{t("went wrong")}</SearchMessage>
+  );
 
   return (
     <Wrapper>

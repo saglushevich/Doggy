@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 import { Container } from "@components/layout";
+import { DOG_DIELDS } from "@constants";
 import { IDog } from "@types";
 
 import {
@@ -15,14 +16,17 @@ import {
 function Dog({ dog }: { dog: IDog }) {
   const { t } = useTranslation();
 
-  const {
-    name,
-    image_link,
-    energy,
-    good_with_strangers,
-    good_with_other_dogs,
-    max_life_expectancy,
-  } = dog;
+  const { name, image_link } = dog;
+
+  const fields = DOG_DIELDS.map(({ id, field }) => {
+    const dogCharacteristic = dog[field as keyof typeof dog];
+
+    return (
+      <Characteristic key={id}>
+        {t(field)} {dogCharacteristic}
+      </Characteristic>
+    );
+  });
 
   return (
     <Wrapper>
@@ -31,20 +35,7 @@ function Dog({ dog }: { dog: IDog }) {
           <Image src={image_link} />
           <InfoText>{name}</InfoText>
         </ImageWrapper>
-        <Characteristics>
-          <Characteristic>
-            {t("energy")} {energy}
-          </Characteristic>
-          <Characteristic>
-            {t("life expectancy")} {max_life_expectancy}
-          </Characteristic>
-          <Characteristic>
-            {t("strangers")} {good_with_strangers}
-          </Characteristic>
-          <Characteristic>
-            {t("other dogs")} {good_with_other_dogs}
-          </Characteristic>
-        </Characteristics>
+        <Characteristics>{fields}</Characteristics>
       </Container>
     </Wrapper>
   );
