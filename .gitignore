@@ -7,6 +7,8 @@
 /apolloServer/node_modules
 /apolloServer/secrets.js
 /apolloServer/build
+/dist
+/.rollup.cache
 
 # testing
 /coverage
