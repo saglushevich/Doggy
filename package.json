@@ -1,7 +1,9 @@
 {
-  "name": "doggy",
-  "version": "0.1.0",
-  "private": true,
+  "name": "modsen-doggy-ui",
+  "version": "0.1.4",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,12 +13,20 @@
     "prettier": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "rollup": "rollup -c --bundleConfigAsCjs"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn run lint:fix && yarn run prettier"
     }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "browser": {
+    "crypto": false
   },
   "dependencies": {
     "@apollo/client": "^3.7.12",
@@ -44,6 +54,14 @@
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@jridgewell/trace-mapping": "^0.3.18",
+    "@rollup/plugin-alias": "^5.0.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-image": "^3.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
     "@storybook/addon-essentials": "^7.0.7",
     "@storybook/addon-interactions": "^7.0.7",
     "@storybook/addon-links": "^7.0.7",
@@ -79,6 +97,8 @@
     "jest-environment-jsdom": "^29.5.0",
     "jest-styled-components": "^7.1.1",
     "prettier": "2.8.8",
+    "rollup": "^3.21.6",
+    "rollup-plugin-dotenv": "^0.4.1",
     "storybook": "^7.0.7",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.2",
