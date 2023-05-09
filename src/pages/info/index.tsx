@@ -1,13 +1,12 @@
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
 
+import Dog from "@components/Dog";
 import DogSearch from "@components/DogSearch";
 import { PageContainer } from "@components/layout";
 import { Title } from "@styles";
 import { IDog } from "@types";
-
-const LazyDog = lazy(() => import("@components/Dog"));
 
 function InfoPage() {
   const { t } = useTranslation();
@@ -18,15 +17,13 @@ function InfoPage() {
   };
 
   return (
-    <Suspense>
-      <PageContainer>
-        <Head>
-          <Title>{t("dog information")}</Title>
-        </Head>
-        <DogSearch selectDog={selectDog} />
-        {selectedDog && <LazyDog dog={selectedDog} />}
-      </PageContainer>
-    </Suspense>
+    <PageContainer>
+      <Head>
+        <Title>{t("dog information")}</Title>
+      </Head>
+      <DogSearch selectDog={selectDog} />
+      {selectedDog && <Dog dog={selectedDog} />}
+    </PageContainer>
   );
 }
 

@@ -7,9 +7,7 @@ import GlobalStyle from "../src/styles";
 
 export const Decorator = (story) => (
   <ThemeProvider theme={THEMES}>
-    {/* <BrowserRouter> */}
       <GlobalStyle />
       {story()}
-    {/* </BrowserRouter> */}
   </ThemeProvider>
 );
