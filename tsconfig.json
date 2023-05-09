@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -9,30 +13,61 @@
     "declaration": true,
     "declarationDir": "type",
     "forceConsistentCasingInFileNames": true,
-    "emitDeclarationOnly": true,
+    "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "outDir": "dist",
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@styles": ["./src/styles"],
-      "@assets/*": ["./src/assets/*"],
-      "@types": ["./src/types"],
-      "@mocks": ["./src/mocks"],
-      "@constants": ["./src/constants"],
-      "@hooks": ["./src/hooks"],
-      "@localization": ["./src/localization"],
-      "@utils": ["./src/utils"],
-      "@apolloClient": ["./src/apolloClient"]
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@styles": [
+        "./src/styles"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@types": [
+        "./src/types"
+      ],
+      "@mocks": [
+        "./src/mocks"
+      ],
+      "@constants": [
+        "./src/constants"
+      ],
+      "@hooks": [
+        "./src/hooks"
+      ],
+      "@localization": [
+        "./src/localization"
+      ],
+      "@utils": [
+        "./src/utils"
+      ],
+      "@apolloClient": [
+        "./src/apolloClient"
+      ]
     }
   },
-  "types": ["@types/jest", "@testing-library/jest-dom", ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "types": [
+    "@types/jest",
+    "@testing-library/jest-dom"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
