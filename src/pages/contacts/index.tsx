@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import Head from "next/head";
 
 import Contacts from "@components/Contacts";
-import ContactsForm from "@components/ContactsForm";
 import { PageContainer } from "@components/layout";
+import ContactsForm from "@components/UI/ContactsForm";
 import { Title } from "@styles";
 
 function ContactsPage() {

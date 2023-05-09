@@ -1,4 +1,4 @@
-import ContactForm from "@components/ContactsForm";
+import ContactForm from "@components/UI/ContactsForm";
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ContactForm> = {
